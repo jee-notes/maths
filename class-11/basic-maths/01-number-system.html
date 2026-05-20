@@ -15,12 +15,129 @@
 </nav>
 <h1>Number System</h1>
 <p class="subtitle">
-Numbers are universal
+Classification, standard sets and interval constraints
 </p>
 <section>
-<h2>Numbers are universal</h2>
+<h2>What is a Number?</h2>
 <p>
-We assign numbers to almost everything.
+A number is an <strong>abstraction</strong> — a mental construct decoupled from physical reality. 
+</p>
+<p>
+Consider observing two apples and two oranges. The apples possess physical, intrinsic properties: they are red, juicy, spherical and organic. The oranges are orange, acidic and textured.
+</p>
+<p>
+Neither the apples nor the oranges contain a physical property called "two." You can slice an apple to find its seeds, but you can never dissect an object to isolate its "twoness."
+</p>
+<p>
+The number \(2\) is an <strong>abstracted commonality</strong>. It is an invariant property extracted by the human mind when comparing distinct collections of objects. It ignores "what" the objects are and focuses entirely on "how many" there are. 
+</p>
+<div class="insightbox">
+<h3>The Transition to Pure Mathematics</h3><br>
+In everyday life, we use numbers as adjectives to qualify physical things (e.g., "two apples").<br>
+However, mathematics begins the exact moment we remove the noun.<br>
+By isolating the abstraction \('2'\) from the physical objects, it ceases to be a descriptor and becomes an independent object of thought.<br>
+Once numbers exist purely as abstractions, we can define rules to manipulate them — such as addition (\(2 + 3 = 5\)) — independent of whether we are adding apples, planets, or vectors.<br>
+Understanding this is vital: algebra is simply the next layer of abstraction.<br>
+If a number abstracts away the nature of the object, a variable (\(x\)) abstracts away the value of the number itself.
+</div>
+</section>
+<section>
+<h2>The Real Number Line \(\mathbb{R}\)</h2>
+<p>
+In classical algebra and calculus, our universe of discourse is primarily restricted to the set of Real Numbers \(\mathbb{R}\). Every real number corresponds uniquely to a geometric point on an infinite continuous line. 
+</p>
+<p>
+For JEE problem-solving, we partition this continuous space into highly structured, discrete and continuous subsets. Understanding these boundaries is critical for defining the domains of functions.
+</p>
+</section>
+<section>
+<h2>Hierarchy of Number Sets</h2>
+<p>
+To avoid ambiguity in question statements (e.g., "where \(x\) is a positive integer" vs "where \(x\) is non-negative"), we utilize standard mathematical set notations:
+</p>
+<div class="concept-box">
+<h3>Natural Numbers \(\mathbb{N}\)</h3>
+<p>
+The counting numbers: \(\{1, 2, 3, \dots\}\). Note that \(0 \notin \mathbb{N}\).
+</p>
+<h3>Integers \(\mathbb{Z}\) or \(\mathbb{I}\)</h3>
+<p>
+Complete values including negative, zero, and positive: \(\{\dots, -2, -1, 0, 1, 2, \dots\}\).
+</p>
+<ul>
+<li><strong>Non-negative integers:</strong> \(\{0, 1, 2, \dots\}\) (Includes zero)</li>
+<li><strong>Positive integers:</strong> \(\{1, 2, 3, \dots\}\) (Identical to \(\mathbb{N}\))</li>
+</ul>
+<h3>Rational Numbers \(\mathbb{Q}\)</h3>
+<p>
+Numbers expressible in the form \(\frac{p}{q}\), where \(p, q \in \mathbb{Z}\) and the denominator \(q \neq 0\). Their decimal representations either terminate or repeat periodically.
+</p>
+<h3>Irrational Numbers \(\mathbb{Q}^c\) or \(\mathbb{Q}'\)</h3>
+<p>
+Real numbers that cannot be represented as a ratio of two integers (e.g., \(\sqrt{2}\), \(\pi\), \(e\)). Their decimal expansions are non-terminating and non-recurring.
+</p>
+</div>
+<p>Rational and Irrational Numbers together constitute Real Numbers.
+</p>
+<p>
+Complex Numbers \(\mathbb{C}\) encompass all real numbers as well as imaginary numbers.
+</p>
+<p>
+A complex number can be written as \(a + ib\) where \(a, b \in \mathbb{R}\). An imaginary number necessarily contains a non-zero imaginary component (\(b \neq 0\)).
+</p>
+</section>
+<section>
+<h2>Continuous Subsets & Interval Notation</h2>
+<p>
+Unlike discrete elements which can be listed inside curly braces \(\{a, b\}\), continuous segments of the real number line are expressed via inequalities and intervals. This is the primary language used to express algebraic solution sets.
+</p>
+<table>
+<thead>
+<tr>
+<th>Notation Type</th>
+<th>Mathematical Inequality</th>
+<th>Interval Representation</th>
+<th>Geometric Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Closed Interval</strong></td>
+<td>\(a \le x \le b\)</td>
+<td>\(x \in [a, b]\)</td>
+<td>Includes both boundary points \(a\) and \(b\).</td>
+</tr>
+<tr>
+<td><strong>Open Interval</strong></td>
+<td>\(a &lt; x &lt; b\)</td>
+<td>\(x \in (a, b)\)</td>
+<td>Excludes both boundary points \(a\) and \(b\).</td>
+</tr>
+<tr>
+<td><strong>Semi-Open / Semi-Closed</strong></td>
+<td>\(a \le x &lt; b\)</td>
+<td>\(x \in [a, b)\)</td>
+<td>Includes \(a\), excludes \(b\).</td>
+</tr>
+<tr>
+<td><strong>Infinite Interval</strong></td>
+<td>\(x \ge a\)</td>
+<td>\(x \in [a, \infty)\)</td>
+<td>All values from \(a\) extending to positive infinity. Infinity (\(\infty\)) is always paired with an open bracket.</td>
+</tr>
+</tbody>
+</table>
+<p>
+The symbol \(\infty\) (or \(-\infty\)) is not a real number, as it does not possess a definite, fixed value on the real number line.
+</p>
+<p>
+Instead, it is a operational symbol indicating that a value grows boundlessly in the positive (or negative) direction without termination.
+</p>
+<p>
+In mathematical definitions, an entity is classified as a specific number only if it represents a unique, definite value.
+</p>
+<p>
+Because \(\infty\) cannot be pinned down to a fixed point, it can never be reached or included, which is why infinite boundaries are strictly assigned open brackets.
 </p>
 </section>
 <footer>
