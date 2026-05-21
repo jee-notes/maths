@@ -240,12 +240,49 @@ border-top: 1px solid #e2e8f0;
 </div>
 </section>
 <article class="philosophy">
-<h2>Understanding UNDERSTANDING</h2>
+<h2>MATHS is a language</h2>
 <p>
-This is in continuation with JEE Physics for Maths.
+Students often debate whether Mathematics belongs to science or art. In reality, Mathematics is something more fundamental — a highly optimized language of abstraction and logic.
 </p>
 <p>
-Maths already has a lot and so here it is simplified for JEE.
+It is a symbolic system through which quantitative information can be represented, transformed, stored, communicated, and analyzed with extraordinary precision.
+</p>
+<p>
+Just as spoken languages encode thoughts into words, Mathematics encodes patterns, structures, relationships, motion, space and change into symbols and operations.
+</p>
+<div class="diagram-grid">
+<div class="diagram-item">
+<svg viewBox="0 0 100 100">
+<line x1="10" y1="50" x2="90" y2="50" class="shape-base" stroke-dasharray="4"/>
+<circle cx="50" cy="50" r="30" class="shape-fill"/>
+<circle cx="50" cy="50" r="2" fill="var(--primary)"/>
+<line x1="50" y1="50" x2="76" y2="35" class="shape-accent"/>
+</svg>
+<p>Spatial Transformation</p>
+</div>
+<div class="diagram-item">
+<svg viewBox="0 0 100 100">
+<path d="M 10 80 Q 35 10, 60 50 T 90 20" class="shape-base"/>
+<line x1="45" y1="23" x2="75" y2="53" class="shape-accent"/>
+<circle cx="60" cy="38" r="3" fill="var(--secondary)"/>
+</svg>
+<p>Rate of Change (\(\frac{dy}{dx}\))</p>
+</div>
+<div class="diagram-item">
+<svg viewBox="0 0 100 100">
+<line x1="10" y1="80" x2="90" y2="80" class="shape-base"/>
+<line x1="20" y1="80" x2="50" y2="20" class="shape-accent"/>
+<line x1="50" y1="20" x2="80" y2="80" class="shape-accent"/>
+<path d="M 20 80 L 50 20 L 80 80 Z" class="shape-fill"/>
+</svg>
+<p>Geometric Invariance</p>
+</div>
+</div
+<p>
+By treating mathematical operators as logical transformations rather than arbitrary formulas, complex geometric, physical and quantitative phenomena can be translated into direct symbolic operations.
+</p>
+<p>
+This ability to convert reality into abstraction — and then manipulate that abstraction systematically — is what gives Mathematics its universal explanatory power across Physics, Engineering, Computer Science, Economics and beyond.
 </p>
 </article>
 <section id="syllabus" class="syllabus-section">
@@ -268,12 +305,11 @@ Maths already has a lot and so here it is simplified for JEE.
 </div>
 <script>
 const class11 = [
-"mole-concept", "basic-maths", "gaseous-state", "thermodynamics",
-"equilibrium"];
+"basic-maths", "logarithms", "quadratic-equations", "sequences-series",
+"trigonometry", "permutations-combinations", "binomial-theorem", "straight-lines", "circles"];
 const class12 = [
-"solid-state", "solutions", "electrochemistry", 
-"chemical-kinetics", "surface-chemistry"];
-
+"functions", "limits-continuity", "differentiation", "applications-of-derivatives", 
+"indefinite-integration", "definite-integration", "differential-equations", "matrices-determinants", "vectors-3d-geometry"];
 function populateList(id, chapters, pathPrefix) {
 const ul = document.getElementById(id);
 chapters.forEach(ch => {
