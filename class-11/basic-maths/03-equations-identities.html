@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Equations vs Identities | Basic Maths</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Basic Maths
+</a>
+</nav>
+<h1>Equations vs Identities</h1>
+<p class="subtitle">
+The logical distinction, the Identity Theorem for polynomials, and conditional statements
+</p>
+
+<section>
+<h2>Equations vs Identities: The Logical Difference</h2>
+<p>
+In mathematics, a statement of equality can represent two fundamentally different concepts depending on the set of values that satisfy it. Distinguishing between these two is critical for solving algebra problems correctly.
+</p>
+
+<div class="model-box">
+<h3>1. Equation</h3>
+An <strong>equation</strong> is a statement of equality between two mathematical expressions that holds true only for <strong>specific values</strong> of the variable(s) involved. These specific values are called the <strong>roots</strong> or <strong>solutions</strong> of the equation.
+<br><br>
+<em>Example:</em>
+\[x^2 - 5x + 6 = 0\]
+This equation is true only when \(x = 2\) or \(x = 3\). For any other real number, the equality is false.
+</div>
+
+<div class="model-box">
+<h3>2. Identity</h3>
+An <strong>identity</strong> is a statement of equality between two mathematical expressions that holds true for <strong>all values</strong> of the variable(s) for which the expressions are defined (i.e., within their common domain).
+<br><br>
+<em>Example:</em>
+\[(x - 2)(x - 3) = x^2 - 5x + 6\]
+This is true for <em>every</em> real number \(x\). If you substitute \(x = 0\), \(x = -5\), or \(x = 1000\), both sides will evaluate to the exact same value.
+</div>
+
+<div class="concept-box">
+<h3>Key Comparison</h3>
+<ul>
+    <li>An <strong>equation</strong> is a constraint. It asks: <em>"For what specific values is this statement true?"</em></li>
+    <li>An <strong>identity</strong> is a transformation. It states: <em>"These two expressions are different ways of writing the exact same mathematical entity."</em></li>
+    <li>Trigonometric identities (like \(\sin^2 x + \cos^2 x = 1\)) are identities because they hold for all real \(x\), whereas \(\sin x = \frac{1}{2}\) is an equation because it is satisfied only by discrete values (\(x = \frac{\pi}{6}, \frac{5\pi}{6}, \dots\)).</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>The Identity Theorem for Polynomials</h2>
+<p>
+For polynomial expressions, the boundary between being an equation and an identity is mathematically rigid. This relationship is defined by a fundamental theorem in algebra.
+</p>
+
+<div class="model-box">
+<h3>The Identity Theorem</h3>
+Consider a polynomial equation of degree \(n\):
+\[P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 = 0\]
+where \(a_n, a_{n-1}, \dots, a_0\) are real or complex coefficients.
+<ol>
+    <li>If \(P(x) = 0\) is a polynomial equation of degree \(n\), it can have <strong>at most \(n\) distinct roots</strong>.</li>
+    <li>If the equation is satisfied by <strong>more than \(n\) distinct values</strong> of \(x\), then the polynomial must be the zero polynomial. That is, it is an <strong>identity</strong>, and all its coefficients must be zero:
+        \[a_n = a_{n-1} = \dots = a_1 = a_0 = 0\]
+    </li>
+</ol>
+</div>
+
+<div class="insightbox">
+<h3>Why the Theorem is an Absolute Cheat-Code for JEE</h3>
+If you have a quadratic equation (degree 2) like \(Ax^2 + Bx + C = 0\), and a question states it is satisfied by three distinct values of \(x\), you do not need to solve the quadratic. By the Identity Theorem, you can immediately conclude:
+\[A = 0, \quad B = 0, \quad C = 0\]
+This allows you to convert a difficult polynomial problem into a simple system of linear equations!
+</div>
+
+<div class="examplebox">
+<h3>Solved Example: Proving a Complex Identity</h3>
+<strong>Problem:</strong> Show that the following equation is an identity for all real numbers \(x\):
+\[\frac{(x-a)(x-b)}{(c-a)(c-b)} + \frac{(x-b)(x-c)}{(a-b)(a-c)} + \frac{(x-c)(x-a)}{(b-c)(b-a)} = 1\]
+where \(a, b, c\) are distinct real constants.
+<hr>
+<strong>Solution:</strong>
+Let's analyze the expression. The left-hand side is a sum of three terms, where each term is a quadratic expression in \(x\) (since the numerator of each term is a product of two linear factors of the form \((x-\alpha)(x-\beta)\)).
+<br><br>
+Therefore, the entire left-hand side is a polynomial of degree **at most 2**.
+Let \(P(x)\) be the polynomial obtained by subtracting \(1\) from the left-hand side:
+\[P(x) = \frac{(x-a)(x-b)}{(c-a)(c-b)} + \frac{(x-b)(x-c)}{(a-b)(a-c)} + \frac{(x-c)(x-a)}{(b-c)(b-a)} - 1\]
+Since \(P(x)\) is a polynomial of degree \(\le 2\), it can have at most 2 distinct roots, unless it is an identity. Let's evaluate \(P(x)\) at three distinct test points: \(x = a\), \(x = b\), and \(x = c\):
+<ol>
+    <li>Evaluate at \(x = a\):
+        \[P(a) = \frac{(a-a)(a-b)}{(c-a)(c-b)} + \frac{(a-b)(a-c)}{(a-b)(a-c)} + \frac{(a-c)(a-a)}{(b-c)(b-a)} - 1\]
+        \[P(a) = 0 + 1 + 0 - 1 = 0\]
+        Hence, \(x = a\) is a root.
+    </li>
+    <li>Evaluate at \(x = b\):
+        \[P(b) = \frac{(b-a)(b-b)}{(c-a)(c-b)} + \frac{(b-b)(b-c)}{(a-b)(a-c)} + \frac{(b-c)(b-a)}{(b-c)(b-a)} - 1\]
+        \[P(b) = 0 + 0 + 1 - 1 = 0\]
+        Hence, \(x = b\) is a root.
+    </li>
+    <li>Evaluate at \(x = c\):
+        \[P(c) = \frac{(c-a)(c-b)}{(c-a)(c-b)} + \frac{(c-b)(c-c)}{(a-b)(a-c)} + \frac{(c-c)(c-a)}{(b-c)(b-a)} - 1\]
+        \[P(c) = 1 + 0 + 0 - 1 = 0\]
+        Hence, \(x = c\) is a root.
+    </li>
+</ol>
+We have shown that the polynomial \(P(x)\) of degree \(\le 2\) is satisfied by **three distinct roots** (\(a, b, c\)). By the Identity Theorem, \(P(x)\) must be identically zero!
+\[P(x) \equiv 0 \implies \frac{(x-a)(x-b)}{(c-a)(c-b)} + \frac{(x-b)(x-c)}{(a-b)(a-c)} + \frac{(x-c)(x-a)}{(b-c)(b-a)} \equiv 1\]
+This algebraic equality is an identity, satisfied for all \(x \in \mathbb{R}\).
+</div>
+</section>
+
+<section>
+<h2>Conditional Identities</h2>
+<p>
+A **conditional identity** is a mathematical relation that behaves as an identity (satisfied by all variables in the domain) but ONLY when a specific **auxiliary constraint** is satisfied.
+</p>
+
+<div class="model-box">
+<h3>The Classical Tri-Variable Constraint</h3>
+The most famous conditional identities in JEE revolve around the constraint \(a + b + c = 0\).
+<p>
+If \(a + b + c = 0\), then:
+</p>
+<ol>
+    <li>\(a^3 + b^3 + c^3 = 3abc\)</li>
+    <li>\(a^2 + b^2 + c^2 = -2(ab + bc + ca)\)</li>
+</ol>
+</div>
+
+<div class="examplebox">
+<h3>Solved Example: Factoring using Conditional Identities</h3>
+<strong>Problem:</strong> Factorize the expression:
+\[S = (x-y)^3 + (y-z)^3 + (z-x)^3\]
+<hr>
+<strong>Solution:</strong>
+Let's define three variables:
+\[a = x - y, \quad b = y - z, \quad c = z - x\]
+First, check the sum of these variables:
+\[a + b + c = (x - y) + (y - z) + (z - x) = x - x + y - y + z - z = 0\]
+Since \(a + b + c = 0\), we can immediately apply the conditional identity:
+\[a^3 + b^3 + c^3 = 3abc\]
+Substitute the original expressions back:
+\[(x - y)^3 + (y - z)^3 + (z - x)^3 = 3(x - y)(y - z)(z - x)\]
+This instantly factorizes a highly complicated algebraic expression without any tedious expansions!
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>
