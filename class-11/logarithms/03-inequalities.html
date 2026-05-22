@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logarithmic Inequalities | Logarithms</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Logarithms
+</a>
+</nav>
+<h1>Logarithmic Inequalities</h1>
+<p class="subtitle">
+Navigating base-sensitive monotonicity and complex algebraic interval intersections
+</p>
+
+<section>
+<h2>Base-Sensitive Monotonicity</h2>
+<p>
+Unlike linear or quadratic expressions, the behavior of logarithmic inequalities depends fundamentally on the magnitude of the base \(a\). This is due to the concept of **monotonicity**:
+</p>
+
+<div class="model-box">
+<h3>Case 1: When Base \(a > 1\) (Strictly Increasing Function)</h3>
+<p>
+When the base is greater than 1, the logarithmic function \(\log_a x\) is strictly increasing. Larger arguments yield larger logarithmic values. 
+</p>
+<p>
+Therefore, the inequality sign is **preserved**:
+\[\log_a f(x) > \log_a g(x) \iff f(x) > g(x) > 0\]
+</p>
+
+<h3>Case 2: When Base \(0 < a < 1\) (Strictly Decreasing Function)</h3>
+<p>
+When the base is between 0 and 1, the logarithmic function \(\log_a x\) is strictly decreasing. Larger arguments yield smaller logarithmic values.
+</p>
+<p>
+Therefore, the inequality sign is **reversed**:
+\[\log_a f(x) > \log_a g(x) \iff 0 < f(x) < g(x)\]
+</p>
+</div>
+
+<div class="insightbox">
+<h3>Warning: The Domain Trap in Inequalities</h3>
+<p>
+It is very common to solve the algebraic part of the inequality but forget to enforce that the arguments must remain strictly positive. 
+</p>
+<p>
+For example, in Case 1, writing \(f(x) > g(x)\) is insufficient because we must also explicitly enforce that the smaller argument is positive: \(g(x) > 0\). (If \(g(x) > 0\), then \(f(x) > g(x)\) automatically ensures \(f(x) > 0\)).
+</p>
+<p>
+In Case 2, writing \(f(x) < g(x)\) is insufficient; we must explicitly enforce that the smaller argument is positive: \(f(x) > 0\). (If \(f(x) > 0\), then \(g(x) > f(x)\) automatically ensures \(g(x) > 0\)).
+</p>
+</div>
+</section>
+
+<section>
+<h2>Systematic Solving Strategy</h2>
+<p>
+To solve any logarithmic inequality without errors, always follow this 3-step protocol:
+</p>
+<ol>
+<li><strong>Find the Domain Set (\(D\)):</strong> Set up inequalities for all arguments (\(> 0\)) and bases (\(> 0, \neq 1\)). Solve their intersection to find the valid range of \(x\).</li>
+<li><strong>Solve the Inequality Set (\(S\)):</strong> Remove the logarithms by applying Case 1 (preserving sign) or Case 2 (reversing sign). If the base contains a variable, split the problem into two distinct cases (\(a > 1\) and \(0 < a < 1\)) and solve each.</li>
+<li><strong>Final Intersection:</strong> The final solution set is the intersection of the domain and the inequality solution:
+\[\text{Final Solution} = D \cap S\]
+</li>
+</ol>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Constant Base in \((0,1)\)</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[\log_{0.5} (x^2 - 5x + 6) \ge -1\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Domain Set (\(D\)).</strong>
+The argument must be strictly positive:
+\[x^2 - 5x + 6 > 0\]
+Factoring the quadratic:
+\[(x-2)(x-3) > 0 \implies x \in (-\infty, 2) \cup (3, \infty)\]
+Thus, \(D = (-\infty, 2) \cup (3, \infty)\).
+</p>
+<p>
+<strong>Step 2: Solve the Inequality Set (\(S\)).</strong>
+The base is \(0.5\), which is in the interval \((0, 1)\). Therefore, we **reverse** the inequality sign:
+\[x^2 - 5x + 6 \le (0.5)^{-1}\]
+Since \((0.5)^{-1} = \left(\frac{1}{2}\right)^{-1} = 2\):
+\[x^2 - 5x + 6 \le 2\]
+\[x^2 - 5x + 4 \le 0\]
+Factoring the quadratic:
+\[(x-1)(x-4) \le 0 \implies x \in [1, 4]\]
+Thus, \(S = [1, 4]\).
+</p>
+<p>
+<strong>Step 3: Intersect \(D\) and \(S\).</strong>
+We intersect \((-\infty, 2) \cup (3, \infty)\) with \([1, 4]\):
+<ul>
+<li>Intersection on the left: \([1, 4] \cap (-\infty, 2) = [1, 2)\)</li>
+<li>Intersection on the right: \([1, 4] \cap (3, \infty) = (3, 4]\)</li>
+</ul>
+Combining these:
+\[x \in [1, 2) \cup (3, 4]\]
+</p>
+<p><strong>Answer:</strong> \(x \in [1, 2) \cup (3, 4]\)</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Constant Base Greater Than 1</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[\log_3 \left(\frac{x-1}{x+1}\right) < 0\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Domain Set (\(D\)).</strong>
+The argument must be strictly positive:
+\[\frac{x-1}{x+1} > 0\]
+Using the wavy curve method, the critical points are \(x = -1\) and \(x = 1\):
+\[D = (-\infty, -1) \cup (1, \infty)\]
+</p>
+<p>
+<strong>Step 2: Solve the Inequality Set (\(S\)).</strong>
+The base is \(3 > 1\). Therefore, we **preserve** the inequality sign:
+\[\frac{x-1}{x+1} < 3^0\]
+Since \(3^0 = 1\):
+\[\frac{x-1}{x+1} < 1\]
+\[\frac{x-1}{x+1} - 1 < 0\]
+\[\frac{(x-1) - (x+1)}{x+1} < 0\]
+\[\frac{-2}{x+1} < 0\]
+Multiply by \(-1\) (reversing the inequality sign):
+\[\frac{2}{x+1} > 0 \implies x+1 > 0 \implies x > -1\]
+Thus, \(S = (-1, \infty)\).
+</p>
+<p>
+<strong>Step 3: Intersect \(D\) and \(S\).</strong>
+We intersect \((-\infty, -1) \cup (1, \infty)\) with \((-1, \infty)\):
+<ul>
+<li>Intersection with \((-\infty, -1)\) is empty.</li>
+<li>Intersection with \((1, \infty)\) is \((1, \infty)\).</li>
+</ul>
+Thus:
+\[x \in (1, \infty)\]
+</p>
+<p><strong>Answer:</strong> \(x \in (1, \infty)\)</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 3: Variable Base Case Analysis</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[\log_{x} (x^2 - 1) > 1\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Domain Constraints.</strong>
+<ul>
+<li>Base constraint: \(x > 0\) and \(x \neq 1\).</li>
+<li>Argument constraint: \(x^2 - 1 > 0 \implies (x-1)(x+1) > 0 \implies x > 1\) or \(x < -1\).</li>
+</ul>
+Intersection of constraints gives the domain: **\(x \in (1, \infty)\)**.
+</p>
+<p>
+<strong>Step 2: Analyze based on the Variable Base.</strong>
+Since our domain is strictly \(x > 1\), the base \(x\) is always strictly greater than 1! This simplifies the problem because we do not need to analyze the case \(0 < x < 1\) (it lies completely outside the domain).
+</p>
+<p>
+Since the base is guaranteed to be \(x > 1\), we **preserve** the inequality sign:
+\[x^2 - 1 > x^1\]
+\[x^2 - x - 1 > 0\]
+Let's find the roots of the quadratic \(x^2 - x - 1 = 0\):
+\[x = \frac{1 \pm \sqrt{1 - 4(1)(-1)}}{2} = \frac{1 \pm \sqrt{5}}{2}\]
+The solution to \(x^2 - x - 1 > 0\) is:
+\[x \in \left(-\infty, \frac{1 - \sqrt{5}}{2}\right) \cup \left(\frac{1 + \sqrt{5}}{2}, \infty\right)\]
+</p>
+<p>
+<strong>Step 3: Intersect with Domain.</strong>
+We intersect our inequality solution with the domain \(D = (1, \infty)\).
+Note that \(\sqrt{5} \approx 2.236\):
+<ul>
+<li>\(\frac{1 - \sqrt{5}}{2} \approx -0.618\) (entirely negative, has empty intersection with \((1, \infty)\))</li>
+<li>\(\frac{1 + \sqrt{5}}{2} \approx 1.618\) (which is greater than 1)</li>
+</ul>
+Intersecting \(\left(\frac{1 + \sqrt{5}}{2}, \infty\right)\) with \((1, \infty)\) yields:
+\[x \in \left(\frac{1 + \sqrt{5}}{2}, \infty\right)\]
+</p>
+<p><strong>Answer:</strong> \(x \in \left(\frac{1 + \sqrt{5}}{2}, \infty\right)\)</p>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

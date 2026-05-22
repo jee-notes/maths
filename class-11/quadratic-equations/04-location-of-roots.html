@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Location of Roots | Quadratic Equations</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Quadratic Equations
+</a>
+</nav>
+<h1>Location of Roots</h1>
+<p class="subtitle">
+Parametric positioning: mapping roots relative to real numbers and interval boundaries
+</p>
+
+<section>
+<h2>Introduction to Location of Roots</h2>
+<p>
+In standard algebra, we solve for roots under fixed coefficients. However, JEE problems frequently ask us to solve **parametric equations** where the coefficients are unknown parameters, and we must find the range of these parameters such that the roots lie within specific real-number intervals.
+</p>
+<p>
+This topic requires combining three separate mathematical layers:
+<ol>
+    <li>**The existence of roots** (Discriminant \(D\)).</li>
+    <li>**The orientation of the curve** (Value of the function at boundary points \(f(d)\)).</li>
+    <li>**The physical position of the curve** (The horizontal position of the vertex \(-\frac{b}{2a}\)).</li>
+</ol>
+</p>
+<p>
+<em>Pro-Tip:</em> To make our constraints universal, we always frame them using the product \(a \cdot f(k)\) rather than just \(f(k)\). This accounts for both upward-opening (\(a > 0\)) and downward-opening (\(a < 0\)) parabolas.
+</p>
+</section>
+
+<section>
+<h2>The 5 Classical Cases</h2>
+<p>
+Let \(f(x) = ax^2 + bx + c\) be a quadratic expression with real roots \(\alpha\) and \(\beta\). Let \(d\) and \(e\) be real numbers (with \(d < e\)).
+</p>
+
+<div class="model-box">
+<h3>Case I: Both roots are greater than a real number \(d\) (\(\alpha, \beta &gt; d\))</h3>
+Geometrically, the entire active segment of the parabola must lie to the right of the vertical line \(x = d\).
+<br><br>
+<strong>Simultaneous Constraints:</strong>
+<ol>
+    <li><strong>Roots must exist:</strong> \(D \ge 0\) (Allows for equal or distinct roots).</li>
+    <li><strong>Vertex must lie to the right of \(d\):</strong> \(-\frac{b}{2a} &gt; d\).</li>
+    <li><strong>Sign at the boundary point:</strong> \(a \cdot f(d) &gt; 0\).</li>
+</ol>
+</div>
+
+<div class="model-box">
+<h3>Case II: Both roots are less than a real number \(d\) (\(\alpha, \beta &lt; d\))</h3>
+Geometrically, the active segment of the parabola lies to the left of the vertical line \(x = d\).
+<br><br>
+<strong>Simultaneous Constraints:</strong>
+<ol>
+    <li><strong>Roots must exist:</strong> \(D \ge 0\).</li>
+    <li><strong>Vertex must lie to the left of \(d\):</strong> \(-\frac{b}{2a} &lt; d\).</li>
+    <li><strong>Sign at the boundary point:</strong> \(a \cdot f(d) &gt; 0\).</li>
+</ol>
+</div>
+
+<div class="model-box">
+<h3>Case III: A real number \(d\) lies between the roots (\(\alpha &lt; d &lt; \beta\))</h3>
+Geometrically, the point \((d, f(d))\) must lie inside the "cup" of the parabola.
+<br><br>
+<strong>Constraint:</strong>
+<div class="math-block">
+\[a \cdot f(d) &lt; 0\]
+</div>
+<strong>Insight Note:</strong> This single constraint is incredibly elegant. If \(a \cdot f(d) < 0\), the parabola is forced to cross the x-axis on both sides of \(d\) to return to its asymptotic direction. Thus, **real and distinct roots are guaranteed automatically**, making additional constraints like \(D > 0\) or vertex checks completely redundant!
+</div>
+
+<div class="model-box">
+<h3>Case IV: Both roots lie within an open interval \((d, e)\) (\(d &lt; \alpha, \beta &lt; e\))</h3>
+Geometrically, the roots must be trapped between the vertical barriers \(x = d\) and \(x = e\).
+<br><br>
+<strong>Simultaneous Constraints:</strong>
+<ol>
+    <li><strong>Roots must exist:</strong> \(D \ge 0\).</li>
+    <li><strong>Vertex must lie inside the interval:</strong> \(d &lt; -\frac{b}{2a} &lt; e\).</li>
+    <li><strong>Sign at the left barrier:</strong> \(a \cdot f(d) &gt; 0\).</li>
+    <li><strong>Sign at the right barrier:</strong> \(a \cdot f(e) &gt; 0\).</li>
+</ol>
+</div>
+
+<div class="model-box">
+<h3>Case V: Exactly one root lies within the open interval \((d, e)\)</h3>
+Geometrically, the curve must cross the x-axis exactly once between \(d\) and \(e\), meaning the function changes sign between the two barriers.
+<br><br>
+<strong>Constraint:</strong>
+<div class="math-block">
+\[f(d) \cdot f(e) &lt; 0\]
+</div>
+<strong>Warning on Boundary Cases:</strong> If a root can coincide exactly with a boundary point (e.g. \(\alpha = d\) or \(\beta = e\)), then \(f(d) \cdot f(e) = 0\). You must test the conditions \(f(d) = 0\) and \(f(e) = 0\) manually to see if they satisfy the problem statement.
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Parameter Domain for Roots Greater than a Bound</h3>
+<strong>Problem:</strong> Find all real values of the parameter \(a\) for which both roots of the quadratic equation:
+\[x^2 - 6ax + (2 - 2a + 9a^2) = 0\]
+are greater than \(3\).
+<hr>
+<strong>Solution:</strong>
+Let \(f(x) = x^2 - 6ax + (2 - 2a + 9a^2)\). This is a quadratic equation with leading coefficient \(1 &gt; 0\).
+<br><br>
+We apply **Case I** constraints with \(d = 3\):
+<ol>
+    <li><strong>Constraint 1: \(D \ge 0\)</strong>
+        \[D = (-6a)^2 - 4(1)(2 - 2a + 9a^2) \ge 0\]
+        \[36a^2 - 8 + 8a - 36a^2 \ge 0\]
+        Notice that the quadratic terms cancel out:
+        \[8a - 8 \ge 0 \implies a \ge 1\]
+    </li>
+    <li><strong>Constraint 2: \(-\frac{b}{2a} &gt; 3\)</strong>
+        Here, \(b = -6a\) and \(a_{\text{coeff}} = 1\):
+        \[-\frac{-6a}{2(1)} &gt; 3 \implies 3a &gt; 3 \implies a &gt; 1\]
+    </li>
+    <li><strong>Constraint 3: \(f(3) &gt; 0\)</strong>
+        \[f(3) = (3)^2 - 6a(3) + (2 - 2a + 9a^2) &gt; 0\]
+        \[9 - 18a + 2 - 2a + 9a^2 &gt; 0\]
+        \[9a^2 - 20a + 11 &gt; 0\]
+        Factor the quadratic expression:
+        \[(9a - 11)(a - 1) &gt; 0\]
+        The solution to this inequality is:
+        \[a \in (-\infty, 1) \cup \left( \frac{11}{9}, \infty \right)\]
+    </li>
+</ol>
+Now, we must find the intersection of all three constraint sets:
+<ul>
+    <li>From Constraint 1: \(a \ge 1\)</li>
+    <li>From Constraint 2: \(a &gt; 1\)</li>
+    <li>From Constraint 3: \(a \in (-\infty, 1) \cup \left( \frac{11}{9}, \infty \right)\)</li>
+</ul>
+Intersecting \(a > 1\) with the third set gives:
+\[a \in \left( \frac{11}{9}, \infty \right)\]
+<strong>Conclusion:</strong> Both roots are greater than \(3\) if and only if \(a \in \left( \frac{11}{9}, \infty \right)\).
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Complex Interval Constraints (Roots Bracketing Points)</h3>
+<strong>Problem:</strong> Find all real values of \(m\) for which the quadratic equation:
+\[x^2 - (m - 3)x + m = 0\]
+has one root smaller than \(1\) and the other root greater than \(2\).
+<hr>
+<strong>Solution:</strong>
+Let's analyze what this statement means geometrically. If one root is smaller than \(1\) (\(\alpha < 1\)) and the other root is greater than \(2\) (\(\beta > 2\)), then both real numbers \(1\) and \(2\) must lie strictly **between** the two roots:
+\[\alpha &lt; 1 &lt; 2 &lt; \beta\]
+This is a double-boundary variation of **Case III**.
+<br><br>
+For both \(1\) and \(2\) to lie inside the roots of an upward-opening parabola (\(a = 1 > 0\)), we must satisfy two simple conditions simultaneously:
+<ol>
+    <li>The value at \(x = 1\) must be negative: \(f(1) &lt; 0\)</li>
+    <li>The value at \(x = 2\) must be negative: \(f(2) &lt; 0\)</li>
+</ol>
+Let's define the function:
+\[f(x) = x^2 - (m - 3)x + m\]
+<ol>
+    <li>Apply constraint \(f(1) < 0\):
+        \[f(1) = 1^2 - (m - 3)(1) + m &lt; 0\]
+        \[f(1) = 1 - m + 3 + m &lt; 0\]
+        Observe the cancellation of \(m\):
+        \[4 &lt; 0\]
+        This is a logical contradiction! The inequality \(4 < 0\) is never true for any real number \(m\).
+    </li>
+</ol>
+Since \(f(1) = 4\) is constant and always positive, the parabola can never dip below the x-axis at \(x = 1\). Thus, it is mathematically impossible for the root \(\alpha\) to be less than \(1\) while maintaining real coefficients.
+<br><br>
+<strong>Conclusion:</strong> There are **no real values of \(m\)** for which the roots satisfy the given conditions.
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

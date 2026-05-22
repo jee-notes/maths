@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Roots & Coefficients | Quadratic Equations</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Quadratic Equations
+</a>
+</nav>
+<h1>Roots & Coefficients</h1>
+<p class="subtitle">
+Vieta's algebraic mapping, symmetric transformations, and Newton's recursive identities
+</p>
+
+<section>
+<h2>Relation between Roots and Coefficients (Vieta's Formulas)</h2>
+<p>
+Consider a general quadratic equation with roots \(\alpha\) and \(\beta\):
+\[ax^2 + bx + c = 0 \quad (a \neq 0)\]
+By the Fundamental Theorem of Algebra, any polynomial can be factored uniquely over the complex field. Therefore, we can express the quadratic polynomial in its factored linear form:
+\[ax^2 + bx + c = a(x - \alpha)(x - \beta)\]
+Expanding the right-hand side yields:
+\[ax^2 + bx + c = a \left[ x^2 - (\alpha + \beta)x + \alpha\beta \right]\]
+\[ax^2 + bx + c = ax^2 - a(\alpha + \beta)x + a\alpha\beta\]
+Since this is an identity (true for all \(x\)), we can equate the coefficients of corresponding powers of \(x\) on both sides:
+<ol>
+    <li>Comparing coefficients of \(x\):
+        \[b = -a(\alpha + \beta) \implies \alpha + \beta = -\frac{b}{a}\]
+    </li>
+    <li>Comparing constant terms:
+        \[c = a\alpha\beta \implies \alpha\beta = \frac{c}{a}\]
+    </li>
+</ol>
+<p>These two fundamental identities are called **Vieta's Formulas** for a second-degree polynomial.</p>
+
+<div class="concept-box">
+<h3>Absolute Difference of Roots</h3>
+Using the algebraic identity \((\alpha - \beta)^2 = (\alpha + \beta)^2 - 4\alpha\beta\), we can derive the absolute difference between the two roots:
+\[(\alpha - \beta)^2 = \left(-\frac{b}{a}\right)^2 - 4\left(\frac{c}{a}\right) = \frac{b^2 - 4ac}{a^2} = \frac{D}{a^2}\]
+Taking the square root of both sides gives:
+<div class="math-block">
+\[|\alpha - \beta| = \frac{\sqrt{D}}{|a|}\]
+</div>
+This relationship is useful for coordinate distance calculations on the x-axis.
+</div>
+</section>
+
+<section>
+<h2>Symmetric Functions of Roots</h2>
+<p>
+An algebraic function \(f(\alpha, \beta)\) is defined as **symmetric** if interchanging the two variables \(\alpha\) and \(\beta\) leaves the expression mathematically unchanged:
+\[f(\alpha, \beta) = f(\beta, \alpha)\]
+Any symmetric polynomial function of the roots of a quadratic equation can be completely expressed in terms of the primary symmetric components: **Sum of roots** (\(\alpha+\beta\)) and **Product of roots** (\(\alpha\beta\)).
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Symmetric Expression</th>
+<th>Algebraic Form in terms of \((\alpha+\beta)\) and \(\alpha\beta\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sum of Squares</strong>: \(\alpha^2 + \beta^2\)</td>
+<td>\((\alpha + \beta)^2 - 2\alpha\beta\)</td>
+</tr>
+<tr>
+<td><strong>Sum of Cubes</strong>: \(\alpha^3 + \beta^3\)</td>
+<td>\((\alpha + \beta)^3 - 3\alpha\beta(\alpha + \beta)\)</td>
+</tr>
+<tr>
+<td><strong>Sum of Fourth Powers</strong>: \(\alpha^4 + \beta^4\)</td>
+<td>\((\alpha^2 + \beta^2)^2 - 2\alpha^2\beta^2 = \left[ (\alpha + \beta)^2 - 2\alpha\beta \right]^2 - 2(\alpha\beta)^2\)</td>
+</tr>
+<tr>
+<td><strong>Sum of Reciprocals</strong>: \(\frac{1}{\alpha} + \frac{1}{\beta}\)</td>
+<td>\(\frac{\alpha + \beta}{\alpha\beta}\)</td>
+</tr>
+<tr>
+<td><strong>Sum of Reciprocal Squares</strong>: \(\frac{1}{\alpha^2} + \frac{1}{\beta^2}\)</td>
+<td>\(\frac{\alpha^2 + \beta^2}{\alpha^2\beta^2} = \frac{(\alpha+\beta)^2 - 2\alpha\beta}{(\alpha\beta)^2}\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Newton's Theorem for Quadratic Roots</h2>
+<p>
+In JEE examinations, questions frequently demand the evaluation of high-power root sums of the form \(\alpha^n \pm \beta^n\). Direct computation of roots using the quadratic formula and expanding them is incredibly tedious. **Newton's Theorem** establishes a beautiful recursive linear relation that bypasses root calculation entirely.
+</p>
+
+<div class="model-box">
+<h3>Newton's Theorem (Quadratic Form)</h3>
+Let \(\alpha\) and \(\beta\) be the roots of the quadratic equation:
+\[ax^2 + bx + c = 0\]
+Let \(S_n = p\alpha^n + q\beta^n\) for \(n \in \mathbb{Z}\), where \(p\) and \(q\) are real constants. Then, for any integer \(n \ge 2\), the sequence \(S_n\) satisfies:
+<div class="math-block">
+\[a S_n + b S_{n-1} + c S_{n-2} = 0\]
+</div>
+</div>
+
+<div class="insightbox">
+<h3>Rigorous Derivation of Newton's Theorem</h3>
+Since \(\alpha\) and \(\beta\) are roots of the quadratic equation \(ax^2 + bx + c = 0\), they must satisfy the equation identically:
+\[a\alpha^2 + b\alpha + c = 0 \quad \text{and} \quad a\beta^2 + b\beta + c = 0\]
+Let's multiply the first equation by \(p\alpha^{n-2}\) and the second equation by \(q\beta^{n-2}\):
+\[a p \alpha^n + b p \alpha^{n-1} + c p \alpha^{n-2} = 0\]
+\[a q \beta^n + b q \beta^{n-1} + c q \beta^{n-2} = 0\]
+Now, we add these two equations together:
+\[\left( a p \alpha^n + a q \beta^n \right) + \left( b p \alpha^{n-1} + b q \beta^{n-1} \right) + \left( c p \alpha^{n-2} + c q \beta^{n-2} \right) = 0\]
+Factoring out the coefficients \(a\), \(b\), and \(c\):
+\[a \left( p\alpha^n + q\beta^n \right) + b \left( p\alpha^{n-1} + q\beta^{n-1} \right) + c \left( p\alpha^{n-2} + q\beta^{n-2} \right) = 0\]
+Substituting the definition \(S_k = p\alpha^k + q\beta^k\) for each respective term yields:
+\[a S_n + b S_{n-1} + c S_{n-2} = 0\]
+This completes the derivation. Notice that the constants \(p\) and \(q\) can even be of opposite signs (e.g., \(S_n = \alpha^n - \beta^n\)), and the recursive relationship still holds perfectly!
+</div>
+</section>
+
+<section>
+<h2>Formation of a Quadratic Equation</h2>
+<p>
+If we are given the roots \(\alpha\) and \(\beta\) of a quadratic equation, we can reconstruct the original quadratic equation by reversing Vieta's formulas:
+\[(x - \alpha)(x - \beta) = 0 \implies x^2 - (\alpha + \beta)x + \alpha\beta = 0\]
+Using standard terminology:
+<div class="math-block">
+\[x^2 - S x + P = 0\]
+</div>
+where \(S = \text{Sum of roots} = \alpha + \beta\) and \(P = \text{Product of roots} = \alpha\beta\).
+</p>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: JEE Advanced Classical Application of Newton's Theorem</h3>
+<strong>Problem:</strong> Let \(\alpha\) and \(\beta\) be the roots of the quadratic equation \(x^2 - 6x - 2 = 0\). If \(a_n = \alpha^n - \beta^n\) for \(n \ge 1\), find the numerical value of the expression:
+\[E = \frac{a_{10} - 2a_8}{2a_9}\]
+<hr>
+<strong>Solution:</strong>
+Instead of trying to find the exact irrational roots of \(x^2 - 6x - 2 = 0\), we recognize the structure of Newton's Theorem.
+<br><br>
+Let's write down the coefficients of our quadratic equation \(ax^2 + bx + c = 0\):
+\[a = 1, \quad b = -6, \quad c = -2\]
+The sequence is defined as \(a_n = \alpha^n - \beta^n\). This matches the form of \(S_n = p\alpha^n + q\beta^n\) with \(p = 1\) and \(q = -1\).
+<br><br>
+Applying Newton's Theorem for \(n = 10\):
+\[a S_{10} + b S_9 + c S_8 = 0\]
+Substitute the coefficients \(a = 1\), \(b = -6\), and \(c = -2\) into the recursive relation:
+\[1(a_{10}) - 6(a_9) - 2(a_8) = 0\]
+\[a_{10} - 2a_8 = 6a_9\]
+Now, we substitute this relation directly into the numerator of our target expression \(E\):
+\[E = \frac{a_{10} - 2a_8}{2a_9}\]
+\[E = \frac{6a_9}{2a_9}\]
+Since the roots are distinct, \(a_9 \neq 0\), allowing us to divide:
+\[E = \frac{6}{2} = 3\]
+<strong>Conclusion:</strong> The value of the expression is **3**. This complex-looking rational expression collapses into a simple constant in just three algebraic steps using Newton's Theorem!
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Quadratic Equation Transformation</h3>
+<strong>Problem:</strong> Form a quadratic equation whose roots are the squares of the roots of the quadratic equation:
+\[ax^2 + bx + c = 0\]
+<hr>
+<strong>Solution:</strong>
+Let \(\alpha\) and \(\beta\) be the roots of the original equation \(ax^2 + bx + c = 0\). We are looking for a new quadratic equation whose roots are:
+\[\alpha' = \alpha^2 \quad \text{and} \quad \beta' = \beta^2\]
+To formulate this new equation, we need to calculate the new sum \(S'\) and new product \(P'\):
+<ol>
+    <li>Calculate the new sum \(S'\):
+        \[S' = \alpha' + \beta' = \alpha^2 + \beta^2\]
+        Using our symmetric function transformations:
+        \[S' = (\alpha + \beta)^2 - 2\alpha\beta\]
+        Substitute the original Vieta's relations \(\alpha+\beta = -\frac{b}{a}\) and \(\alpha\beta = \frac{c}{a}\):
+        \[S' = \left(-\frac{b}{a}\right)^2 - 2\left(\frac{c}{a}\right) = \frac{b^2}{a^2} - \frac{2c}{a} = \frac{b^2 - 2ac}{a^2}\]
+    </li>
+    <li>Calculate the new product \(P'\):
+        \[P' = \alpha'\beta' = \alpha^2\beta^2 = (\alpha\beta)^2\]
+        Substitute \(\alpha\beta = \frac{c}{a}\):
+        \[P' = \left(\frac{c}{a}\right)^2 = \frac{c^2}{a^2}\]
+    </li>
+</ol>
+Now, we write the new quadratic equation using \(x^2 - S'x + P' = 0\):
+\[x^2 - \left(\frac{b^2 - 2ac}{a^2}\right)x + \frac{c^2}{a^2} = 0\]
+Multiplying the entire equation by \(a^2\) to eliminate denominators:
+<div class="math-block">
+\[a^2x^2 - (b^2 - 2ac)x + c^2 = 0\]
+</div>
+<strong>Alternative Method (Substitution / Transformation of Variables):</strong>
+Let \(y = x^2\) be the new variable. This implies \(x = \sqrt{y}\).
+Substitute \(x = \sqrt{y}\) into the original equation:
+\[a(\sqrt{y})^2 + b\sqrt{y} + c = 0\]
+\[ay + c = -b\sqrt{y}\]
+Square both sides of the equation to eliminate the radical:
+\[(ay + c)^2 = (-b\sqrt{y})^2\]
+\[a^2y^2 + 2acy + c^2 = b^2y\]
+Collect all terms on the left-hand side:
+\[a^2y^2 + (2ac - b^2)y + c^2 = 0\]
+\[a^2y^2 - (b^2 - 2ac)y + c^2 = 0\]
+Replacing \(y\) with \(x\) recovers the exact same transformed quadratic equation! This substitution method is extremely powerful for symmetric root transformations.
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Characteristic & Mantissa | Logarithms</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Logarithms
+</a>
+</nav>
+<h1>Characteristic & Mantissa</h1>
+<p class="subtitle">
+Base-10 logarithmic decomposition and its application to numerical magnitude and digit analysis
+</p>
+
+<section>
+<h2>Decomposition of Common Logarithms</h2>
+<p>
+For any positive real number \(N\), its common logarithm (base 10) can be uniquely represented as the sum of an integer \(C\) and a non-negative fractional decimal \(M\):
+</p>
+<div class="math-block">
+\[\log_{10} N = C + M\]
+</div>
+<p>
+Where:
+<ul>
+<li><strong>\(C\) is the Characteristic:</strong> The integral component of the value, where \(C \in \mathbb{Z}\) (can be positive, negative, or zero).</li>
+<li><strong>\(M\) is the Mantissa:</strong> The fractional/decimal component, which must satisfy a strict non-negativity constraint: **\(0 \le M < 1\)**.</li>
+</ul>
+</p>
+
+<div class="concept-box">
+<h3>The Negative Characteristic Trap</h3>
+<p>
+For positive logarithmic values, the characteristic is simply the integer part, and the mantissa is the decimal part.
+</p>
+<p>
+For negative logarithmic values, we **cannot** simply split the digits.
+</p>
+<p>
+Consider \(\log_{10} N = -2.35\). Writing \(C = -2\) and \(M = -0.35\) is a fatal error because the mantissa \(M\) is negative, violating the constraint \(0 \le M < 1\).
+</p>
+<p>
+Instead, we must express it as:
+\[-2.35 = -3 + 0.65\]
+Here, the **Characteristic \(C = -3\)** and the **Mantissa \(M = 0.65\)**. This is often written in standard notation as \(\bar{3}.65\) (read as "bar 3 point 65").
+</p>
+</div>
+
+<div class="insightbox">
+<h3>Geometric Insight of Characteristic and Mantissa</h3>
+<p>
+The characteristic \(C\) represents the power of 10 (order of magnitude) that bounds the number \(N\). It tells us which interval of powers of 10 the number belongs to:
+\[10^C \le N < 10^{C+1}\]
+The mantissa \(M\) represents the relative position of \(N\) within that exponential interval. Because \(M\) depends only on the sequence of significant digits and is independent of the decimal point position, numbers like \(23.5\), \(235\), and \(0.00235\) all share the **exact same mantissa**. Only their characteristics differ.
+</p>
+</div>
+</section>
+
+<section>
+<h2>Application 1: Finding the Number of Digits</h2>
+<p>
+To determine the number of digits in the integral part of a large number \(A = x^y\) (where \(x, y \in \mathbb{N}\)):
+</p>
+<ol>
+<li>Calculate \(L = \log_{10} A = y \log_{10} x\).</li>
+<li>Decompose \(L\) into \(C + M\), where \(C\) is the characteristic.</li>
+<li>The number of digits in the integer representation of \(A\) is given by:
+<div class="math-block">
+\[\text{Number of Digits} = C + 1\]
+</div>
+</li>
+</ol>
+<p>
+<strong>Why this works:</strong>
+If the characteristic is \(C\), then:
+\[C \le \log_{10} A < C + 1 \implies 10^C \le A < 10^{C+1}\]
+The smallest number with \(C+1\) digits is \(10^C\) (e.g., \(10^2 = 100\) has 3 digits), and the largest is just below \(10^{C+1}\) (e.g., \(10^3 = 1000\) is the first 4-digit number). Thus, any number in this range has exactly \(C+1\) digits.
+</p>
+</section>
+
+<section>
+<h2>Application 2: Finding Leading Zeros after the Decimal</h2>
+<p>
+To find the number of zeros immediately following the decimal point before the first significant (non-zero) digit appears in a very small fraction \(N = x^{-y}\):
+</p>
+<ol>
+<li>Calculate \(L = \log_{10} N = -y \log_{10} x\).</li>
+<li>Decompose \(L\) into a negative characteristic \(C\) and a positive mantissa \(M\) (e.g., \(L = C + M\), where \(C < 0\)).</li>
+<li>The number of leading zeros is given by:
+<div class="math-block">
+\[\text{Number of Zeros} = |C| - 1 = -C - 1\]
+</div>
+</li>
+</ol>
+<p>
+<strong>Why this works:</strong>
+If the characteristic is \(C\) (where \(C\) is negative, e.g., \(-k\)), then:
+\[C \le \log_{10} N < C + 1 \implies 10^{-k} \le N < 10^{-k+1}\]
+For example, if \(C = -3\):
+\[10^{-3} \le N < 10^{-2} \implies 0.001 \le N < 0.01\]
+Any number in this range (such as \(0.0025\) or \(0.007\)) has exactly \(2\) zeros after the decimal point before the first significant digit. Notice that \(2 = |-3| - 1\). The formula holds universally.
+</p>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Finding the Number of Digits in a Large Exponent</h3>
+<p>
+Find the number of digits in the decimal representation of \(2^{64}\) and \(3^{40}\), given that \(\log_{10} 2 \approx 0.3010\) and \(\log_{10} 3 \approx 0.4771\).
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Part A: For \(2^{64}\)</strong>
+Let \(A = 2^{64}\). Taking base-10 logarithm:
+\[\log_{10} A = \log_{10} (2^{64}) = 64 \log_{10} 2\]
+Substitute the value of \(\log_{10} 2\):
+\[\log_{10} A \approx 64 \cdot 0.30103 = 19.26592\]
+Here, the integral part is the characteristic:
+\[C = 19\]
+Applying the formula:
+\[\text{Number of Digits} = C + 1 = 19 + 1 = 20\]
+</p>
+<p>
+<strong>Part B: For \(3^{40}\)</strong>
+Let \(B = 3^{40}\). Taking base-10 logarithm:
+\[\log_{10} B = 40 \log_{10} 3\]
+Substitute the value of \(\log_{10} 3\):
+\[\log_{10} B \approx 40 \cdot 0.47712 = 19.0848\]
+Here, the characteristic is:
+\[C = 19\]
+Applying the formula:
+\[\text{Number of Digits} = C + 1 = 19 + 1 = 20\]
+</p>
+<p><strong>Answer:</strong> Both \(2^{64}\) and \(3^{40}\) contain exactly 20 digits.</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Finding Leading Zeros in a Small Fraction</h3>
+<p>
+Find the number of consecutive zeros immediately following the decimal point before the first significant digit in \(5^{-25}\), given that \(\log_{10} 2 \approx 0.3010\).
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Express \(\log_{10} 5\) using \(\log_{10} 2\).</strong>
+We know that \(5 = \frac{10}{2}\), so:
+\[\log_{10} 5 = \log_{10} \left(\frac{10}{2}\right) = \log_{10} 10 - \log_{10} 2 = 1 - 0.30103 = 0.69897\]
+</p>
+<p>
+<strong>Step 2: Calculate the logarithm of the expression.</strong>
+Let \(N = 5^{-25}\).
+\[\log_{10} N = \log_{10} (5^{-25}) = -25 \log_{10} 5\]
+\[\log_{10} N \approx -25 \cdot 0.69897 = -17.47425\]
+</p>
+<p>
+<strong>Step 3: Decompose into Characteristic and Mantissa.</strong>
+Since \(-17.47425\) is negative, we add and subtract 18:
+\[-17.47425 = -18 + (18 - 17.47425) = -18 + 0.52575\]
+The characteristic is:
+\[C = -18\]
+(Note that the mantissa \(0.52575\) is strictly positive, satisfying \(0 \le M < 1\)).
+</p>
+<p>
+<strong>Step 4: Calculate the number of leading zeros.</strong>
+Using the formula:
+\[\text{Number of Zeros} = |C| - 1 = |-18| - 1 = 17\]
+</p>
+<p><strong>Answer:</strong> There are exactly 17 leading zeros before the first significant digit in \(5^{-25}\).</p>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

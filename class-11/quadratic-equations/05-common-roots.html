@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Common Roots | Quadratic Equations</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Quadratic Equations
+</a>
+</nav>
+<h1>Common Roots</h1>
+<p class="subtitle">
+Shared solutions: algebraic elimination, proportional coefficients, and complex conjugate traps
+</p>
+
+<section>
+<h2>Introduction</h2>
+<p>
+Consider two separate quadratic equations with real coefficients:
+\[a_1 x^2 + b_1 x + c_1 = 0 \quad (a_1 \neq 0)\]
+\[a_2 x^2 + b_2 x + c_2 = 0 \quad (a_2 \neq 0)\]
+Depending on their coefficients, these two parabolas can share either **both** of their x-intercepts (roots) or **exactly one** x-intercept. Deriving these algebraic boundaries is a highly tested concept in the JEE.
+</p>
+</section>
+
+<section>
+<h2>Condition for BOTH Roots Common</h2>
+<p>
+If both roots are common between the two equations, then the two polynomials represent the exact same curve scaled by a constant multiplier \(k \neq 0\):
+\[a_1 x^2 + b_1 x + c_1 = k(a_2 x^2 + b_2 x + c_2)\]
+This means the ratio of their corresponding coefficients must be strictly identical:
+<div class="math-block">
+\[\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}\]
+</div>
+</p>
+</section>
+
+<section>
+<h2>Condition for EXACTLY ONE Common Root</h2>
+<p>
+Let \(\alpha\) be the unique common root shared by both equations. By definition, \(\alpha\) must satisfy both equations simultaneously:
+\[a_1 \alpha^2 + b_1 \alpha + c_1 = 0 \tag{1}\]
+\[a_2 \alpha^2 + b_2 \alpha + c_2 = 0 \tag{2}\]
+To find the constraint on the coefficients, we can solve this as a system of linear equations in terms of \(\alpha^2\) and \(\alpha\) using **Cramer's Rule** (or the cross-multiplication method):
+\[\frac{\alpha^2}{b_1c_2 - b_2c_1} = \frac{-\alpha}{a_1c_2 - a_2c_1} = \frac{1}{a_1b_2 - a_2b_1}\]
+Standardizing the sign in the middle term:
+\[\frac{\alpha^2}{b_1c_2 - b_2c_1} = \frac{\alpha}{c_1a_2 - c_2a_1} = \frac{1}{a_1b_2 - a_2b_1}\]
+From this compound equality, we extract two separate relations:
+<ol>
+    <li>Solve for \(\alpha\):
+        \[\alpha = \frac{c_1a_2 - c_2a_1}{a_1b_2 - a_2b_1}\]
+    </li>
+    <li>Solve for \(\alpha^2\):
+        \[\alpha^2 = \frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1}\]
+    </li>
+</ol>
+To eliminate the common root \(\alpha\) entirely and obtain a coefficient constraint, we square the first relation and set it equal to the second:
+\[(\alpha)^2 = \alpha^2\]
+\[\left( \frac{c_1a_2 - c_2a_1}{a_1b_2 - a_2b_1} \right)^2 = \frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1}\]
+Multiply both sides by \((a_1b_2 - a_2b_1)^2\):
+<div class="math-block">
+\[(c_1a_2 - c_2a_1)^2 = (a_1b_2 - a_2b_1)(b_1c_2 - b_2c_1)\]
+</div>
+This is the formal algebraic condition for exactly one common root.
+</p>
+
+<div class="insightbox">
+<h3>Active Problem Solving Tip</h3>
+Do not waste mental energy memorizing this bulky algebraic formula! 
+<br><br>
+In practice, the easiest way to solve "one common root" problems is:
+<ol>
+    <li>Write out the two equations substituting \(x = \alpha\).</li>
+    <li>Multiply the equations by appropriate constants to match the leading \(\alpha^2\) coefficients.</li>
+    <li>Subtract the two equations to eliminate \(\alpha^2\) entirely. This yields a simple linear equation in \(\alpha\), allowing you to solve for the root \(\alpha\) directly in terms of the parameters.</li>
+    <li>Substitute this expression for \(\alpha\) back into either of the original equations to get your final constraint.</li>
+</ol>
+This method is far less prone to arithmetic sign errors!
+</div>
+</section>
+
+<section>
+<h2>The Complex Conjugate Common Root Trap</h2>
+<p>
+JEE examiners love to set a trap using the combination of complex roots and common roots.
+</p>
+
+<div class="concept-box">
+<h3>The Conjugate Theorem Trap</h3>
+Suppose a question states: <em>"The equations \(x^2 + x + 1 = 0\) and \(ax^2 + bx + c = 0\) (where \(a, b, c \in \mathbb{R}\)) share a common root."</em>
+<br><br>
+Let's analyze the first equation \(x^2 + x + 1 = 0\):
+\[D_1 = (1)^2 - 4(1)(1) = -3 &lt; 0\]
+Since the discriminant is negative and the coefficients are real, its roots **must occur as complex conjugate pairs** (\(\omega\) and \(\omega^2\)).
+<br><br>
+If the second equation \(ax^2 + bx + c = 0\) shares **one** root with the first equation, it is sharing a complex number (say, \(\omega\)). 
+<br><br>
+But because \(a, b, c\) are real, the complex roots of the second equation **must also occur in conjugate pairs**. Since \(\omega\) is a root, its conjugate \(\omega^2\) is forced to be a root of the second equation as well!
+<br><br>
+Therefore, it is mathematically impossible for the two equations to share *exactly one* common root under real coefficients. **They must share both roots!**
+<br><br>
+Thus, the condition for a "single common root" collapses instantly into the condition for "both roots common":
+\[\frac{a}{1} = \frac{b}{1} = \frac{c}{1} \implies a = b = c\]
+This trick completely bypasses any Cramer's Rule calculation!
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Finding Parameter Value for One Common Root</h3>
+<strong>Problem:</strong> Find all real values of \(k\) for which the two quadratic equations:
+\[3x^2 + 4kx + 2 = 0 \quad \text{and} \quad 2x^2 + 3x - 2 = 0\]
+have exactly one common root.
+<hr>
+<strong>Solution:</strong>
+Instead of using the bulky Cramer's formula, let's use our active elimination method.
+Let \(\alpha\) be the common root. Then:
+\[3\alpha^2 + 4k\alpha + 2 = 0 \tag{1}\]
+\[2\alpha^2 + 3\alpha - 2 = 0 \tag{2}\]
+First, let's factor the second equation directly (since it has no unknown parameters):
+\[2\alpha^2 + 3\alpha - 2 = 0\]
+\[2\alpha^2 + 4\alpha - \alpha - 2 = 0\]
+\[2\alpha(\alpha + 2) - 1(\alpha + 2) = 0\]
+\[(2\alpha - 1)(\alpha + 2) = 0 \implies \alpha = \frac{1}{2} \quad \text{or} \quad \alpha = -2\]
+Since \(\alpha\) must satisfy the first equation as well, we have two possible cases:
+<ol>
+    <li><strong>Case A: The common root is \(\alpha = \frac{1}{2}\)</strong>
+        Substitute \(\alpha = \frac{1}{2}\) into equation (1):
+        \[3\left(\frac{1}{2}\right)^2 + 4k\left(\frac{1}{2}\right) + 2 = 0\]
+        \[3\left(\frac{1}{4}\right) + 2k + 2 = 0\]
+        \[\frac{3}{4} + 2k + 2 = 0\]
+        \[2k = -2 - \frac{3}{4} = -\frac{11}{4} \implies k = -\frac{11}{8}\]
+    </li>
+    <li><strong>Case B: The common root is \(\alpha = -2\)</strong>
+        Substitute \(\alpha = -2\) into equation (1):
+        \[3(-2)^2 + 4k(-2) + 2 = 0\]
+        \[3(4) - 8k + 2 = 0\]
+        \[12 - 8k + 2 = 0\]
+        \[8k = 14 \implies k = \frac{14}{8} = \frac{7}{4}\]
+    </li>
+</ol>
+<strong>Conclusion:</strong> The equations have a common root if and only if \(k = -\frac{11}{8}\) or \(k = \frac{7}{4}\).
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Resolving the Conjugate Trap</h3>
+<strong>Problem:</strong> If the quadratic equations:
+\[x^2 + 2x + 3 = 0 \quad \text{and} \quad ax^2 + bx + c = 0\]
+have a common root, where \(a, b, c \in \mathbb{R}\), find the numerical ratio \(a : b : c\).
+<hr>
+<strong>Solution:</strong>
+First, let's examine the discriminant \(D_1\) of the first equation \(x^2 + 2x + 3 = 0\):
+\[D_1 = (2)^2 - 4(1)(3) = 4 - 12 = -8 &lt; 0\]
+Since \(D_1 < 0\) and the coefficients are real numbers, the roots of this equation are complex conjugate numbers.
+<br><br>
+We are given that the second equation \(ax^2 + bx + c = 0\) has a common root with the first, and its coefficients \(a, b, c\) are also real.
+<br><br>
+By the Complex Conjugate Root Theorem, because the shared root is complex and both equations have real coefficients, **both roots must be common**.
+<br><br>
+Therefore, the two equations are identical up to a constant scaling factor:
+\[\frac{a}{1} = \frac{b}{2} = \frac{c}{3}\]
+Let this common ratio be \(\lambda\). Then:
+\[a = \lambda, \quad b = 2\lambda, \quad c = 3\lambda\]
+Taking the ratio of the coefficients:
+\[a : b : c = \lambda : 2\lambda : 3\lambda = 1 : 2 : 3\]
+<strong>Conclusion:</strong> The ratio is \(a : b : c = 1 : 2 : 3\).
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

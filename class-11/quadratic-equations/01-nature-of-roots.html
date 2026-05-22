@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nature of Roots | Quadratic Equations</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Quadratic Equations
+</a>
+</nav>
+<h1>Nature of Roots</h1>
+<p class="subtitle">
+The anatomy of second-degree equations: from real partitions to imaginary conjugates
+</p>
+
+<section>
+<h2>Defining Quadratic Expressions and Equations</h2>
+<p>
+Before evaluating their solutions, we must distinguish between a quadratic expression and a quadratic equation. This logical separation dictates whether we are analyzing a dynamic curve or a set of static constraint points.
+</p>
+
+<div class="concept-box">
+<h3>1. Quadratic Expression</h3>
+A <strong>quadratic expression</strong> is a polynomial of degree 2, typically represented as:
+\[f(x) = ax^2 + bx + c\]
+where \(x\) is a variable, and \(a, b, c\) are constants called coefficients. 
+<br><br>
+<strong>Crucial Constraint:</strong> \(a \neq 0\). If \(a = 0\), the polynomial degenerates into a linear expression \(bx + c\). The coefficients \(a, b, c\) can belong to the set of real numbers \(\mathbb{R}\) or complex numbers \(\mathbb{C}\).
+</div>
+
+<div class="concept-box">
+<h3>2. Quadratic Equation</h3>
+A <strong>quadratic equation</strong> is formulated when we constrain the quadratic expression to a fixed value (usually zero):
+\[ax^2 + bx + c = 0\]
+The values of \(x\) that satisfy this mathematical constraint are called the <strong>roots</strong> of the equation, or the <strong>zeroes</strong> of the corresponding expression \(f(x)\).
+</div>
+</section>
+
+<section>
+<h2>Derivation of the Quadratic Formula</h2>
+<p>
+To resolve the general quadratic equation \(ax^2 + bx + c = 0\) without guessing, we use the method of **completing the square** (historically pioneered in India by mathematician Shridhara Acharya).
+</p>
+<p>
+We begin with the standard equation:
+\[ax^2 + bx + c = 0\]
+Since \(a \neq 0\), we can safely divide the entire equation by the leading coefficient \(a\):
+\[x^2 + \frac{b}{a}x + \frac{c}{a} = 0\]
+Next, we isolate the variable terms on the left side:
+\[x^2 + \frac{b}{a}x = -\frac{c}{a}\]
+To construct a perfect square trinomial on the left-hand side, we add the square of half the coefficient of \(x\), which is \(\left(\frac{b}{2a}\right)^2\), to both sides of the equation:
+\[x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a}\]
+The left-hand side now compresses perfectly into a binomial square:
+\[\left(x + \frac{b}{2a}\right)^2 = \frac{b^2}{4a^2} - \frac{c}{a}\]
+We combine the terms on the right-hand side using a common denominator:
+\[\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}\]
+Taking the square root of both sides yields:
+\[x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}\]
+Subtracting \(\frac{b}{2a}\) from both sides isolates \(x\), giving us the classical quadratic formula:
+<div class="math-block">
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+</div>
+</section>
+
+<section>
+<h2>The Discriminant and Classifying Roots</h2>
+<p>
+The quantity beneath the square root radical determines the fundamental nature of the roots. We define this quantity as the **Discriminant** (\(D\)):
+\[D = b^2 - 4ac\]
+Assuming the coefficients \(a, b, c \in \mathbb{R}\), we can partition the discriminant's domain into three distinct regions:
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Mathematical Nature of Roots</th>
+<th>Geometric Interpretation (Graph of \(y=f(x)\))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>\(D &gt; 0\)</strong></td>
+<td>Two real and distinct roots:
+\[x_1, x_2 = \frac{-b \pm \sqrt{D}}{2a}\]</td>
+<td>The parabola intersects the x-axis at two distinct physical points.</td>
+</tr>
+<tr>
+<td><strong>\(D = 0\)</strong></td>
+<td>Two real and equal roots (a double root):
+\[x_1 = x_2 = -\frac{b}{2a}\]</td>
+<td>The vertex of the parabola touches the x-axis at exactly one point.</td>
+</tr>
+<tr>
+<td><strong>\(D &lt; 0\)</strong></td>
+<td>Two non-real complex conjugate roots:
+\[x_1, x_2 = p \pm iq \quad (q \neq 0)\]</td>
+<td>The parabola lies entirely above or below the x-axis, never intersecting it.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="insightbox">
+<h3>Deep Concept: Rational vs Irrational Roots</h3>
+If the coefficients \(a, b, c\) are strictly <strong>rational numbers</strong> (\(a, b, c \in \mathbb{Q}\)), then:
+<ol>
+    <li>If \(D\) is a **perfect square** of a rational number, the square root \(\sqrt{D}\) simplifies to a rational value. Thus, both roots are **rational**.</li>
+    <li>If \(D\) is **not a perfect square**, then \(\sqrt{D}\) is irrational. Thus, the roots are **irrational**, occurring in conjugate surd pairs:
+    \[x = p \pm \sqrt{q}\]
+    where \(p, \sqrt{q}\) are rational and irrational components respectively.</li>
+</ol>
+</div>
+
+<div class="insightbox">
+<h3>The Conjugacy Warning for JEE</h3>
+A common shortcut taught for JEE is: <em>"Complex roots always occur in conjugate pairs (\(p \pm iq\)), and irrational roots always occur in conjugate surds (\(p \pm \sqrt{q}\))."</em>
+<br><br>
+<strong>This is only true if the coefficients satisfy specific constraints!</strong>
+<ul>
+    <li>Complex roots are conjugates <strong>only if coefficients \(a, b, c \in \mathbb{R}\)</strong>.</li>
+    <li>Irrational roots are surd conjugates <strong>only if coefficients \(a, b, c \in \mathbb{Q}\)</strong>.</li>
+</ul>
+If these constraints are broken, conjugacy fails! For example, consider the equation:
+\[x^2 - ix = 0\]
+Here, \(a = 1, b = -i, c = 0\) (coefficients are not all real). Resolving this gives:
+\[x(x - i) = 0 \implies x = 0, \quad x = i\]
+The roots are \(0\) and \(i\), which are clearly not complex conjugates of each other.
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Parameter Optimization for Equal Roots</h3>
+<strong>Problem:</strong> Find all real values of the parameter \(m\) for which the quadratic equation:
+\[(m - 1)x^2 - 2(m + 1)x + (m + 3) = 0\]
+has equal roots.
+<hr>
+<strong>Solution:</strong>
+For any quadratic equation \(Ax^2 + Bx + C = 0\) to have equal roots, its discriminant \(D = B^2 - 4AC\) must be exactly equal to zero. 
+<br><br>
+Additionally, the equation must remain quadratic, requiring the leading coefficient \(A \neq 0\):
+\[m - 1 \neq 0 \implies m \neq 1\]
+Next, we write down the coefficients of our equation:
+\[A = (m - 1), \quad B = -2(m + 1), \quad C = (m + 3)\]
+Now we calculate the discriminant \(D\):
+\[D = [-2(m + 1)]^2 - 4(m - 1)(m + 3)\]
+\[D = 4(m^2 + 2m + 1) - 4(m^2 + 2m - 3)\]
+Factor out the common multiplier \(4\):
+\[D = 4 \left[ (m^2 + 2m + 1) - (m^2 + 2m - 3) \right]\]
+Simplify the algebraic terms inside the bracket:
+\[D = 4 [ m^2 - m^2 + 2m - 2m + 1 + 3 ]\]
+\[D = 4 [ 4 ] = 16\]
+Notice that the variable \(m\) has cancelled out entirely, leaving the discriminant constant:
+\[D = 16\]
+Since \(16 \neq 0\) for any real number, the discriminant \(D\) is always positive (\(D > 0\)) regardless of the value of \(m\).
+<br><br>
+Thus, for any real value of \(m\) (excluding \(m=1\) where the equation ceases to be quadratic), the roots of this equation will always be **real and distinct**.
+<br><br>
+<strong>Conclusion:</strong> There are **no real values** of \(m\) for which the equation has equal roots.
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Proof of Nature of Roots with Parametric Constants</h3>
+<strong>Problem:</strong> Let \(a, b, c, d\) be real numbers. Show that the roots of the equation:
+\[(a^2 + b^2)x^2 - 2(ac + bd)x + (c^2 + d^2) = 0\]
+are real if and only if they are equal, and find this double root.
+<hr>
+<strong>Solution:</strong>
+First, let's write down the coefficients of the quadratic equation:
+\[A = a^2 + b^2, \quad B = -2(ac + bd), \quad C = c^2 + d^2\]
+Let's compute the discriminant \(D = B^2 - 4AC\):
+\[D = [-2(ac + bd)]^2 - 4(a^2 + b^2)(c^2 + d^2)\]
+\[D = 4(ac + bd)^2 - 4(a^2c^2 + a^2d^2 + b^2c^2 + b^2d^2)\]
+Divide by \(4\) to simplify calculations:
+\[\frac{D}{4} = (a^2c^2 + b^2d^2 + 2abcd) - (a^2c^2 + a^2d^2 + b^2c^2 + b^2d^2)\]
+Observe the cancellation of \(a^2c^2\) and \(b^2d^2\):
+\[\frac{D}{4} = 2abcd - a^2d^2 - b^2c^2\]
+Multiply the entire expression by \(-1\) to reveal a perfect square trinomial:
+\[\frac{D}{4} = -(a^2d^2 + b^2c^2 - 2abcd)\]
+\[\frac{D}{4} = -(ad - bc)^2\]
+Therefore, the discriminant is:
+\[D = -4(ad - bc)^2\]
+Since \((ad - bc)^2 \ge 0\) for all real \(a, b, c, d\), we have:
+\[-4(ad - bc)^2 \le 0 \implies D \le 0\]
+For the roots to be real, we must have \(D \ge 0\). 
+But we have just shown that \(D \le 0\) always.
+<br><br>
+Thus, the only way for the roots to be real is if \(D = 0\):
+\[D = 0 \implies -4(ad - bc)^2 = 0 \implies ad = bc\]
+If this condition holds, the roots will be real and equal. If \(ad \neq bc\), then \(D < 0\) and the roots will be non-real complex numbers.
+<br><br>
+If the roots are real and equal (\(D=0\)), we calculate the double root:
+\[x = -\frac{B}{2A} = \frac{2(ac + bd)}{2(a^2 + b^2)} = \frac{ac + bd}{a^2 + b^2}\]
+Since \(ad = bc \implies d = \frac{bc}{a}\) (assuming \(a \neq 0\)), we can substitute \(d\):
+\[x = \frac{ac + b\left(\frac{bc}{a}\right)}{a^2 + b^2} = \frac{\frac{a^2c + b^2c}{a}}{a^2 + b^2} = \frac{c(a^2 + b^2)}{a(a^2 + b^2)} = \frac{c}{a}\]
+<strong>Conclusion:</strong> The roots are real if and only if \(ad = bc\). In this case, the double root is \(x = \frac{c}{a}\) (or \(x = \frac{d}{b}\)).
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

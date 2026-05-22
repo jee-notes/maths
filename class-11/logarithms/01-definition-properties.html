@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Definition & Properties | Logarithms</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Logarithms
+</a>
+</nav>
+<h1>Definition & Fundamental Properties</h1>
+<p class="subtitle">
+The structural boundaries and algebraic properties of the logarithmic operator
+</p>
+
+<section>
+<h2>What is a Logarithm?</h2>
+<p>
+The logarithm is fundamentally the <strong>inverse operation</strong> to exponentiation. It answers a specific question: <em>To what exponent must we raise a given base to obtain a target value?</em>
+</p>
+<p>
+If we have a positive real number \(a\) raised to a real exponent \(y\) to produce a positive value \(x\):
+</p>
+<div class="math-block">
+\[a^y = x \iff y = \log_a x\]
+</div>
+<p>
+Here, \(y\) is defined as the logarithm of \(x\) to the base \(a\). For example, since \(2^3 = 8\), we write \(\log_2 8 = 3\). Similarly, since \(10^{-2} = 0.01\), we write \(\log_{10} 0.01 = -2\).
+</p>
+</section>
+
+<section>
+<h2>The Crucial Domain & Base Constraints</h2>
+<p>
+The expression \(\log_a x\) is mathematically defined if and only if the argument \(x\) and the base \(a\) satisfy three strict real-number constraints. These constraints form the bedrock of JEE domain and range problems:
+</p>
+<div class="model-box">
+<h3>Domain Constraints for \(\log_a x\)</h3>
+<ol>
+<li><strong>Argument must be positive:</strong> \(x > 0\)</li>
+<li><strong>Base must be positive:</strong> \(a > 0\)</li>
+<li><strong>Base cannot be unity:</strong> \(a \neq 1\)</li>
+</ol>
+</div>
+
+<div class="insightbox">
+<h3>Deep Theoretical Insight: Why do these constraints exist?</h3>
+<p>
+These constraints are not arbitrary rules; they exist to preserve the consistency of arithmetic operations in the real number system \(\mathbb{R}\):
+</p>
+<ul>
+<li><strong>Why \(a > 0\)?</strong> If the base \(a\) were negative, say \(a = -2\), then \(\log_{-2} x = y\) implies \((-2)^y = x\). If \(y = 1/2\), we get \((-2)^{1/2} = \sqrt{-2}\), which is an imaginary number. To ensure the logarithmic function is continuously defined for all real numbers \(y\), the base must be strictly positive.</li>
+<li><strong>Why \(a \neq 1\)?</strong> If the base \(a = 1\), then \(\log_1 x = y\) implies \(1^y = x\). If \(x = 5\), there is no real exponent \(y\) that satisfies \(1^y = 5\). If \(x = 1\), then \(1^y = 1\) is satisfied by <em>every</em> real number \(y\), meaning the logarithm fails to yield a unique, well-defined value. Thus, \(a = 1\) is excluded.</li>
+<li><strong>Why \(x > 0\)?</strong> Since the base \(a\) must be positive (\(a > 0\)), raising it to any real power \(y\) will always yield a strictly positive result (\(a^y > 0\)). Since \(x = a^y\), the argument \(x\) must necessarily be positive. Thus, logarithms of zero and negative numbers are undefined in the real number system.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Common vs Natural Logarithms</h2>
+<p>
+While a logarithm can theoretically use any valid base \(a\), mathematics relies primarily on two standard bases:
+</p>
+<div class="concept-box">
+<h3>Common Logarithm (Base 10)</h3>
+<p>
+Denoted as \(\log_{10} x\) or simply \(\log x\) (in general algebra contexts). It forms the basis of scientific notation, pH values, earthquakes (Richter scale), and decibel sound measurements.
+</p>
+<h3>Natural Logarithm (Base \(e\))</h3>
+<p>
+Denoted as \(\log_e x\) or \(\ln x\). The base \(e\) is Euler's constant:
+\[e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n \approx 2.7182818284\]
+Natural logarithms are the universal standard in calculus because the derivative of \(\ln x\) is uniquely simple: \(\frac{d}{dx}(\ln x) = \frac{1}{x}\).
+</p>
+</div>
+</section>
+
+<section>
+<h2>Fundamental Logarithmic Identities</h2>
+<p>
+By mapping exponent rules directly to their inverse logarithmic forms, we obtain the following universal algebraic identities:
+</p>
+<table>
+<thead>
+<tr>
+<th>Identity Name</th>
+<th>Algebraic Expression</th>
+<th>Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fundamental Identity</strong></td>
+<td>\(a^{\log_a x} = x\)</td>
+<td>\(a>0, a\neq 1, x>0\)</td>
+</tr>
+<tr>
+<td><strong>Logarithm of Unity</strong></td>
+<td>\(\log_a 1 = 0\)</td>
+<td>\(a>0, a\neq 1\)</td>
+</tr>
+<tr>
+<td><strong>Logarithm of Base</strong></td>
+<td>\(\log_a a = 1\)</td>
+<td>\(a>0, a\neq 1\)</td>
+</tr>
+<tr>
+<td><strong>Product Rule</strong></td>
+<td>\(\log_a(xy) = \log_a x + \log_a y\)</td>
+<td>\(x, y > 0\)</td>
+</tr>
+<tr>
+<td><strong>Quotient Rule</strong></td>
+<td>\(\log_a\left(\frac{x}{y}\right) = \log_a x - \log_a y\)</td>
+<td>\(x, y > 0\)</td>
+</tr>
+<tr>
+<td><strong>Power Rule (Argument)</strong></td>
+<td>\(\log_a(x^k) = k \log_a x\)</td>
+<td>\(x > 0\)</td>
+</tr>
+<tr>
+<td><strong>Power Rule (Base)</strong></td>
+<td>\(\log_{a^k} x = \frac{1}{k} \log_a x\)</td>
+<td>\(x > 0, k \neq 0\)</td>
+</tr>
+<tr>
+<td><strong>Base Change Theorem</strong></td>
+<td>\(\log_a b = \frac{\log_c b}{\log_c a}\)</td>
+<td>\(a,b,c > 0\) and \(a,c \neq 1\)</td>
+</tr>
+<tr>
+<td><strong>Reciprocal Corollary</strong></td>
+<td>\(\log_a b = \frac{1}{\log_b a}\)</td>
+<td>\(a,b > 0\) and \(a,b \neq 1\)</td>
+</tr>
+<tr>
+<td><strong>Power Index Identity</strong></td>
+<td>\(x^{\log_a y} = y^{\log_a x}\)</td>
+<td>\(x,y > 0\), \(a>0, a\neq 1\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Evaluating a complex logarithm</h3>
+<p>
+Evaluate the value of \(\log_{2\sqrt{3}} 144\).
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+Let \(\log_{2\sqrt{3}} 144 = y\). By definition of a logarithm:
+\[(2\sqrt{3})^y = 144\]
+Let's express both sides using prime factors or common powers. Note that \(144 = 12^2\).
+Let's see if we can express the base \(2\sqrt{3}\) in terms of \(12\):
+\[(2\sqrt{3})^2 = 2^2 \cdot (\sqrt{3})^2 = 4 \cdot 3 = 12\]
+Therefore, \(2\sqrt{3} = \sqrt{12} = 12^{1/2}\).
+Substituting this back into the equation:
+\[\left(12^{1/2}\right)^y = 12^2\]
+\[12^{y/2} = 12^2\]
+Equating the exponents:
+\[\frac{y}{2} = 2 \implies y = 4\]
+Thus, \(\log_{2\sqrt{3}} 144 = 4\).
+</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Proving the Power Index Identity</h3>
+<p>
+Prove that \(x^{\log_a y} = y^{\log_a x}\) for positive real numbers \(x, y\) and base \(a \neq 1\).
+</p>
+<hr>
+<p><strong>Proof:</strong></p>
+<p>
+Let \(P = x^{\log_a y}\). Taking \(\log_a\) on both sides:
+\[\log_a P = \log_a \left( x^{\log_a y} \right)\]
+Using the power rule of exponents in logarithms:
+\[\log_a P = (\log_a y) \cdot (\log_a x)\]
+Since real number multiplication is commutative, we can swap the terms:
+\[\log_a P = (\log_a x) \cdot (\log_a y)\]
+Now, treat \(\log_a x\) as the coefficient and move it to the exponent of the argument \(y\) inside the logarithm:
+\[\log_a P = \log_a \left( y^{\log_a x} \right)\]
+Since the logarithm function is one-to-one (injective), we can equate the arguments on both sides:
+\[P = y^{\log_a x}\]
+Hence, \(x^{\log_a y} = y^{\log_a x}\). (Q.E.D.)
+</p>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

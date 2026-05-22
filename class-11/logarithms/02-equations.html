@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logarithmic Equations | Logarithms</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Logarithms
+</a>
+</nav>
+<h1>Logarithmic Equations</h1>
+<p class="subtitle">
+Systematic methods for solving algebraic equations containing logarithmic operators
+</p>
+
+<section>
+<h2>What is a Logarithmic Equation?</h2>
+<p>
+A <strong>logarithmic equation</strong> is an equation in which a variable appears inside the argument or base of a logarithmic term. Examples include:
+</p>
+<div class="math-block">
+\[\log_2 (x - 1) + \log_2 (x + 2) = 2\]
+\[\log_x (3x^2 - x) = 2\]
+</div>
+<p>
+To solve these equations, we employ algebraic identities to simplify and remove the logarithmic operators. However, removing logarithms algebraically comes with a massive trap.
+</p>
+</section>
+
+<section>
+<h2>The Golden Rule: Domain Check & Extraneous Roots</h2>
+<p>
+When solving logarithmic equations, the most critical step is the **final domain check**.
+</p>
+<p>
+Algebraic manipulation (like the product or quotient rule) often yields a simplified algebraic equation that has a <em>larger</em> domain than the original logarithmic equation. The roots of this simplified equation that do not satisfy the original constraints are called **extraneous roots**.
+</p>
+
+<div class="concept-box">
+<h3>The Domain Check Protocol</h3>
+<p>
+For every candidate root \(x_0\) obtained after algebraic simplification, you must substitute \(x_0\) back into the <strong>original</strong> form of the equation and check:
+</p>
+<ol>
+<li>Are all logarithmic arguments strictly positive? (\(> 0\))</li>
+<li>Are all logarithmic bases positive and not equal to 1? (\(> 0\) and \(\neq 1\))</li>
+</ol>
+<p>
+If a candidate root fails any constraint in even a single term of the original equation, it must be **rejected**.
+</p>
+</div>
+
+<div class="insightbox">
+<h3>Insight: How Algebraic Rules Expand the Domain</h3>
+<p>
+Consider the identity \(\log_a(x) + \log_a(y) = \log_a(xy)\).
+</p>
+<ul>
+<li>On the left-hand side, the expression is defined only if \(x > 0\) and \(y > 0\).</li>
+<li>On the right-hand side, \(\log_a(xy)\) is defined if \(xy > 0\). This product is positive if <em>both</em> \(x\) and \(y\) are positive, **or** if <em>both</em> \(x\) and \(y\) are negative!</li>
+</ul>
+<p>
+If we algebraically transition from left to right, we inadvertently allow negative values of \(x\) and \(y\) into our equations. The resulting algebraic solutions can yield negative values which satisfy the simplified equation but violate the original terms.
+</p>
+</div>
+</section>
+
+<section>
+<h2>Standard Solving Techniques</h2>
+<p>
+Most JEE logarithmic equations fall into one of three structural categories:
+</p>
+<h3>1. Equations Reducible to Quadratic Forms</h3>
+<p>
+If the equation consists of terms containing \(\log_a x\) and its powers, we substitute \(t = \log_a x\). This transforms the expression into a standard polynomial or rational equation in \(t\). Once \(t\) is solved, we find \(x = a^t\).
+</p>
+<h3>2. Equations with Variables in Exponents</h3>
+<p>
+When an equation contains terms of the form \(f(x)^{g(x)} = c\), we "take logarithms on both sides" to pull the exponents down using the power rule.
+</p>
+<h3>3. Base-Change Reductions</h3>
+<p>
+If the logarithms in the equation have different bases (e.g., base 2, 4, and 16), use the base-change theorem or the base-power identity to convert all terms to a single common base.
+</p>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Base-Change Reduction</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[\log_2 x + \log_4 x + \log_{16} x = 7\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Domain check constraint.</strong> The argument is \(x\), so we must have \(x > 0\).
+</p>
+<p>
+<strong>Step 2: Base harmonization.</strong> Express all bases as powers of 2:
+<ul>
+<li>\(\log_2 x\)</li>
+<li>\(\log_4 x = \log_{2^2} x = \frac{1}{2} \log_2 x\)</li>
+<li>\(\log_{16} x = \log_{2^4} x = \frac{1}{4} \log_2 x\)</li>
+</ul>
+Substitute these into the equation:
+\[\log_2 x + \frac{1}{2} \log_2 x + \frac{1}{4} \log_2 x = 7\]
+</p>
+<p>
+Factoring out \(\log_2 x\):
+\[\left(1 + \frac{1}{2} + \frac{1}{4}\right) \log_2 x = 7\]
+\[\left(\frac{4 + 2 + 1}{4}\right) \log_2 x = 7\]
+\[\frac{7}{4} \log_2 x = 7\]
+\[\log_2 x = 4\]
+</p>
+<p>
+By definition:
+\[x = 2^4 = 16\]
+Since \(16 > 0\), the constraint is satisfied.
+</p>
+<p><strong>Answer:</strong> \(x = 16\)</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Extraneous Root Detection with Variable Base</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[x^{\log_x (x+3)} = 5\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Identify constraints from the original expression.</strong>
+<ul>
+<li>Base of the logarithm: \(x > 0\) and \(x \neq 1\).</li>
+<li>Argument of the logarithm: \(x + 3 > 0 \implies x > -3\).</li>
+</ul>
+Intersection of these constraints yields the overall domain: **\(x \in (0, 1) \cup (1, \infty)\)**.
+</p>
+<p>
+<strong>Step 2: Solve the equation.</strong>
+Using the fundamental identity \(b^{\log_b N} = N\) (where \(b = x > 0, b \neq 1\) and \(N = x+3 > 0\)):
+\[x^{\log_x (x+3)} = x + 3\]
+The equation reduces to:
+\[x + 3 = 5\]
+\[x = 2\]
+</p>
+<p>
+<strong>Step 3: Verification.</strong>
+Check if \(x = 2\) lies in our domain: \(2 > 0\) and \(2 \neq 1\). The constraints are fully satisfied.
+</p>
+<p><strong>Answer:</strong> \(x = 2\)</p>
+</div>
+
+<div class="examplebox">
+<h3>Example 3: Variables in Base and Arguments on Both Sides</h3>
+<p>
+Solve for \(x \in \mathbb{R}\):
+\[\log_{(x+3)} (x^2 - x) = \log_{(x+3)} (2x + 4)\]
+</p>
+<hr>
+<p><strong>Solution:</strong></p>
+<p>
+<strong>Step 1: Domain Constraints.</strong>
+<ol>
+<li>Base: \(x+3 > 0\) and \(x+3 \neq 1 \implies x > -3\) and \(x \neq -2\).</li>
+<li>First argument: \(x^2 - x > 0 \implies x(x-1) > 0 \implies x \in (-\infty, 0) \cup (1, \infty)\).</li>
+<li>Second argument: \(2x + 4 > 0 \implies 2x > -4 \implies x > -2\).</li>
+</ol>
+Taking the intersection of all three conditions:
+<ul>
+<li>\(x > -3\) and \(x \neq -2\)</li>
+<li>\(x > -2\) (this already satisfies \(x > -3\) and \(x \neq -2\))</li>
+<li>\(x < 0\) or \(x > 1\)</li>
+</ul>
+Thus, the valid domain is: **\(x \in (-2, 0) \cup (1, \infty)\)**.
+</p>
+<p>
+<strong>Step 2: Solve the equation.</strong>
+Equating the arguments:
+\[x^2 - x = 2x + 4\]
+\[x^2 - 3x - 4 = 0\]
+Factoring the quadratic:
+\[(x - 4)(x + 1) = 0 \implies x = 4 \text{ or } x = -1\]
+</p>
+<p>
+<strong>Step 3: Verify roots against the domain.</strong>
+<ul>
+<li>For \(x = 4\): Lies in \((1, \infty)\). **Valid.**</li>
+<li>For \(x = -1\): Lies in \((-2, 0)\). **Valid.**</li>
+</ul>
+Both roots satisfy all original base and argument constraints.
+</p>
+<p><strong>Answer:</strong> \(x = -1, 4\)</p>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

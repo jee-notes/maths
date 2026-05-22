@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Graphical Analysis & Range | Quadratic Equations</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Quadratic Equations
+</a>
+</nav>
+<h1>Graphical Analysis & Range of Expressions</h1>
+<p class="subtitle">
+Visualizing quadratics: vertices, parabolic constraints, and the boundaries of rational expressions
+</p>
+
+<section>
+<h2>Geometric Anatomy of a Parabola</h2>
+<p>
+Algebra and Geometry are two sides of the same coin. A quadratic expression \(f(x) = ax^2 + bx + c\) represents a geometric curve called a **parabola** when plotted on the Cartesian plane. The shape, orientation, and boundaries of this parabola are completely dictated by its algebraic coefficients.
+</p>
+
+<div class="model-box">
+<h3>1. Orientation (The Leading Coefficient \(a\))</h3>
+The sign of the leading coefficient \(a\) determines whether the parabola opens upwards or downwards:
+<ul>
+    <li><strong>If \(a &gt; 0\):</strong> The parabola is concave upwards (opens up like a cup). It possesses a global <strong>minimum</strong> point and extends infinitely upwards.</li>
+    <li><strong>If \(a &lt; 0\):</strong> The parabola is concave downwards (opens down like a cap). It possesses a global <strong>maximum</strong> point and extends infinitely downwards.</li>
+</ul>
+</div>
+
+<div class="model-box">
+<h3>2. The Vertex (The Turning Point)</h3>
+The **vertex** represents the absolute extremum of the parabola (the lowest point for \(a>0\) and the highest point for \(a<0\)).
+<br><br>
+Let's derive the coordinates of the vertex by **completing the square** on the general expression:
+\[y = ax^2 + bx + c\]
+Factor out the leading coefficient \(a\):
+\[y = a \left[ x^2 + \frac{b}{a}x \right] + c\]
+Add and subtract \(\left(\frac{b}{2a}\right)^2\) inside the bracket:
+\[y = a \left[ x^2 + 2\left(\frac{b}{2a}\right)x + \left(\frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} \right] + c\]
+\[y = a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} \right] + c\]
+\[y = a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c\]
+Combine the constant terms using a common denominator:
+\[y = a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2 - 4ac}{4a}\]
+Substituting the Discriminant \(D = b^2 - 4ac\):
+<div class="math-block">
+\[y = a\left(x + \frac{b}{2a}\right)^2 - \frac{D}{4a}\]
+</div>
+Since \(\left(x + \frac{b}{2a}\right)^2 \ge 0\) for all real \(x\):
+<ul>
+    <li>If \(a &gt; 0\), the term \(a\left(x + \frac{b}{2a}\right)^2\) is non-negative. Thus, the minimum value of \(y\) occurs when this term is exactly zero, i.e., at \(x = -\frac{b}{2a}\). The minimum value is \(y_{\text{min}} = -\frac{D}{4a}\).</li>
+    <li>If \(a &lt; 0\), the term \(a\left(x + \frac{b}{2a}\right)^2\) is non-positive. Thus, the maximum value of \(y\) occurs when this term is zero, i.e., at \(x = -\frac{b}{2a}\). The maximum value is \(y_{\text{max}} = -\frac{D}{4a}\).</li>
+</ul>
+Thus, the coordinates of the **Vertex (\(V\))** are:
+<div class="math-block">
+\[V = \left( -\frac{b}{2a}, \ -\frac{D}{4a} \right)\]
+</div>
+The vertical line passing through the vertex, \(x = -\frac{b}{2a}\), is the **axis of symmetry** of the parabola.
+</div>
+</section>
+
+<section>
+<h2>Sign of a Quadratic Expression (Positive & Negative Definite)</h2>
+<p>
+In JEE inequalities, you will frequently encounter quadratic expressions that must remain strictly positive or strictly negative across their entire domain. These behaviors are called **Positive Definite** and **Negative Definite** respectively.
+</p>
+
+<div class="concept-box">
+<h3>1. Positive Definite Quadratic</h3>
+A quadratic expression is strictly positive for all real \(x\):
+\[ax^2 + bx + c &gt; 0, \quad \forall x \in \mathbb{R}\]
+if and only if:
+<div class="math-block">
+\[a &gt; 0 \quad \text{and} \quad D &lt; 0\]
+</div>
+<strong>Geometric Reason:</strong> \(a > 0\) means the parabola opens upwards. \(D < 0\) means there are no real roots, so the parabola never intersects or touches the x-axis. Thus, the entire graph floats strictly above the x-axis.
+</div>
+
+<div class="concept-box">
+<h3>2. Negative Definite Quadratic</h3>
+A quadratic expression is strictly negative for all real \(x\):
+\[ax^2 + bx + c &lt; 0, \quad \forall x \in \mathbb{R}\]
+if and only if:
+<div class="math-block">
+\[a &lt; 0 \quad \text{and} \quad D &lt; 0\]
+</div>
+<strong>Geometric Reason:</strong> \(a < 0\) means the parabola opens downwards. \(D < 0\) means no real roots. Thus, the entire graph hangs strictly below the x-axis.
+</div>
+</section>
+
+<section>
+<h2>Range of Quadratic Expressions</h2>
+<p>
+The **range** of an expression represents the complete set of values it can output over its domain.
+</p>
+
+<div class="model-box">
+<h3>1. Unrestricted Domain (\(x \in \mathbb{R}\))</h3>
+If \(x\) can be any real number, the range is determined solely by the vertex:
+<ul>
+    <li><strong>For \(a &gt; 0\):</strong> Range is \(y \in \left[ -\frac{D}{4a}, \infty \right)\).</li>
+    <li><strong>For \(a &lt; 0\):</strong> Range is \(y \in \left( -\infty, -\frac{D}{4a} \right]\).</li>
+</ul>
+</div>
+
+<div class="model-box">
+<h3>2. Restricted Domain (\(x \in [x_1, x_2]\))</h3>
+If \(x\) is restricted to a closed interval \([x_1, x_2]\), the global extremum at the vertex may or may not lie inside the restricted region.
+<br><br>
+To find the range, evaluate the function at three points:
+<ol>
+    <li>The boundary value \(f(x_1)\).</li>
+    <li>The boundary value \(f(x_2)\).</li>
+    <li>The vertex value \(f\left(-\frac{b}{2a}\right) = -\frac{D}{4a}\), **but only if** the x-coordinate of the vertex falls inside the interval:
+        \[-\frac{b}{2a} \in [x_1, x_2]\]
+    </li>
+</ol>
+The absolute minimum of the range will be the minimum of these values, and the absolute maximum will be the maximum of these values.
+</div>
+</section>
+
+<section>
+<h2>Range of Rational Expressions</h2>
+<p>
+A very common problem type in JEE requires finding the range of rational expressions of the form:
+\[y = \frac{a_1 x^2 + b_1 x + c_1}{a_2 x^2 + b_2 x + c_2}\]
+We can systematically solve this using the **Discriminant Constraint Method**:
+</p>
+
+<div class="concept-box">
+<h3>The Discriminant Constraint Procedure</h3>
+<ol>
+    <li>Set the expression equal to \(y\):
+        \[y = \frac{a_1 x^2 + b_1 x + c_1}{a_2 x^2 + b_2 x + c_2}\]
+    </li>
+    <li>Cross-multiply to eliminate the fraction:
+        \[y(a_2 x^2 + b_2 x + c_2) = a_1 x^2 + b_1 x + c_1\]
+    </li>
+    <li>Rearrange all terms to formulate a standard quadratic equation in terms of \(x\):
+        \[(a_1 - a_2 y)x^2 + (b_1 - b_2 y)x + (c_1 - c_2 y) = 0\]
+    </li>
+    <li>Since \(x\) is a real variable (\(x \in \mathbb{R}\)), this quadratic equation must have **real roots**. This forces the discriminant \(D_x\) of this equation to be non-negative:
+        \[D_x = (b_1 - b_2 y)^2 - 4(a_1 - a_2 y)(c_1 - c_2 y) \ge 0\]
+    </li>
+    <li>Solve the resulting quadratic inequality in terms of \(y\). The solution set of this inequality represents the range of the function.</li>
+    <li><strong>Critical Check:</strong> Check what happens if the leading coefficient becomes zero, i.e., \(a_1 - a_2 y = 0 \implies y = \frac{a_1}{a_2}\). Verify if there is a real value of \(x\) that can produce this value of \(y\) by substituting \(y = \frac{a_1}{a_2}\) back into the cross-multiplied equation and solving for \(x\). If a real \(x\) exists, then \(\frac{a_1}{a_2}\) is included in the range; otherwise, it must be excluded.</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Parameter Constraint for Strict Positivity</h3>
+<strong>Problem:</strong> Find all real values of the parameter \(k\) for which the quadratic inequality:
+\[kx^2 - 4x + (k - 3) &gt; 0\]
+holds true for all real values of \(x\).
+<hr>
+<strong>Solution:</strong>
+Let \(f(x) = kx^2 - 4x + (k - 3)\). For the quadratic expression \(f(x) > 0\) to be positive definite for all \(x \in \mathbb{R}\), we must apply two simultaneous constraints:
+<ol>
+    <li>The leading coefficient must be strictly positive:
+        \[k &gt; 0\]
+    </li>
+    <li>The discriminant \(D\) must be strictly negative (so the curve never touches the x-axis):
+        \[D &lt; 0\]
+    </li>
+</ol>
+Let's compute the discriminant \(D\):
+\[D = (-4)^2 - 4(k)(k - 3)\]
+\[D = 16 - 4(k^2 - 3k)\]
+\[D = 16 - 4k^2 + 12k\]
+We apply the constraint \(D < 0\):
+\[-4k^2 + 12k + 16 &lt; 0\]
+Divide the entire inequality by \(-4\) (remembering to **reverse the inequality sign**):
+\[k^2 - 3k - 4 &gt; 0\]
+Factor the quadratic expression:
+\[(k - 4)(k + 1) &gt; 0\]
+Using the wavy curve method, the solution to this inequality is:
+\[k \in (-\infty, -1) \cup (4, \infty)\]
+Now, we must take the intersection of this solution set with our primary constraint \(k > 0\):
+\[k \in (4, \infty)\]
+<strong>Conclusion:</strong> The inequality holds true for all real \(x\) if and only if \(k \in (4, \infty)\).
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Finding Range of a Rational Expression</h3>
+<strong>Problem:</strong> Find the range of the function:
+\[y = \frac{x^2 - x + 1}{x^2 + x + 1}\]
+for all real values of \(x\).
+<hr>
+<strong>Solution:</strong>
+Let's use the Discriminant Constraint Method. First, we cross-multiply:
+\[y(x^2 + x + 1) = x^2 - x + 1\]
+\[yx^2 + yx + y = x^2 - x + 1\]
+Rearrange all terms into a standard quadratic equation in \(x\):
+\[(y - 1)x^2 + (y + 1)x + (y - 1) = 0\]
+Since \(x \in \mathbb{R}\), this quadratic equation must have real roots, requiring its discriminant \(D \ge 0\):
+\[D = (y + 1)^2 - 4(y - 1)(y - 1) \ge 0\]
+\[(y + 1)^2 - 4(y - 1)^2 \ge 0\]
+Notice that this is a difference of squares of the form \(A^2 - B^2 \ge 0\), where \(A = y+1\) and \(B = 2(y-1) = 2y-2\):
+\[[ (y + 1) - (2y - 2) ] [ (y + 1) + (2y - 2) ] \ge 0\]
+\[[ y + 1 - 2y + 2 ] [ y + 1 + 2y - 2 ] \ge 0\]
+\[(3 - y)(3y - 1) \ge 0\]
+Multiply by \(-1\) to standardize the factors (reversing the inequality sign):
+\[(y - 3)(3y - 1) \le 0\]
+Solving this inequality using the wavy curve method yields the boundary range:
+\[y \in \left[ \frac{1}{3}, \ 3 \right]\]
+<strong>Critical Check:</strong>
+We must check if the leading coefficient can be zero, which occurs when \(y - 1 = 0 \implies y = 1\).
+If \(y = 1\), our quadratic equation in \(x\) reduces to:
+\[(1 - 1)x^2 + (1 + 1)x + (1 - 1) = 0 \implies 2x = 0 \implies x = 0\]
+Since \(x = 0\) is a valid real number, \(y = 1\) is indeed achievable by the function.
+Since \(1\) is already contained inside the interval \(\left[\frac{1}{3}, 3\right]\), we do not need to make any exclusions.
+<br><br>
+<strong>Conclusion:</strong> The range of the function is:
+<div class="math-block">
+\[y \in \left[ \frac{1}{3}, \ 3 \right]\]
+</div>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>
