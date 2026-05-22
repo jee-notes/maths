@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arithmetico-Geometric Progression | Sequences & Series</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sequences & Series
+</a>
+</nav>
+<h1>Arithmetico-Geometric Progression (A.G.P.)</h1>
+<p class="subtitle">
+Hybrid sequences and the universal shift-and-subtract technique
+</p>
+
+<section>
+<h2>Definition of an A.G.P.</h2>
+<p>
+An Arithmetico-Geometric Progression (A.G.P.) is a sequence in which each term is formed by multiplying corresponding terms of an Arithmetic Progression (A.P.) and a Geometric Progression (G.P.).
+</p>
+
+<div class="concept-box">
+<h3>The Structural Form</h3>
+Let the underlying A.P. be: \(\quad a, \ a+d, \ a+2d, \dots, \ a+(n-1)d\)
+<br>
+Let the underlying G.P. be: \(\quad 1, \ r, \ r^2, \dots, \ r^{n-1}\)
+<br><br>
+The resulting A.G.P. is the term-by-term product:
+\[a, \ (a+d)r, \ (a+2d)r^2, \dots, \ [a+(n-1)d]r^{n-1}\]
+</div>
+</section>
+
+<section>
+<h2>Sum of \(n\) Terms of an A.G.P.</h2>
+<p>
+Unlike pure A.P.s or G.P.s, memorizing the bulk formula for the sum of an A.G.P. is highly discouraged in JEE. The formula is complex and prone to recall errors. Instead, you must master the **method of derivation**, known as the shift-and-subtract technique, which works universally for all mixed multiplicative series.
+</p>
+
+<div class="model-box">
+<h3>The Shift-and-Subtract Technique</h3>
+Let \(S_n\) be the sum of the first \(n\) terms of an A.G.P.:
+\[S_n = a + (a+d)r + (a+2d)r^2 + \dots + [a+(n-1)d]r^{n-1} \tag{1}\]
+<strong>Step 1:</strong> Multiply the entire sum equation by the common ratio \(r\) of the G.P. component. Write the resulting series shifted one place to the right, so that terms with identical powers of \(r\) align vertically:
+\[r S_n = \phantom{a} + ar + (a+d)r^2 + \dots + [a+(n-2)d]r^{n-1} + [a+(n-1)d]r^n \tag{2}\]
+<strong>Step 2:</strong> Subtract equation (2) from equation (1) vertically. Except for the first term and the very last isolated term, all intermediate aligned pairs will subtract to leave a pure Geometric Progression!
+\[S_n - r S_n = a + \left[ (a+d)r - ar \right] + \left[ (a+2d)r^2 - (a+d)r^2 \right] + \dots - [a+(n-1)d]r^n\]
+\[S_n(1 - r) = a + \left[ dr + dr^2 + \dots + dr^{n-1} \right] - [a+(n-1)d]r^n\]
+<strong>Step 3:</strong> Notice the bracketed segment \(\left[ dr + dr^2 + \dots + dr^{n-1} \right]\). This is a standard G.P. with \(n-1\) terms, first term \(dr\), and common ratio \(r\). Evaluate it using the standard G.P. sum formula:
+\[S_n(1 - r) = a + dr\left[ \frac{1 - r^{n-1}}{1 - r} \right] - [a+(n-1)d]r^n\]
+<strong>Step 4:</strong> Finally, divide by \((1-r)\) to isolate \(S_n\):
+<div class="math-block">
+\[S_n = \frac{a}{1-r} + \frac{dr(1 - r^{n-1})}{(1-r)^2} - \frac{[a+(n-1)d]r^n}{1-r}\]
+</div>
+</div>
+</section>
+
+<section>
+<h2>Sum to Infinity of an A.G.P.</h2>
+<p>
+If the magnitude of the common ratio is strictly less than 1 (\(|r| &lt; 1\)), the terms of the G.P. component decay towards zero exponentially. Because exponential decay overtakes the linear growth of the A.P. component, the term \([a+(n-1)d]r^n \to 0\) as \(n \to \infty\).
+</p>
+<p>
+Applying this limit \(n \to \infty\) to our finite sum formula causes the massive tail terms to vanish, leaving a beautiful and clean infinite sum:
+</p>
+<div class="concept-box">
+<h3>Infinite A.G.P. Sum Formula (\(|r| &lt; 1\))</h3>
+<div class="math-block">
+\[S_\infty = \frac{a}{1 - r} + \frac{dr}{(1 - r)^2}\]
+</div>
+<em>Insight:</em> The first part \(\frac{a}{1-r}\) is the sum of an infinite pure G.P. The second part \(\frac{dr}{(1-r)^2}\) represents the cumulative addition from the arithmetic growth \(d\).
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Evaluating a Standard Infinite A.G.P.</h3>
+<strong>Problem:</strong> Find the sum to infinity of the series:
+\[S = 1 + \frac{4}{5} + \frac{7}{25} + \frac{10}{125} + \dots\]
+<hr>
+<strong>Solution:</strong>
+First, let's explicitly identify the A.P. and G.P. components by writing the denominators as powers:
+\[S = 1 + 4\left(\frac{1}{5}\right) + 7\left(\frac{1}{5}\right)^2 + 10\left(\frac{1}{5}\right)^3 + \dots\]
+We can see this is an A.G.P. where:
+<ul>
+    <li>The A.P. component is \(1, 4, 7, 10, \dots\) \(\implies a = 1, \ d = 3\)</li>
+    <li>The G.P. component has a common ratio \(r = \frac{1}{5}\)</li>
+</ul>
+Since \(|r| = \frac{1}{5} &lt; 1\), the infinite sum converges. We could use the formula directly, but let's practice the shift-and-subtract method as it prevents formula-recall errors!
+<br><br>
+Write the sum \(S\):
+\[S = 1 + \frac{4}{5} + \frac{7}{5^2} + \frac{10}{5^3} + \dots \tag{1}\]
+Multiply by the common ratio \(r = \frac{1}{5}\) and shift right:
+\[\frac{1}{5}S = \phantom{1} + \frac{1}{5} + \frac{4}{5^2} + \frac{7}{5^3} + \dots \tag{2}\]
+Subtract (2) from (1):
+\[S - \frac{1}{5}S = 1 + \left(\frac{4}{5} - \frac{1}{5}\right) + \left(\frac{7}{5^2} - \frac{4}{5^2}\right) + \dots\]
+\[\frac{4}{5}S = 1 + \frac{3}{5} + \frac{3}{5^2} + \frac{3}{5^3} + \dots\]
+Notice that from the second term onwards, we have a pure infinite G.P. with first term \(\frac{3}{5}\) and common ratio \(\frac{1}{5}\):
+\[\frac{4}{5}S = 1 + \left[ \frac{\frac{3}{5}}{1 - \frac{1}{5}} \right]\]
+\[\frac{4}{5}S = 1 + \left[ \frac{3/5}{4/5} \right]\]
+\[\frac{4}{5}S = 1 + \frac{3}{4} = \frac{7}{4}\]
+Multiply by \(\frac{5}{4}\) to isolate \(S\):
+\[S = \frac{7}{4} \times \frac{5}{4} = \frac{35}{16}\]
+<strong>Conclusion:</strong> The sum of the infinite series is \(\frac{35}{16}\).
+</div>
+
+<div class="examplebox">
+<h3>Example 2: A Second-Order A.G.P. (Double Shift)</h3>
+<strong>Problem:</strong> Evaluate the infinite sum:
+\[S = 1 + \frac{3}{2} + \frac{7}{4} + \frac{13}{8} + \frac{21}{16} + \dots\]
+<hr>
+<strong>Solution:</strong>
+Let's analyze the sequence of numerators: \(1, 3, 7, 13, 21, \dots\)
+The differences between consecutive numerators are: \(2, 4, 6, 8, \dots\)
+Since the differences themselves form an A.P., the numerators form a **second-order arithmetic sequence** (a quadratic sequence). The denominators are clearly powers of \(2\), so the common ratio is \(r = \frac{1}{2}\).
+<br><br>
+Because it's a second-order A.P. mixed with a G.P., one shift-and-subtract will reduce it to a standard A.G.P. A second shift-and-subtract will reduce it to a pure G.P.!
+<br><br>
+<strong>First Shift:</strong>
+\[S = 1 + \frac{3}{2} + \frac{7}{4} + \frac{13}{8} + \frac{21}{16} + \dots\]
+Multiply by \(\frac{1}{2}\) and shift:
+\[\frac{1}{2}S = \phantom{1} + \frac{1}{2} + \frac{3}{4} + \frac{7}{8} + \frac{13}{16} + \dots\]
+Subtract the two equations:
+\[\frac{1}{2}S = 1 + \frac{2}{2} + \frac{4}{4} + \frac{6}{8} + \frac{8}{16} + \dots\]
+Let's call this new series \(S'\). We now have a standard A.G.P. where the numerators \(2, 4, 6, 8\) form a regular A.P.
+<br><br>
+<strong>Second Shift:</strong>
+Let's isolate the A.G.P. part to evaluate it cleanly:
+\[S' = \frac{2}{2} + \frac{4}{4} + \frac{6}{8} + \frac{8}{16} + \dots\]
+Multiply \(S'\) by \(\frac{1}{2}\) and shift:
+\[\frac{1}{2}S' = \phantom{\frac{2}{2}} + \frac{2}{4} + \frac{4}{8} + \frac{6}{16} + \dots\]
+Subtract:
+\[S' - \frac{1}{2}S' = \frac{2}{2} + \left(\frac{4}{4} - \frac{2}{4}\right) + \left(\frac{6}{8} - \frac{4}{8}\right) + \dots\]
+\[\frac{1}{2}S' = 1 + \frac{2}{4} + \frac{2}{8} + \frac{2}{16} + \dots\]
+\[\frac{1}{2}S' = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots\]
+This is a standard infinite G.P. with first term \(1\) and common ratio \(\frac{1}{2}\):
+\[\frac{1}{2}S' = \frac{1}{1 - 1/2} = \frac{1}{1/2} = 2\]
+So, \(S' = 4\).
+<br><br>
+<strong>Final Substitution:</strong>
+We substitute \(S'\) back into our first shifted equation:
+\[\frac{1}{2}S = 1 + S'\]
+\[\frac{1}{2}S = 1 + 4 = 5\]
+\[S = 10\]
+<strong>Conclusion:</strong> The infinite sum converges beautifully to 10. This double-shift technique is essential for JEE Advanced!
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

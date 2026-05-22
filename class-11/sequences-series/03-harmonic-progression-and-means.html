@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Harmonic Progression & Means | Sequences & Series</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sequences & Series
+</a>
+</nav>
+<h1>Harmonic Progression & Means</h1>
+<p class="subtitle">
+Reciprocal linearity, bounding inequalities, and the hierarchy of means
+</p>
+
+<section>
+<h2>Harmonic Progression (H.P.)</h2>
+<p>
+Unlike Arithmetic and Geometric Progressions, a Harmonic Progression does not possess an independent defining formula for its terms. Instead, it is defined entirely in relation to an Arithmetic Progression.
+</p>
+
+<div class="concept-box">
+<h3>Definition of an H.P.</h3>
+A sequence of non-zero numbers \(h_1, h_2, h_3, \dots, h_n\) is a Harmonic Progression (H.P.) if and only if their reciprocals form an Arithmetic Progression (A.P.):
+\[\frac{1}{h_1}, \ \frac{1}{h_2}, \ \frac{1}{h_3}, \ \dots, \ \frac{1}{h_n} \quad \text{are in A.P.}\]
+</div>
+
+<p>
+Because an H.P. is essentially a "reciprocal A.P.", there is <strong>no general formula for the sum of \(n\) terms of an H.P.</strong> To find any \(n^{\text{th}}\) term of an H.P., you must:
+<ol>
+    <li>Invert the terms to form an A.P.</li>
+    <li>Calculate the \(n^{\text{th}}\) term of the resulting A.P. using \(T_n = a + (n-1)d\).</li>
+    <li>Reciprocate this result to find the \(n^{\text{th}}\) term of the original H.P.</li>
+</ol>
+</p>
+</section>
+
+<section>
+<h2>Harmonic Mean (H.M.)</h2>
+<p>
+If three numbers \(a, b, c\) are in H.P., the middle term \(b\) is the **Harmonic Mean (H.M.)** between \(a\) and \(c\).
+</p>
+<p>
+By definition, their reciprocals \(\frac{1}{a}, \frac{1}{b}, \frac{1}{c}\) must be in A.P. Therefore:
+\[\frac{1}{b} - \frac{1}{a} = \frac{1}{c} - \frac{1}{b}\]
+\[\frac{2}{b} = \frac{1}{a} + \frac{1}{c} = \frac{a + c}{ac}\]
+Inverting both sides yields the formula for the Harmonic Mean of two numbers:
+<div class="math-block">
+\[b = \frac{2ac}{a + c}\]
+</div>
+</p>
+</section>
+
+<section>
+<h2>The Hierarchy of Means (AM-GM-HM Inequality)</h2>
+<p>
+For any set of \(n\) positive real numbers, the three classical Pythagorean means obey a strict hierarchy. This is one of the most powerful and frequently tested inequalities in the entire JEE syllabus.
+</p>
+
+<div class="model-box">
+<h3>The AM-GM-HM Theorem</h3>
+Let \(a_1, a_2, \dots, a_n\) be positive real numbers. We define their three means as:
+<ul>
+    <li><strong>Arithmetic Mean (A.M.):</strong> \(\quad A = \frac{a_1 + a_2 + \dots + a_n}{n}\)</li>
+    <li><strong>Geometric Mean (G.M.):</strong> \(\quad G = (a_1 \cdot a_2 \dots a_n)^{\frac{1}{n}}\)</li>
+    <li><strong>Harmonic Mean (H.M.):</strong> \(\quad H = \frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \dots + \frac{1}{a_n}}\)</li>
+</ul>
+These means are universally bound by the fundamental inequality:
+<div class="math-block">
+\[A.M. \ge G.M. \ge H.M.\]
+</div>
+<strong>Condition for Equality:</strong> The equality (\(A = G = H\)) holds true <strong>if and only if</strong> all the individual numbers are perfectly equal to each other (\(a_1 = a_2 = \dots = a_n\)).
+</div>
+
+<div class="insightbox">
+<h3>Relation between Means for Two Numbers</h3>
+If we have exactly two positive numbers \(a\) and \(b\), their means are:
+\[A = \frac{a+b}{2}, \quad G = \sqrt{ab}, \quad H = \frac{2ab}{a+b}\]
+Notice an extraordinary algebraic property when we multiply \(A\) and \(H\):
+\[A \times H = \left(\frac{a+b}{2}\right) \times \left(\frac{2ab}{a+b}\right) = ab = G^2\]
+Thus, for two numbers, the three means actually form a Geometric Progression of their own!
+\[G^2 = AH\]
+</div>
+</section>
+
+<section>
+<h2>Applications of AM-GM in JEE</h2>
+<p>
+In JEE Mathematics, the AM-GM inequality is rarely tested directly as a pure sequence problem. Instead, it is an <strong>extrema-finding tool</strong> hidden within algebra, trigonometry, and calculus problems.
+</p>
+<p>
+You should instantly consider using AM-GM whenever a problem asks you to find the:
+<ul>
+    <li><strong>Minimum value</strong> of a sum (especially when the product of the terms is constant or cancels out).</li>
+    <li><strong>Maximum value</strong> of a product (especially when the sum of the terms is constant).</li>
+</ul>
+</p>
+
+<div class="examplebox">
+<h3>Example 1: Minimizing a Reciprocal Sum</h3>
+<strong>Problem:</strong> Find the minimum value of \(f(x) = 4x + \frac{9}{x}\) for all \(x &gt; 0\).
+<hr>
+<strong>Solution:</strong>
+We want the minimum value of a sum of two positive terms: \(a = 4x\) and \(b = \frac{9}{x}\).
+<br><br>
+Notice that if we multiply these two terms together, the variable \(x\) completely cancels out:
+\[a \cdot b = (4x) \cdot \left(\frac{9}{x}\right) = 36\]
+Since the product is constant, the AM-GM inequality is the perfect tool! Apply AM \(\ge\) GM:
+\[\frac{a + b}{2} \ge \sqrt{ab}\]
+\[\frac{4x + \frac{9}{x}}{2} \ge \sqrt{(4x)\left(\frac{9}{x}\right)}\]
+\[\frac{4x + \frac{9}{x}}{2} \ge \sqrt{36}\]
+\[\frac{4x + \frac{9}{x}}{2} \ge 6\]
+Multiply by 2:
+\[4x + \frac{9}{x} \ge 12\]
+<strong>Conclusion:</strong> The absolute minimum value of the expression is 12. 
+<br><br>
+<em>(Optional Check: This minimum occurs when the two terms are equal: \(4x = \frac{9}{x} \implies x^2 = \frac{9}{4} \implies x = \frac{3}{2}\).)</em>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Weighted AM-GM for Asymmetric Products</h3>
+<strong>Problem:</strong> If \(x, y, z\) are positive real numbers such that \(x + y + z = 12\), find the maximum value of the product \(P = x^2 y^3 z\).
+<hr>
+<strong>Solution:</strong>
+We need to maximize a product \(x^2 y^3 z^1\) under a constant sum \(x + y + z = 12\). 
+<br><br>
+To make the AM-GM inequality work, we must split the terms \(x, y, z\) into pieces so that their product generates the desired exponents:
+<ul>
+    <li>We need \(x^2\), so we split \(x\) into 2 equal parts: \(\frac{x}{2}, \frac{x}{2}\)</li>
+    <li>We need \(y^3\), so we split \(y\) into 3 equal parts: \(\frac{y}{3}, \frac{y}{3}, \frac{y}{3}\)</li>
+    <li>We need \(z^1\), so we leave \(z\) as 1 part: \(z\)</li>
+</ul>
+This gives us a total of \(n = 2 + 3 + 1 = 6\) distinct terms. Let's apply AM \(\ge\) GM on these 6 positive terms:
+\[\frac{\frac{x}{2} + \frac{x}{2} + \frac{y}{3} + \frac{y}{3} + \frac{y}{3} + z}{6} \ge \left( \frac{x}{2} \cdot \frac{x}{2} \cdot \frac{y}{3} \cdot \frac{y}{3} \cdot \frac{y}{3} \cdot z \right)^{\frac{1}{6}}\]
+Notice that the numerator of the A.M. perfectly collapses back into our original sum constraint!
+\[\frac{x + y + z}{6} \ge \left( \frac{x^2 y^3 z}{4 \times 27} \right)^{\frac{1}{6}}\]
+Substitute the constraint \(x + y + z = 12\):
+\[\frac{12}{6} \ge \left( \frac{P}{108} \right)^{\frac{1}{6}}\]
+\[2 \ge \left( \frac{P}{108} \right)^{\frac{1}{6}}\]
+Raise both sides to the power of 6 to eliminate the radical:
+\[2^6 \ge \frac{P}{108}\]
+\[64 \ge \frac{P}{108}\]
+\[P \le 64 \times 108\]
+\[P \le 6912\]
+<strong>Conclusion:</strong> The maximum value of the product \(x^2 y^3 z\) is 6912. The weighted AM-GM split is an incredibly elegant trick for asymmetric maximization!
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

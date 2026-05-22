@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Special Series & Telescoping | Sequences & Series</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sequences & Series
+</a>
+</nav>
+<h1>Special Series & Telescoping</h1>
+<p class="subtitle">
+Power sums, sigma notation, and the Method of Differences
+</p>
+
+<section>
+<h2>Standard Power Sums (\(\Sigma\))</h2>
+<p>
+Before tackling complex algebraic series, it is absolutely essential to memorize the three standard power sum identities. These form the basic building blocks for evaluating polynomial sequences using Sigma notation.
+</p>
+
+<div class="concept-box">
+<h3>The Big Three Power Sums</h3>
+<strong>1. Sum of first \(n\) natural numbers:</strong>
+<div class="math-block">
+\[\sum_{r=1}^n r = 1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}\]
+</div>
+<strong>2. Sum of squares of first \(n\) natural numbers:</strong>
+<div class="math-block">
+\[\sum_{r=1}^n r^2 = 1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\]
+</div>
+<strong>3. Sum of cubes of first \(n\) natural numbers:</strong>
+<div class="math-block">
+\[\sum_{r=1}^n r^3 = 1^3 + 2^3 + 3^3 + \dots + n^3 = \left[ \frac{n(n+1)}{2} \right]^2\]
+</div>
+<em>Observation:</em> Notice the beautiful symmetry that the sum of the cubes is exactly the square of the sum of the numbers themselves! \(\sum r^3 = (\sum r)^2\)
+</div>
+</section>
+
+<section>
+<h2>Applying Sigma Notation</h2>
+<p>
+If the \(r^{\text{th}}\) term (\(T_r\)) of a sequence is a polynomial in \(r\), we can easily find the sum to \(n\) terms by expanding the polynomial and applying the standard power sums linearly.
+</p>
+<p>
+For example, if \(T_r = ar^2 + br + c\), then:
+\[S_n = \sum_{r=1}^n T_r = a \sum_{r=1}^n r^2 + b \sum_{r=1}^n r + c \sum_{r=1}^n 1\]
+<em>Note:</em> \(\sum_{r=1}^n 1 = 1 + 1 + \dots + 1 = n\).
+</p>
+</section>
+
+<section>
+<h2>The Method of Differences (Telescoping Series)</h2>
+<p>
+When a series is not an A.P., G.P., A.G.P., or a simple polynomial sequence, we must rely on the most powerful sequence manipulation technique in mathematics: **Telescoping**.
+</p>
+<p>
+The core philosophy of Telescoping is to artificially rewrite the \(r^{\text{th}}\) general term \(T_r\) as the difference of two consecutive states of a secondary sequence \(V_r\).
+</p>
+
+<div class="model-box">
+<h3>The Telescoping Mechanism</h3>
+Goal: Express \(T_r = V_r - V_{r-1}\) (or sometimes \(V_{r+1} - V_r\)).
+<br><br>
+If we can achieve this split, watch what happens when we sum from \(r=1\) to \(n\):
+\[S_n = T_1 + T_2 + T_3 + \dots + T_n\]
+\[S_n = (V_1 - V_0) + (V_2 - V_1) + (V_3 - V_2) + \dots + (V_n - V_{n-1})\]
+Look closely at the adjacent brackets! The positive \(V_1\) cancels the negative \(V_1\). The positive \(V_2\) cancels the negative \(V_2\). This cascading cancellation collapses the entire massive sum into just the boundary terms:
+<div class="math-block">
+\[S_n = V_n - V_0\]
+</div>
+</div>
+</section>
+
+<section>
+<h2>Standard Telescoping Architectures</h2>
+
+<div class="insightbox">
+<h3>Type 1: Series of Fractions (Differences in Denominator)</h3>
+Form: \(\frac{1}{a \cdot b}\) where the difference \((b - a)\) is a constant \(k\).
+<br>
+<strong>Trick:</strong> Multiply and divide by \(k\) to create the difference in the numerator.
+\[T_r = \frac{1}{k} \cdot \frac{b - a}{a \cdot b} = \frac{1}{k} \left( \frac{1}{a} - \frac{1}{b} \right)\]
+</div>
+
+<div class="insightbox">
+<h3>Type 2: Series of Products (Consecutive Terms)</h3>
+Form: \(T_r = r(r+1)(r+2)\dots(r+k-1)\) (product of \(k\) consecutive integers).
+<br>
+<strong>Trick:</strong> Multiply and divide by the difference of the "next" term and the "previous" term. In this case, \((r+k) - (r-1) = k+1\).
+\[T_r = \frac{T_r \cdot [(r+k) - (r-1)]}{k+1}\]
+This perfectly splits \(T_r\) into \(V_r - V_{r-1}\) where \(V_r\) has \(k+1\) factors.
+</div>
+
+<div class="insightbox">
+<h3>Type 3: Logarithmic Telescoping</h3>
+Form: \(T_r = \log \left( \frac{f(r+1)}{f(r)} \right)\)
+<br>
+<strong>Trick:</strong> Use the log division property directly!
+\[T_r = \log(f(r+1)) - \log(f(r))\]
+When summed, \(\sum T_r = \log(f(n+1)) - \log(f(1))\).
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Classic Fraction Telescoping</h3>
+<strong>Problem:</strong> Find the sum to \(n\) terms of the series:
+\[S_n = \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} + \dots\]
+<hr>
+<strong>Solution:</strong>
+First, let's identify the general term \(T_r\). The \(r^{\text{th}}\) term has factors \(r\) and \(r+1\) in the denominator:
+\[T_r = \frac{1}{r(r+1)}\]
+Notice that the difference between the factors in the denominator is \((r+1) - r = 1\), which perfectly matches the numerator!
+We can split the fraction using partial fractions or logical manipulation:
+\[T_r = \frac{(r+1) - r}{r(r+1)} = \frac{r+1}{r(r+1)} - \frac{r}{r(r+1)}\]
+\[T_r = \frac{1}{r} - \frac{1}{r+1}\]
+This is a perfect telescoping form \(V_r - V_{r+1}\) (where \(V_r = 1/r\)). Let's write out the sum:
+\[S_n = \sum_{r=1}^n T_r = \sum_{r=1}^n \left( \frac{1}{r} - \frac{1}{r+1} \right)\]
+Expand the sum vertically to see the cascading cancellation:
+\[
+\begin{align*}
+T_1 &= \left( \frac{1}{1} - \frac{1}{2} \right) \\
+T_2 &= \left( \frac{1}{2} - \frac{1}{3} \right) \\
+T_3 &= \left( \frac{1}{3} - \frac{1}{4} \right) \\
+&\dots \\
+T_n &= \left( \frac{1}{n} - \frac{1}{n+1} \right)
+\end{align*}
+\]
+Adding them all together, the \(-1/2\) cancels with \(+1/2\), the \(-1/3\) cancels with \(+1/3\), and so on. Only the first positive term and the last negative term survive!
+\[S_n = 1 - \frac{1}{n+1}\]
+\[S_n = \frac{n+1-1}{n+1} = \frac{n}{n+1}\]
+<strong>Conclusion:</strong> The sum to \(n\) terms is \(\frac{n}{n+1}\). As \(n \to \infty\), the sum converges to exactly 1.
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Splitting Quadratic Denominators</h3>
+<strong>Problem:</strong> Find the infinite sum of the series whose general term is \(T_r = \frac{2r+1}{r^2(r+1)^2}\).
+<hr>
+<strong>Solution:</strong>
+At first glance, this looks incredibly complex. We need to express \(T_r\) as \(V_r - V_{r+1}\). Let's look closely at the denominator factors: \(r^2\) and \((r+1)^2\).
+<br><br>
+What is the difference between these two denominator factors? Let's calculate:
+\[(r+1)^2 - r^2 = (r^2 + 2r + 1) - r^2 = 2r + 1\]
+This difference is exactly our numerator! This is a manufactured telescoping problem.
+Let's rewrite the term by substituting the numerator:
+\[T_r = \frac{(r+1)^2 - r^2}{r^2(r+1)^2}\]
+Now split the fraction:
+\[T_r = \frac{(r+1)^2}{r^2(r+1)^2} - \frac{r^2}{r^2(r+1)^2}\]
+\[T_r = \frac{1}{r^2} - \frac{1}{(r+1)^2}\]
+We have successfully achieved telescoping form \(V_r - V_{r+1}\) with \(V_r = 1/r^2\). Let's calculate the sum to \(n\) terms (\(S_n\)):
+\[S_n = \sum_{r=1}^n \left( \frac{1}{r^2} - \frac{1}{(r+1)^2} \right)\]
+Due to the telescoping cancellation, only the very first and very last parts survive:
+\[S_n = \frac{1}{1^2} - \frac{1}{(n+1)^2} = 1 - \frac{1}{(n+1)^2}\]
+The problem asks for the infinite sum. We take the limit as \(n \to \infty\):
+\[S_\infty = \lim_{n \to \infty} \left( 1 - \frac{1}{(n+1)^2} \right)\]
+Since the denominator \((n+1)^2\) grows infinitely large, the fraction approaches zero.
+\[S_\infty = 1 - 0 = 1\]
+<strong>Conclusion:</strong> The infinite sum evaluates perfectly to 1.
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

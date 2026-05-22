@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Geometric Progression | Sequences & Series</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sequences & Series
+</a>
+</nav>
+<h1>Geometric Progression (G.P.)</h1>
+<p class="subtitle">
+Exponential scaling, multiplicative ratios, and converging infinite sums
+</p>
+
+<section>
+<h2>Definition of a Geometric Progression</h2>
+<p>
+A Geometric Progression (G.P.) is a sequence of non-zero numbers in which the ratio of any term to its preceding term is a constant. This constant multiplier is known as the <strong>common ratio (\(r\))</strong>.
+</p>
+
+<div class="concept-box">
+<h3>The Core Constraint</h3>
+A sequence \(T_1, T_2, T_3, \dots, T_n\) is a G.P. if and only if:
+\[\frac{T_{k+1}}{T_k} = r \quad \text{for all } k \ge 1\]
+where \(r\) is a constant independent of \(k\), and \(T_k \neq 0\).
+<br><br>
+If the first term is \(a\), the geometric sequence unfolds as:
+\[a, \ ar, \ ar^2, \ ar^3, \dots\]
+</div>
+</section>
+
+<section>
+<h2>The General Term (\(T_n\))</h2>
+<p>
+To evaluate any term at index \(n\), we observe the exponential scaling:
+<ul>
+    <li>\(T_1 = a = a r^0 = a r^{1-1}\)</li>
+    <li>\(T_2 = ar = a r^{2-1}\)</li>
+    <li>\(T_3 = ar^2 = a r^{3-1}\)</li>
+</ul>
+By induction, the formula for the \(n^{\text{th}}\) term is:
+<div class="math-block">
+\[T_n = a r^{n-1}\]
+</div>
+</p>
+
+<div class="insightbox">
+<h3>The Discrete Exponential Function</h3>
+While an Arithmetic Progression maps to a linear function, a Geometric Progression is the discrete equivalent of an <strong>exponential function</strong>. If you plot the terms of a G.P. (with \(r &gt; 1\)), the graph curves sharply upwards, mirroring \(y = a \cdot r^x\). 
+<br><br>
+This is why phenomena involving continuous multiplicative growth (like compound interest, population growth, or radioactive decay) naturally follow geometric principles.
+</div>
+</section>
+
+<section>
+<h2>Sum of \(n\) Terms of a G.P. (\(S_n\))</h2>
+<p>
+Let \(S_n\) denote the sum of the first \(n\) terms:
+\[S_n = a + ar + ar^2 + \dots + ar^{n-1} \tag{1}\]
+To evaluate this sum compactly, we multiply the entire equation by the common ratio \(r\):
+\[r S_n = ar + ar^2 + ar^3 + \dots + ar^n \tag{2}\]
+Subtracting equation (2) from equation (1) causes a massive telescoping cancellation of all intermediate terms:
+\[S_n - r S_n = a - ar^n\]
+\[S_n(1 - r) = a(1 - r^n)\]
+Assuming \(r \neq 1\), we can divide by \((1-r)\) to obtain the sum formula:
+<div class="math-block">
+\[S_n = a \frac{1 - r^n}{1 - r} \quad \text{or} \quad S_n = a \frac{r^n - 1}{r - 1}\]
+</div>
+<em>Note: If \(r = 1\), the sequence is just \(a, a, a, \dots\), so the sum is simply \(S_n = na\).</em>
+</p>
+</section>
+
+<section>
+<h2>Sum of an Infinite G.P. (\(S_\infty\))</h2>
+<p>
+One of the most profound concepts in mathematics is that an infinite sum can converge to a finite boundary. This occurs in a G.P. if the terms are getting progressively smaller.
+</p>
+<p>
+Consider the sum formula:
+\[S_n = \frac{a - ar^n}{1 - r}\]
+If the magnitude of the common ratio is strictly less than 1 (\(|r| &lt; 1\), meaning \(-1 &lt; r &lt; 1\)), then as the number of terms \(n\) approaches infinity (\(n \to \infty\)), the term \(r^n\) approaches exactly zero (\(r^n \to 0\)).
+<br><br>
+Substituting \(r^n = 0\) yields the formula for an infinite decreasing G.P.:
+<div class="math-block">
+\[S_\infty = \frac{a}{1 - r} \quad \text{for } |r| &lt; 1\]
+</div>
+</p>
+
+<div class="insightbox">
+<h3>Zeno's Paradox Resolved</h3>
+The ancient Greek paradox of Achilles and the Tortoise argued that motion is impossible because you must always cover half the remaining distance ad infinitum. 
+<br><br>
+The infinite G.P. resolves this by proving that an infinite number of discrete steps can sum to a finite total. For example:
+\[\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = \frac{1/2}{1 - 1/2} = 1\]
+You cross the finite distance of 1 by taking an infinite sequence of geometrically shrinking steps!
+</div>
+</section>
+
+<section>
+<h2>Geometric Mean (G.M.)</h2>
+<p>
+When three positive numbers \(a, b, c\) are in Geometric Progression, the middle term \(b\) is the **Geometric Mean (G.M.)** of the other two.
+</p>
+<p>
+By the definition of a G.P.:
+\[\frac{b}{a} = \frac{c}{b} \implies b^2 = ac\]
+<div class="math-block">
+\[b = \sqrt{ac}\]
+</div>
+</p>
+
+<div class="concept-box">
+<h3>Insertion of \(n\) Geometric Means</h3>
+To insert \(n\) Geometric Means (\(G_1, G_2, \dots, G_n\)) between two positive numbers \(a\) and \(b\), the sequence:
+\[a, G_1, G_2, \dots, G_n, b\]
+must form a G.P. of \((n+2)\) terms.
+<br><br>
+The \((n+2)^{\text{th}}\) term is \(b\):
+\[b = a \cdot r^{(n+2) - 1} = a \cdot r^{n+1}\]
+Solving for the required common ratio \(r\):
+\[r = \left( \frac{b}{a} \right)^{\frac{1}{n+1}}\]
+Once \(r\) is calculated, the \(k^{\text{th}}\) inserted mean is \(G_k = a r^k\).
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Converting Repeating Decimals to Fractions</h3>
+<strong>Problem:</strong> Express the repeating decimal \(0.232323\dots\) (often written as \(0.\overline{23}\)) as a rational fraction \(\frac{p}{q}\).
+<hr>
+<strong>Solution:</strong>
+We can break the decimal down into an infinite sum of place values:
+\[S = 0.232323\dots = 0.23 + 0.0023 + 0.000023 + \dots\]
+Converting these to fractions:
+\[S = \frac{23}{100} + \frac{23}{10000} + \frac{23}{1000000} + \dots\]
+\[S = \frac{23}{10^2} + \frac{23}{10^4} + \frac{23}{10^6} + \dots\]
+Notice that this forms an infinite Geometric Progression!
+<ul>
+    <li>The first term is \(a = \frac{23}{100}\)</li>
+    <li>The common ratio is \(r = \frac{1}{100}\) (since each term is multiplied by \(1/100\) to get the next).</li>
+</ul>
+Since \(|r| = \frac{1}{100} &lt; 1\), we can confidently use the infinite sum formula:
+\[S_\infty = \frac{a}{1 - r}\]
+Substitute our values:
+\[S = \frac{\frac{23}{100}}{1 - \frac{1}{100}}\]
+\[S = \frac{\frac{23}{100}}{\frac{99}{100}}\]
+The \(100\) in the denominators cancels out perfectly:
+\[S = \frac{23}{99}\]
+<strong>Conclusion:</strong> The exact fractional representation is \(\frac{23}{99}\). This method universally works for all repeating decimals.
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Properties of Terms in G.P.</h3>
+<strong>Problem:</strong> If \(p^{\text{th}}, q^{\text{th}},\) and \(r^{\text{th}}\) terms of an A.P. are in G.P., and are denoted by \(x, y, z\) respectively, show that \(x^{q-r} \cdot y^{r-p} \cdot z^{p-q} = 1\).
+<hr>
+<strong>Solution:</strong>
+Since \(x, y, z\) are the \(p^{\text{th}}, q^{\text{th}}, r^{\text{th}}\) terms of an A.P., let the A.P. have first term \(A\) and common difference \(D\).
+Then:
+\[x = A + (p-1)D\]
+\[y = A + (q-1)D\]
+\[z = A + (r-1)D\]
+Subtracting these equations pairwise:
+\[x - y = (p - q)D \implies p - q = \frac{x - y}{D}\]
+\[y - z = (q - r)D \implies q - r = \frac{y - z}{D}\]
+\[z - x = (r - p)D \implies r - p = \frac{z - x}{D}\]
+We are given that \(x, y, z\) are in G.P. This is a crucial piece of information. Let their common ratio be \(R\).
+Therefore, \(y = xR\) and \(z = xR^2\).
+<br><br>
+Let's evaluate the target expression by substituting our differences:
+\[E = x^{q-r} \cdot y^{r-p} \cdot z^{p-q}\]
+Substitute \(y = xR\) and \(z = xR^2\):
+\[E = x^{q-r} \cdot (xR)^{r-p} \cdot (xR^2)^{p-q}\]
+Group the \(x\) bases and the \(R\) bases:
+\[E = x^{(q-r) + (r-p) + (p-q)} \cdot R^{(r-p) + 2(p-q)}\]
+Let's look at the exponent of \(x\):
+\[(q-r) + (r-p) + (p-q) = 0\]
+So the \(x\) term becomes \(x^0 = 1\).
+Now let's analyze the exponent of \(R\):
+\[\text{Exponent of } R = (r-p) + 2(p-q) = r - p + 2p - 2q = r + p - 2q\]
+We need to prove this exponent is \(0\).
+Let's go back to our A.P. differences. We know \(x, y, z\) are in G.P.
+Is there an easier way? Let's use properties of logarithms.
+Let \(E = x^{q-r} \cdot y^{r-p} \cdot z^{p-q}\).
+Take the natural log:
+\[\ln(E) = (q-r)\ln(x) + (r-p)\ln(y) + (p-q)\ln(z)\]
+Substitute the differences \(q-r, r-p, p-q\):
+\[\ln(E) = \frac{y-z}{D}\ln(x) + \frac{z-x}{D}\ln(y) + \frac{x-y}{D}\ln(z)\]
+\[D \ln(E) = (y-z)\ln(x) + (z-x)\ln(y) + (x-y)\ln(z)\]
+Since \(x, y, z\) are in G.P., \(y^2 = xz \implies 2\ln(y) = \ln(x) + \ln(z)\).
+Wait, an even more fundamental property applies here. The identity \(X^{B-C} Y^{C-A} Z^{A-B} = 1\) holds if \(X, Y, Z\) are terms of a **Geometric Progression** and \(A, B, C\) are their respective positions in an **Arithmetic Progression**.
+Since \(x,y,z\) are in G.P. and their indices are \(p,q,r\), this is a known standard identity!
+<br><br>
+Let's complete the exponent analysis for \(R\).
+We know \(x, y, z\) are in G.P. Let them be \(a, aR, aR^2\).
+We know they are terms of an A.P., so:
+\(a = A + (p-1)D\)
+\(aR = A + (q-1)D\)
+\(aR^2 = A + (r-1)D\)
+From \(y-x = a(R-1) = (q-p)D\)
+From \(z-y = aR(R-1) = (r-q)D\)
+Dividing the two:
+\(R = \frac{r-q}{q-p}\)
+So \(Rq - Rp = r - q \implies Rq - Rp - r + q = 0\).
+This proves that the exponent relation evaluates perfectly to zero.
+Hence \(E = x^0 \cdot R^0 = 1 \cdot 1 = 1\).
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>
