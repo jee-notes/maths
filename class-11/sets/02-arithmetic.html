@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arithmetic and Algebra | Basic Maths</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Basic Maths
+</a>
+</nav>
+<h1>Arithmetic and Algebra</h1>
+<p class="subtitle">
+The operationalization of mathematical abstractions and the symbolic leap
+</p>
+<section>
+<h2>Why We Operationalize Abstractions</h2>
+<p>
+Isolating numbers from physical objects serves a singular, powerful purpose: it allows us to define <strong>universal operators</strong>
+</p>
+<p>
+Operations such as addition, multiplication, roots, exponents, logarithms, and trigonometric functions — are defined independent of any specific physical context.
+</p>
+<p>
+Once these operations are rigorously established in the abstract domain, we can map numbers back onto any real-world domain and instantly inherit the full predictive power of these operators.
+</p>
+<div class="insightbox">
+<h3>Case Study: Coordinate Geometry</h3>
+By assigning numbers to spatial coordinates, Coordinate Geometry systematically converts purely physical, geometric problems into abstract, numeric-algebraic equations.<br>
+This translation layer is precisely what allows modern computers to solve highly complex spatial and physics simulations through pure number crunching.
+</div>
+</section>
+<section>
+<h2>Expanding Systems to Collapse Operations</h2>
+<p>
+The evolution of our number systems is driven by a deep desire for mathematical symmetry and simplification.
+</p>
+<p>
+Historically, mathematics began with Natural Numbers \(\mathbb{N}\) exclusively to track discrete counts, treating addition and subtraction as two entirely separate, distinct procedures.
+</p>
+<p>
+However, by expanding our universe of discourse to include negative values — the set of Integers \(\mathbb{Z}\) — subtraction ceases to exist as an independent operation.
+</p>
+<p>
+It is completely absorbed, redefined simply as the <strong>addition of a negative number</strong>:
+</p>
+\[a - b \equiv a + (-b)\]
+<p>
+Similarly, expanding the number space to Rational Numbers \(\mathbb{Q}\) collapses division into the multiplication of a reciprocal:
+</p>
+\[\frac{a}{b} \equiv a \cdot \left(\frac{1}{b}\right)\]
+<p>
+Ultimately, when dealing with the continuum of Real Numbers \(\mathbb{R}\), all classical algebraic operations reduce fundamentally to <strong>variations of addition</strong>.
+</p>
+<p>
+By expanding the boundaries of our number spaces, we systematically minimize our core operational rules down to a single, elegant foundational mechanic.
+</p>
+</section>
+
+<section>
+<h2>Arithmetic vs Algebra: The Symbolic Leap</h2>
+<p>
+Arithmetic is the study of concrete, definite numbers and direct computations. In arithmetic, every problem involves specific quantities like \(5 + 3 = 8\) or \(\sqrt{16} = 4\). While powerful, arithmetic is limited because it cannot express general rules or relationships.
+</p>
+<p>
+<strong>Algebra</strong> represents a profound shift in abstraction. It introduces the concept of a <strong>variable</strong> — a symbol (usually a letter like \(x\), \(a\), or \(b\)) that represents an unspecified value or a class of numbers. By replacing numbers with variables, algebra enables us to write universal statements, establish structures, and solve equations where the values are initially unknown.
+</p>
+<div class="insightbox">
+<h3>The Symbolic Power of Variables</h3>
+In arithmetic, we can verify that \(2 + 3 = 3 + 2\), and \(5 + 12 = 12 + 5\). But we can never prove this commutativity for all numbers because there are infinitely many numbers to check.<br><br>
+In algebra, we write the simple, single expression:
+\[a + b = b + a \quad \forall \, a, b \in \mathbb{R}\]
+With this symbolic leap, we declare a universal law of real numbers that holds across the entire continuum \(\mathbb{R}\) in one stroke.
+</div>
+</section>
+
+<section>
+<h2>Laws of Exponents and Indices</h2>
+<p>
+When an abstraction (number or variable) is multiplied by itself repeatedly, we define an index or exponent. For any base \(a \in \mathbb{R}\) and positive integer \(n\), the term \(a^n\) represents the product of \(a\) multiplied by itself \(n\) times:
+\[a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n \text{ times}}\]
+</p>
+<p>
+To perform consistent algebraic calculations in JEE problems, you must master the fundamental **Laws of Indices**:
+</p>
+<div class="model-box">
+<h3>Laws of Indices (\(a, b > 0\) and \(m, n \in \mathbb{R}\))</h3>
+<ol>
+    <li><strong>Product Rule:</strong> \(a^m \cdot a^n = a^{m+n}\)</li>
+    <li><strong>Quotient Rule:</strong> \(\frac{a^m}{a^n} = a^{m-n}\)</li>
+    <li><strong>Power of a Power:</strong> \((a^m)^n = a^{mn}\)</li>
+    <li><strong>Power of a Product:</strong> \((ab)^n = a^n b^n\)</li>
+    <li><strong>Power of a Fraction:</strong> \(\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}\)</li>
+    <li><strong>Zero Exponent:</strong> \(a^0 = 1 \quad (a \neq 0)\)</li>
+    <li><strong>Negative Exponent:</strong> \(a^{-n} = \frac{1}{a^n} \quad (a \neq 0)\)</li>
+    <li><strong>Fractional Exponent (Surds):</strong> \(a^{m/n} = \sqrt[n]{a^m}\)</li>
+</ol>
+</div>
+
+<div class="concept-box">
+<h3>Surds and Rationalization</h3>
+A <strong>surd</strong> is an irrational number represented by a root, such as \(\sqrt{2}\) or \(\sqrt[3]{5}\). In algebraic simplifications, we frequently encounter fractions with surds in the denominator. To simplify them, we perform <strong>rationalization</strong> — multiplying the numerator and denominator by the conjugate expression to eliminate the radical.
+<br><br>
+For example, to rationalize the denominator of \(\frac{1}{\sqrt{a} + \sqrt{b}}\), multiply by its conjugate \(\sqrt{a} - \sqrt{b}\):
+\[\frac{1}{\sqrt{a} + \sqrt{b}} = \frac{1}{\sqrt{a} + \sqrt{b}} \cdot \frac{\sqrt{a} - \sqrt{b}}{\sqrt{a} - \sqrt{b}} = \frac{\sqrt{a} - \sqrt{b}}{a - b}\]
+</div>
+
+<div class="examplebox">
+<h3>Solved Example: Simplifying Surds</h3>
+<strong>Problem:</strong> Rationalize and simplify the expression:
+\[E = \frac{1}{\sqrt{5} + \sqrt{3}} + \frac{1}{\sqrt{3} + \sqrt{2}} - \frac{2}{\sqrt{5} + \sqrt{2}}\]
+<hr>
+<strong>Solution:</strong>
+Rationalize each term individually by multiplying by its respective conjugate:
+<ol>
+    <li>First Term:
+        \[\frac{1}{\sqrt{5} + \sqrt{3}} \cdot \frac{\sqrt{5} - \sqrt{3}}{\sqrt{5} - \sqrt{3}} = \frac{\sqrt{5} - \sqrt{3}}{5 - 3} = \frac{\sqrt{5} - \sqrt{3}}{2}\]
+    </li>
+    <li>Second Term:
+        \[\frac{1}{\sqrt{3} + \sqrt{2}} \cdot \frac{\sqrt{3} - \sqrt{2}}{\sqrt{3} - \sqrt{2}} = \frac{\sqrt{3} - \sqrt{2}}{3 - 2} = \sqrt{3} - \sqrt{2} = \frac{2(\sqrt{3} - \sqrt{2})}{2}\]
+    </li>
+    <li>Third Term:
+        \[\frac{2}{\sqrt{5} + \sqrt{2}} \cdot \frac{\sqrt{5} - \sqrt{2}}{\sqrt{5} - \sqrt{2}} = \frac{2(\sqrt{5} - \sqrt{2})}{5 - 2} = \frac{2(\sqrt{5} - \sqrt{2})}{3}\]
+    </li>
+</ol>
+Now, substitute these back into the expression with a common denominator of \(6\):
+\[E = \frac{3(\sqrt{5} - \sqrt{3}) + 6(\sqrt{3} - \sqrt{2}) - 4(\sqrt{5} - \sqrt{2})}{6}\]
+Simplify the numerator:
+\[E = \frac{3\sqrt{5} - 3\sqrt{3} + 6\sqrt{3} - 6\sqrt{2} - 4\sqrt{5} + 4\sqrt{2}}{6}\]
+Combine like terms:
+\[E = \frac{(3\sqrt{5} - 4\sqrt{5}) + (-3\sqrt{3} + 6\sqrt{3}) + (-6\sqrt{2} + 4\sqrt{2})}{6} = \frac{-\sqrt{5} + 3\sqrt{3} - 2\sqrt{2}}{6}\]
+</div>
+</section>
+
+<section>
+<h2>Fundamental Algebraic Identities</h2>
+<p>
+Algebraic identities are equations that hold true for all possible values of the variables involved. They form the core toolbox for factorizing, expanding, and simplifying complex algebraic expressions in JEE calculus and coordinate geometry.
+</p>
+
+<div class="model-box">
+<h3>Core Identities (Must Memorize)</h3>
+<ul>
+    <li><strong>Square Identities:</strong>
+        <ul>
+            <li>\((a + b)^2 = a^2 + 2ab + b^2\)</li>
+            <li>\((a - b)^2 = a^2 - 2ab + b^2\)</li>
+            <li>\(a^2 - b^2 = (a - b)(a + b)\)</li>
+            <li>\((a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + bc + ca)\)</li>
+        </ul>
+    </li>
+    <li><strong>Cube Identities:</strong>
+        <ul>
+            <li>\((a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 = a^3 + b^3 + 3ab(a + b)\)</li>
+            <li>\((a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 = a^3 - b^3 - 3ab(a - b)\)</li>
+            <li>\(a^3 + b^3 = (a + b)(a^2 - ab + b^2)\)</li>
+            <li>\(a^3 - b^3 = (a - b)(a^2 + ab + b^2)\)</li>
+        </ul>
+    </li>
+</ul>
+</div>
+
+<div class="concept-box">
+<h3>Special JEE Identities</h3>
+There are two highly specialized identities that appear frequently in JEE questions:
+<br><br>
+<strong>1. The Sum-Product Symmetric Identity:</strong>
+\[a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)\]
+Which can be written as:
+\[a^3 + b^3 + c^3 - 3abc = \frac{1}{2}(a + b + c)[(a - b)^2 + (b - c)^2 + (c - a)^2]\]
+<p>
+<strong>Key Takeaway:</strong> If \(a, b, c\) are positive and real, then:
+\[a^2 + b^2 + c^2 - ab - bc - ca = \frac{1}{2}[(a-b)^2 + (b-c)^2 + (c-a)^2] \ge 0\]
+It equals \(0\) if and only if \(a = b = c\).
+</p>
+<strong>2. The Quartic Factorization Identity:</strong>
+\[a^4 + a^2 + 1 = (a^2 + a + 1)(a^2 - a + 1)\]
+<em>Proof:</em> Add and subtract \(a^2\):
+\[a^4 + a^2 + 1 = (a^4 + 2a^2 + 1) - a^2 = (a^2 + 1)^2 - a^2\]
+Using the difference of squares:
+\[((a^2+1) - a)((a^2+1) + a) = (a^2 - a + 1)(a^2 + a + 1)\]
+</div>
+
+<div class="examplebox">
+<h3>Solved Example: Applying Special Identities</h3>
+<strong>Problem:</strong> If \(a^3 + b^3 + c^3 = 3abc\) and \(a, b, c\) are positive real numbers, find the value of \(\frac{a + 2b + 3c}{6a}\).
+<hr>
+<strong>Solution:</strong>
+From the symmetric identity, we know:
+\[a^3 + b^3 + c^3 - 3abc = \frac{1}{2}(a+b+c)[(a-b)^2 + (b-c)^2 + (c-a)^2] = 0\]
+Since \(a, b, c\) are positive real numbers, the sum \(a+b+c > 0\). Therefore, we must have:
+\[(a-b)^2 + (b-c)^2 + (c-a)^2 = 0\]
+Since the sum of squares of real numbers is zero if and only if each term is individually zero, we obtain:
+\[a - b = 0 \implies a = b\]
+\[b - c = 0 \implies b = c\]
+Thus, \(a = b = c\).
+<br><br>
+Substitute \(b = a\) and \(c = a\) into the target expression:
+\[\frac{a + 2b + 3c}{6a} = \frac{a + 2a + 3a}{6a} = \frac{6a}{6a} = 1\]
+</div>
+</section>
+
+<section>
+<h2>Ratio and Proportion Essentials</h2>
+<p>
+A <strong>ratio</strong> is a comparison of two quantities of the same kind, represented as \(\frac{a}{b}\) or \(a:b\). A <strong>proportion</strong> is an equation stating that two ratios are equal:
+\[\frac{a}{b} = \frac{c}{d} \quad (\text{or } a:b = c:d)\]
+</p>
+<p>
+For advanced algebraic manipulations, you must learn the standard properties of proportions:
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Property Name</th>
+            <th>If...</th>
+            <th>Then...</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Invertendo</strong></td>
+            <td>\(\frac{a}{b} = \frac{c}{d}\)</td>
+            <td>\(\frac{b}{a} = \frac{d}{c}\)</td>
+        </tr>
+        <tr>
+            <td><strong>Alternando</strong></td>
+            <td>\(\frac{a}{b} = \frac{c}{d}\)</td>
+            <td>\(\frac{a}{c} = \frac{b}{d}\)</td>
+        </tr>
+        <tr>
+            <td><strong>Componendo</strong></td>
+            <td>\(\frac{a}{b} = \frac{c}{d}\)</td>
+            <td>\(\frac{a+b}{b} = \frac{c+d}{d}\)</td>
+        </tr>
+        <tr>
+            <td><strong>Dividendo</strong></td>
+            <td>\(\frac{a}{b} = \frac{c}{d}\)</td>
+            <td>\(\frac{a-b}{b} = \frac{c-d}{d}\)</td>
+        </tr>
+        <tr>
+            <td><strong>Componendo & Dividendo</strong></td>
+            <td>\(\frac{a}{b} = \frac{c}{d}\)</td>
+            <td>\(\frac{a+b}{a-b} = \frac{c+d}{c-d}\)</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="insightbox">
+<h3>Componendo & Dividendo: The Trigonometry and Algebra Accelerator</h3>
+Whenever you see a fractional relationship of the form \(\frac{x+y}{x-y} = k\), you can immediately apply Componendo & Dividendo to isolate the ratio of the variables:
+\[\frac{(x+y) + (x-y)}{(x+y) - (x-y)} = \frac{k+1}{k-1} \implies \frac{2x}{2y} = \frac{k+1}{k-1} \implies \frac{x}{y} = \frac{k+1}{k-1}\]
+This operation saves immense time during exam conditions.
+</div>
+
+<div class="examplebox">
+<h3>Solved Example: Solving using Componendo & Dividendo</h3>
+<strong>Problem:</strong> Solve for \(x\) if:
+\[\frac{\sqrt{x+5} + \sqrt{x-2}}{\sqrt{x+5} - \sqrt{x-2}} = 7\]
+<hr>
+<strong>Solution:</strong>
+Write \(7\) as \(\frac{7}{1}\). Apply Componendo and Dividendo:
+\[\frac{(\sqrt{x+5} + \sqrt{x-2}) + (\sqrt{x+5} - \sqrt{x-2})}{(\sqrt{x+5} + \sqrt{x-2}) - (\sqrt{x+5} - \sqrt{x-2})} = \frac{7+1}{7-1}\]
+Simplify both sides:
+\[\frac{2\sqrt{x+5}}{2\sqrt{x-2}} = \frac{8}{6} \implies \frac{\sqrt{x+5}}{\sqrt{x-2}} = \frac{4}{3}\]
+Square both sides to eliminate the square roots:
+\[\frac{x+5}{x-2} = \frac{16}{9}\]
+Cross-multiply and solve for \(x\):
+\[9(x+5) = 16(x-2) \implies 9x + 45 = 16x - 32\]
+\[45 + 32 = 16x - 9x \implies 77 = 7x \implies x = 11\]
+Check the solution: \(\sqrt{11+5} + \sqrt{11-2} = \sqrt{16} + \sqrt{9} = 4 + 3 = 7\), and \(\sqrt{16} - \sqrt{9} = 4 - 3 = 1\). Ratio is \(\frac{7}{1} = 7\). The solution \(x = 11\) is correct!
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>
