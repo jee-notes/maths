@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Algebraic Laws of Sets | Sets</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sets
+</a>
+</nav>
+<h1>Algebraic Laws of Sets</h1>
+<p class="subtitle">
+The formal calculus of set relationships and algebraic transformations.
+</p>
+
+<section>
+<h2>Fundamental Laws of Set Algebra</h2>
+<p>
+Just as numbers obey rules like commutativity and distributivity under addition and multiplication, sets obey a highly structured system of algebraic laws under union (\(\cup\)), intersection (\(\cap\)), and complementation (\('\)).
+</p>
+<p>
+For any sets \(A\), \(B\), and \(C\) subset of Universal set \(U\), the following algebraic properties hold:
+</p>
+
+<div class="model-box">
+<h3>The Axiomatic Laws of Sets</h3>
+<ul>
+<li><strong>Idempotent Laws:</strong>
+  \[A \cup A = A \quad \text{and} \quad A \cap A = A\]
+  (Operating a set with itself yields no change.)
+</li>
+<li><strong>Identity Laws:</strong>
+  \[A \cup \emptyset = A \quad \text{and} \quad A \cap U = A\]
+  (Empty set \(\emptyset\) is the identity element for union; Universal set \(U\) is the identity for intersection.)
+</li>
+<li><strong>Dominance / Boundedness Laws:</strong>
+  \[A \cup U = U \quad \text{and} \quad A \cap \emptyset = \emptyset\]
+  (Universal set dominates union; empty set dominates intersection.)
+</li>
+<li><strong>Commutative Laws:</strong>
+  \[A \cup B = B \cup A \quad \text{and} \quad A \cap B = B \cap A\]
+  (The order of binary operations is irrelevant.)
+</li>
+<li><strong>Associative Laws:</strong>
+  \[(A \cup B) \cup C = A \cup (B \cup C) \quad \text{and} \quad (A \cap B) \cap C = A \cap (B \cap C)\]
+  (Grouping of operations of the same kind is irrelevant.)
+</li>
+<li><strong>Distributive Laws:</strong>
+  <ul>
+    <li>Union distributes over intersection:
+      \[A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\]
+    </li>
+    <li>Intersection distributes over union:
+      \[A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\]
+    </li>
+  </ul>
+</li>
+</ul>
+</div>
+<div class="insightbox">
+<h3>Note on Distributivity</h3>
+Be highly careful! In ordinary numbers, multiplication distributes over addition (\(a \cdot (b+c) = ab + ac\)), but addition does <strong>not</strong> distribute over multiplication (\(a + (b \cdot c) \neq (a+b) \cdot (a+c)\)). 
+<br><br>
+In sets, however, symmetry is perfect: **both** operations distribute over each other! This is a core feature of Boolean algebras.
+</div>
+</section>
+
+<section>
+<h2>De Morgan's Laws and Proofs</h2>
+<p>
+Augustus De Morgan formulated two revolutionary laws that describe how complementation acts as a duality operator, exchanging union and intersection.
+</p>
+
+<div class="concept-box">
+<h3>De Morgan's Statements</h3>
+<ol>
+  <li><strong>First Law (Complement of Union):</strong>
+    \[(A \cup B)' = A' \cap B'\]
+    (The complement of a union is the intersection of the complements.)
+  </li>
+  <li><strong>Second Law (Complement of Intersection):</strong>
+    \[(A \cap B)' = A' \cup B'\]
+    (The complement of an intersection is the union of the complements.)
+  </li>
+</ol>
+</div>
+
+<h3>Rigorously Proving the First Law: \((A \cup B)' = A' \cap B'\)</h3>
+<p>
+To prove this identity without relying on the suggestive visuals of Venn diagrams, we must utilize formal element logic and establish **double containment** (\(X \subseteq Y\) and \(Y \subseteq X\)).
+</p>
+
+<div class="model-box">
+<h4>Part 1: Prove \((A \cup B)' \subseteq A' \cap B'\)</h4>
+Let \(x\) be an arbitrary element belonging to the left-hand set:
+\[x \in (A \cup B)'\]
+By definition of a complement:
+\[x \notin (A \cup B)\]
+If \(x\) does not belong to the union of \(A\) and \(B\), it means it cannot belong to either set:
+\[x \notin A \quad \text{and} \quad x \notin B\]
+By definition of complements:
+\[x \in A' \quad \text{and} \quad x \in B'\]
+By definition of intersections:
+\[x \in A' \cap B'\]
+Since any \(x \in (A \cup B)'\) must lie in \(A' \cap B'\), we have proved:
+\[(A \cup B)' \subseteq A' \cap B' \quad \text{--- (Equation 1)}\]
+
+<h4>Part 2: Prove \(A' \cap B' \subseteq (A \cup B)'\)</h4>
+Let \(y\) be an arbitrary element belonging to the right-hand set:
+\[y \in A' \cap B'\]
+By definition of intersection:
+\[y \in A' \quad \text{and} \quad y \in B'\]
+By definition of complements:
+\[y \notin A \quad \text{and} \notin B\]
+If \(y\) is not in \(A\) and is also not in \(B\), then \(y\) cannot possibly belong to their union:
+\[y \notin (A \cup B)\]
+By definition of complements:
+\[y \in (A \cup B)'\]
+Since any \(y \in A' \cap B'\) must lie in \((A \cup B)'\), we have proved:
+\[A' \cap B' \subseteq (A \cup B)' \quad \text{--- (Equation 2)}\]
+
+<h4>Conclusion:</h4>
+From Equation 1 and Equation 2, we conclude:
+\[(A \cup B)' = A' \cap B'\]
+</div>
+</section>
+
+<section>
+<h2>Algebraic Proofs of Set Identities</h2>
+<p>
+Instead of starting from element-wise containment for every single new identity, we can systematically leverage already-proven fundamental laws to simplify expressions. Let us study a common identity proof:
+</p>
+
+<div class="concept-box">
+<h3>Proving: \(A - (B \cup C) = (A - B) \cap (A - C)\)</h3>
+We will simplify the left-hand side (LHS) step-by-step:
+<ol>
+  <li>First, recall the fundamental set difference identity:
+    \[X - Y \equiv X \cap Y'\]
+    Applying this to the LHS:
+    \[A - (B \cup C) = A \cap (B \cup C)'\]
+  </li>
+  <li>Apply <strong>De Morgan's First Law</strong> to the term \((B \cup C)'\):
+    \[A \cap (B \cup C)' = A \cap (B' \cap C')\]
+  </li>
+  <li>Use the <strong>Idempotent Law</strong> to write \(A\) as \(A \cap A\):
+    \[A \cap (B' \cap C') = (A \cap A) \cap (B' \cap C')\]
+  </li>
+  <li>Using the <strong>Associative and Commutative Laws</strong> of intersection, rearrange the grouping:
+    \[(A \cap A) \cap (B' \cap C') = (A \cap B') \cap (A \cap C')\]
+  </li>
+  <li>Convert back to set difference notation using \(X \cap Y' = X - Y\):
+    \[(A \cap B') \cap (A \cap C') = (A - B) \cap (A - C)\]
+  </li>
+</ol>
+Thus, the left-hand side is algebraically transformed into the right-hand side:
+\[A - (B \cup C) = (A - B) \cap (A - C)\]
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Simplification using Reverse Distributivity</h3>
+<strong>Problem:</strong> Simplify the expression: \(E = (A \cup B) \cap (A \cup B')\).
+<hr>
+<strong>Solution:</strong>
+Observe that \(A \cup\) is common to both bracketed terms. We can apply the <strong>Distributive Law in reverse</strong> (factoring out the union operator):
+\[(A \cup B) \cap (A \cup B') = A \cup (B \cap B')\]
+Recall the complement law: a set and its complement have absolutely no elements in common:
+\[B \cap B' = \emptyset\]
+Substitute this back:
+\[E = A \cup \emptyset\]
+By the Identity Law of union, union with an empty set leaves a set unchanged:
+\[E = A\]
+Thus, the simplified expression is **\(A\)**.
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Collapsing Difference Unions</h3>
+<strong>Problem:</strong> Prove algebraically that \((A \cap B) \cup (A - B) = A\).
+<hr>
+<strong>Solution:</strong>
+Express the set difference using intersection and complement:
+\[LHS = (A \cap B) \cup (A \cap B')\]
+Apply the distributive law in reverse (factoring out the intersection operator \(A \cap\)):
+\[LHS = A \cap (B \cup B')\]
+Recall the complement law: the union of a set and its complement constitutes the entire universal set:
+\[B \cup B' = U\]
+Substitute this back:
+\[LHS = A \cap U\]
+By the Identity Law of intersection, intersecting with the Universal set yields the set itself:
+\[LHS = A = RHS\]
+Hence, the identity is proved!
+</div>
+
+<div class="examplebox">
+<h3>Example 3: Tricky Distributive Simplification</h3>
+<strong>Problem:</strong> Simplify the complex set expression: \(X = A \cap (A \cup B)'\).
+<hr>
+<strong>Solution:</strong>
+Let's apply De Morgan's Law to the complement term:
+\[(A \cup B)' = A' \cap B'\]
+Substitute this back:
+\[X = A \cap (A' \cap B')\]
+Apply the Associative Law of intersection to regroup the elements:
+\[X = (A \cap A') \cap B'\]
+Recall that \(A \cap A' = \emptyset\):
+\[X = \emptyset \cap B'\]
+Since the intersection of the empty set with any other set is strictly empty (Dominance Law):
+\[X = \emptyset\]
+Thus, the expression simplifies to **\(\emptyset\)** (the empty set).
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

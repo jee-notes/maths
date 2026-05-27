@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Venn Diagrams and Operations | Sets</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sets
+</a>
+</nav>
+<h1>Venn Diagrams and Operations on Sets</h1>
+<p class="subtitle">
+Visualizing and transforming set spaces through logical operations.
+</p>
+
+<section>
+<h2>Venn Diagrams</h2>
+<p>
+A **Venn Diagram** is a geometric representation developed by John Venn in 1880 to visualize sets, their intersections, and logical relationships. It provides a visual proof space that is highly intuitive:
+</p>
+<ul>
+<li>The <strong>Universal Set \(U\)</strong> is represented by a <strong>rectangle</strong>.</li>
+<li>The <strong>subsets</strong> of \(U\) are represented by <strong>closed circles or ellipses</strong> inside the rectangle.</li>
+<li>The elements of a set are written inside its respective circle (for discrete representations).</li>
+</ul>
+<div class="insightbox">
+<h3>Why Visualization Matters</h3>
+Many complex set-algebra equations that are difficult to prove algebraically become trivial when drawn. In the JEE, drawing a quick Venn diagram is often the fastest and most error-free way to solve complex word problems and verify multi-option logical expressions.
+</div>
+</section>
+
+<section>
+<h2>Union and Intersection</h2>
+<p>
+The two most fundamental binary operations on sets are Union and Intersection:
+</p>
+
+<div class="concept-box">
+<h3>1. Union of Sets (\(A \cup B\))</h3>
+The <strong>union</strong> of two sets \(A\) and \(B\) is the set of all elements which belong to \(A\) <strong>or</strong> to \(B\) (or to both). The word "or" here is used in the inclusive sense.
+\[A \cup B = \{ x \mid x \in A \text{ or } x \in B \}\]
+<br>
+<div class="diagram">
+<svg width="240" height="150" viewBox="0 0 240 150">
+  <rect x="5" y="5" width="230" height="140" fill="#fcfdfd" stroke="#134e4a" stroke-width="2" rx="8" />
+  <text x="15" y="25" fill="#134e4a" font-weight="bold" font-family="sans-serif">U</text>
+  <!-- Union: Both circles shaded -->
+  <circle cx="100" cy="80" r="40" fill="#fb923c" fill-opacity="0.4" stroke="#134e4a" stroke-width="2" />
+  <circle cx="140" cy="80" r="40" fill="#fb923c" fill-opacity="0.4" stroke="#134e4a" stroke-width="2" />
+  <text x="80" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">A</text>
+  <text x="155" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">B</text>
+</svg>
+<p style="font-size:0.9rem; color:#6b7280; margin-top:5px;">Union \(A \cup B\) (Shaded Area)</p>
+</div>
+</div>
+
+<div class="concept-box">
+<h3>2. Intersection of Sets (\(A \cap B\))</h3>
+The <strong>intersection</strong> of two sets \(A\) and \(B\) is the set of all elements which belong to <strong>both</strong> \(A\) and \(B\).
+\[A \cap B = \{ x \mid x \in A \text{ and } x \in B \}\]
+<br>
+<div class="diagram">
+<svg width="240" height="150" viewBox="0 0 240 150">
+  <defs>
+    <clipPath id="circleA">
+      <circle cx="100" cy="80" r="40" />
+    </clipPath>
+  </defs>
+  <rect x="5" y="5" width="230" height="140" fill="#fcfdfd" stroke="#134e4a" stroke-width="2" rx="8" />
+  <text x="15" y="25" fill="#134e4a" font-weight="bold" font-family="sans-serif">U</text>
+  <!-- Circles outlines -->
+  <circle cx="100" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <circle cx="140" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <!-- Overlap shaded via clipPath -->
+  <circle cx="140" cy="80" r="40" fill="#f97316" fill-opacity="0.7" clip-path="url(#circleA)" />
+  <text x="80" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">A</text>
+  <text x="155" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">B</text>
+</svg>
+<p style="font-size:0.9rem; color:#6b7280; margin-top:5px;">Intersection \(A \cap B\) (Shaded Area)</p>
+</div>
+</div>
+
+<div class="model-box">
+<h3>Disjoint Sets</h3>
+If two sets \(A\) and \(B\) have no elements in common, they are called <strong>disjoint sets</strong>. In this case, their intersection is empty:
+\[A \cap B = \emptyset\]
+In a Venn diagram, disjoint circles do not touch or overlap at all.
+</div>
+</section>
+
+<section>
+<h2>Set Difference and Symmetric Difference</h2>
+<p>
+Subtraction on sets allows us to isolate elements that are unique to certain sets:
+</p>
+
+<div class="concept-box">
+<h3>1. Set Difference (\(A - B\))</h3>
+The <strong>difference</strong> \(A - B\) (read as "\(A\) minus \(B\)") is the set of all elements which belong to \(A\) but <strong>do not</strong> belong to \(B\).
+\[A - B = \{ x \mid x \in A \text{ and } x \notin B \}\]
+Note that \(A - B = A \cap B'\), where \(B'\) is the complement of \(B\).
+<br><br>
+<div class="diagram">
+<svg width="240" height="150" viewBox="0 0 240 150">
+  <rect x="5" y="5" width="230" height="140" fill="white" stroke="#134e4a" stroke-width="2" rx="8" />
+  <text x="15" y="25" fill="#134e4a" font-weight="bold" font-family="sans-serif">U</text>
+  <!-- Shade A -->
+  <circle cx="100" cy="80" r="40" fill="#fb923c" fill-opacity="0.5" stroke="none" />
+  <!-- Overwrite B with white background to mask intersection -->
+  <circle cx="140" cy="80" r="40" fill="white" stroke="none" />
+  <!-- Draw outlines -->
+  <circle cx="100" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <circle cx="140" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <text x="80" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">A</text>
+  <text x="155" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">B</text>
+</svg>
+<p style="font-size:0.9rem; color:#6b7280; margin-top:5px;">Difference \(A - B\) (Shaded Area)</p>
+</div>
+<br>
+<strong>Important:</strong> Set difference is not commutative! In general, \(A - B \neq B - A\).
+</div>
+
+<div class="concept-box">
+<h3>2. Symmetric Difference (\(A \Delta B\))</h3>
+The <strong>symmetric difference</strong> of two sets \(A\) and \(B\) is the set of all elements which belong to either \(A\) or \(B\), but <strong>not both</strong>. It is denoted by <strong>\(A \Delta B\)</strong>.
+\[A \Delta B = (A - B) \cup (B - A) = (A \cup B) - (A \cap B)\]
+<br>
+<div class="diagram">
+<svg width="240" height="150" viewBox="0 0 240 150">
+  <defs>
+    <clipPath id="circleA2">
+      <circle cx="100" cy="80" r="40" />
+    </clipPath>
+  </defs>
+  <rect x="5" y="5" width="230" height="140" fill="white" stroke="#134e4a" stroke-width="2" rx="8" />
+  <text x="15" y="25" fill="#134e4a" font-weight="bold" font-family="sans-serif">U</text>
+  <!-- Shade both A and B -->
+  <circle cx="100" cy="80" r="40" fill="#fb923c" fill-opacity="0.4" stroke="none" />
+  <circle cx="140" cy="80" r="40" fill="#fb923c" fill-opacity="0.4" stroke="none" />
+  <!-- Overwrite intersection in white -->
+  <circle cx="140" cy="80" r="40" fill="white" clip-path="url(#circleA2)" />
+  <!-- Draw outlines -->
+  <circle cx="100" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <circle cx="140" cy="80" r="40" fill="none" stroke="#134e4a" stroke-width="2" />
+  <text x="80" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">A</text>
+  <text x="155" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">B</text>
+</svg>
+<p style="font-size:0.9rem; color:#6b7280; margin-top:5px;">Symmetric Difference \(A \Delta B\) (Shaded Area)</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Complement of a Set</h2>
+<p>
+The complement operation represents the mathematical equivalent of the logical "NOT" operator.
+</p>
+<div class="concept-box">
+<h3>Definition of Complement (\(A'\) or \(A^c\))</h3>
+Let \(U\) be the universal set and \(A\) be a subset of \(U\). The <strong>complement of \(A\)</strong> (denoted by \(A'\) or \(A^c\)) is the set of all elements of \(U\) which do not belong to \(A\).
+\[A' = \{ x \in U \mid x \notin A \} = U - A\]
+<br>
+<div class="diagram">
+<svg width="240" height="150" viewBox="0 0 240 150">
+  <!-- Rect shaded (orange soft) -->
+  <rect x="5" y="5" width="230" height="140" fill="#ffedd5" stroke="#134e4a" stroke-width="2" rx="8" />
+  <text x="15" y="25" fill="#134e4a" font-weight="bold" font-family="sans-serif">U</text>
+  <!-- Circle A white -->
+  <circle cx="120" cy="80" r="40" fill="white" stroke="#134e4a" stroke-width="2" />
+  <text x="115" y="85" fill="#134e4a" font-weight="bold" font-family="sans-serif">A</text>
+</svg>
+<p style="font-size:0.9rem; color:#6b7280; margin-top:5px;">Complement \(A'\) (Shaded Area)</p>
+</div>
+</div>
+
+<div class="model-box">
+<h3>Core Properties of Complement</h3>
+For any subset \(A\) of Universal set \(U\):
+<ol>
+<li><strong>Complement Law:</strong> \(A \cup A' = U\) and \(A \cap A' = \emptyset\).</li>
+<li><strong>Law of Double Complementation:</strong> \((A')' = A\).</li>
+<li><strong>Laws of Empty and Universal Sets:</strong> \(\emptyset' = U\) and \(U' = \emptyset\).</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Computation on Numerical Sets</h3>
+<strong>Problem:</strong> Let the Universal set \(U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}\). Let \(A = \{1, 3, 5, 7, 9\}\) and \(B = \{2, 3, 5, 7\}\). Find:
+<br>
+(i) \(A \cup B\) and \(A \cap B\) <br>
+(ii) \(A - B\) and \(B - A\) <br>
+(iii) \(A \Delta B\) <br>
+(iv) \(A'\) and \(B'\)
+<hr>
+<strong>Solution:</strong>
+<ol>
+<li><strong>Part (i):</strong>
+- **Union:** Combine all elements of both sets (no duplicates):
+\[A \cup B = \{1, 2, 3, 5, 7, 9\}\]
+- **Intersection:** Identify elements common to both sets (\(3, 5, 7\)):
+\[A \cap B = \{3, 5, 7\}\]
+</li>
+<li><strong>Part (ii):</strong>
+- **\(A - B\):** Take elements of \(A\) and remove any that are also in \(B\) (\(3, 5, 7\)):
+\[A - B = \{1, 9\}\]
+- **\(B - A\):** Take elements of \(B\) and remove any that are also in \(A\) (\(3, 5, 7\)):
+\[B - A = \{2\}\]
+</li>
+<li><strong>Part (iii):</strong>
+- **Symmetric Difference (\(A \Delta B\)):** The union of \(A-B\) and \(B-A\):
+\[A \Delta B = (A-B) \cup (B-A) = \{1, 2, 9\}\]
+</li>
+<li><strong>Part (iv):</strong>
+- **Complements:** Elements of \(U\) that are not in \(A\) and \(B\) respectively:
+\[A' = U - A = \{2, 4, 6, 8, 10\}\]
+\[B' = U - B = \{1, 4, 6, 8, 9, 10\}\]
+</li>
+</ol>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Abstract Containment Proofs</h3>
+<strong>Problem:</strong> Show that if \(A \subseteq B\), then:
+<br>
+(i) \(A \cap B = A\)
+<br>
+(ii) \(A \cup B = B\)
+<hr>
+<strong>Solution:</strong>
+We are given \(A \subseteq B\), which means:
+\[\forall x, x \in A \implies x \in B\]
+<ol>
+<li><strong>Part (i) Proving \(A \cap B = A\):</strong>
+To prove set equality, we show double containment:
+<ol type="a">
+<li>Show \((A \cap B) \subseteq A\):
+Let \(x \in A \cap B\). By definition of intersection, \(x \in A\) and \(x \in B\). Since \(x \in A\), it follows that \((A \cap B) \subseteq A\).</li>
+<li>Show \(A \subseteq (A \cap B)\):
+Let \(y \in A\). Since \(A \subseteq B\), we must have \(y \in B\). Thus, \(y \in A\) and \(y \in B \implies y \in A \cap B\). Hence, \(A \subseteq (A \cap B)\).</li>
+</ol>
+From both containments, we obtain \(A \cap B = A\).
+</li>
+<li><strong>Part (ii) Proving \(A \cup B = B\):</strong>
+<ol type="a">
+<li>Show \((A \cup B) \subseteq B\):
+Let \(x \in A \cup B\). By definition, \(x \in A\) or \(x \in B\). 
+- If \(x \in B\), containment holds. 
+- If \(x \in A\), since \(A \subseteq B\), we must have \(x \in B\). 
+In either case, \(x \in B \implies (A \cup B) \subseteq B\).</li>
+<li>Show \(B \subseteq (A \cup B)\):
+By definition, any set \(B\) is a subset of its union with another set, so \(B \subseteq (A \cup B)\) is always true.</li>
+</ol>
+From both containments, we obtain \(A \cup B = B\).
+</li>
+</ol>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

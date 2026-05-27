@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cardinality and Practical Problems | Sets</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sets
+</a>
+</nav>
+<h1>Cardinality and Practical Problems</h1>
+<p class="subtitle">
+Solving quantitative word problems and analyzing set boundaries.
+</p>
+
+<section>
+<h2>The Inclusion-Exclusion Principle</h2>
+<p>
+When working with finite sets, we frequently need to calculate the number of elements in the union of sets given their individual cardinalities and the size of their overlaps. The **Inclusion-Exclusion Principle** prevents overcounting overlapping regions.
+</p>
+
+<div class="concept-box">
+<h3>1. Cardinality of Union of Two Sets</h3>
+For any two finite sets \(A\) and \(B\):
+\[n(A \cup B) = n(A) + n(B) - n(A \cap B)\]
+<p>
+<strong>Intuitive Proof:</strong> 
+When we sum \(n(A)\) and \(n(B)\), the elements belonging to the intersection region \(A \cap B\) are counted twice—once in \(A\) and once in \(B\). To obtain the correct count of unique elements, we must subtract the cardinality of the intersection \(n(A \cap B)\) once.
+</p>
+<strong>Special Case (Disjoint Sets):</strong> 
+If \(A\) and \(B\) are disjoint sets (\(A \cap B = \emptyset\)), then \(n(A \cap B) = 0\), and the union cardinality simplifies to:
+\[n(A \cup B) = n(A) + n(B)\]
+</div>
+
+<div class="concept-box">
+<h3>2. Cardinality of Union of Three Sets</h3>
+For any three finite sets \(A\), \(B\), and \(C\):
+\[n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(C \cap A) + n(A \cap B \cap C)\]
+<p>
+<strong>Intuitive Breakdown:</strong>
+</p>
+<ol>
+  <li>We first add the individual cardinalities: \(n(A) + n(B) + n(C)\).</li>
+  <li>By doing so, the double overlaps—\((A \cap B)\), \((B \cap C)\), and \((C \cap A)\)—have been counted twice. To compensate, we subtract them: \(- n(A \cap B) - n(B \cap C) - n(C \cap A)\).</li>
+  <li>However, let us consider the central triple overlap—\(A \cap B \cap C\). It was counted 3 times in step 1, and subtracted 3 times in step 2. Currently, it is counted 0 times!</li>
+  <li>To count the triple overlap exactly once, we must add it back: \(+ n(A \cap B \cap C)\).</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2>Advanced Cardinality Relations</h2>
+<p>
+Advanced JEE prompts frequently ask for highly specific, partitioned regions within a Venn diagram. You must memorize these cardinality formulas to save time:
+</p>
+
+<div class="model-box">
+<h3>Formulae for 3-Set Partitions (\(A, B, C\))</h3>
+<ul>
+  <li><strong>Number of elements in exactly one of the three sets:</strong>
+    \[n(\text{exactly one}) = n(A) + n(B) + n(C) - 2n(A \cap B) - 2n(B \cap C) - 2n(C \cap A) + 3n(A \cap B \cap C)\]
+  </li>
+  <li><strong>Number of elements in exactly two of the three sets:</strong>
+    \[n(\text{exactly two}) = n(A \cap B) + n(B \cap C) + n(C \cap A) - 3n(A \cap B \cap C)\]
+  </li>
+  <li><strong>Number of elements in at least two of the three sets:</strong>
+    \[n(\text{at least two}) = n(A \cap B) + n(B \cap C) + n(C \cap A) - 2n(A \cap B \cap C)\]
+    (Which is equivalent to the sum of "exactly two" and "all three".)
+  </li>
+  <li><strong>Number of elements in none of the sets:</strong>
+    \[n(\text{none}) = n(U) - n(A \cup B \cup C)\]
+  </li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Solved JEE Problems</h2>
+
+<div class="examplebox">
+<h3>Problem 1: Standard 3-Set Survey Analysis</h3>
+<strong>Problem:</strong> In a town of 10,000 families, a survey showed that:
+<ul>
+  <li>\(60\%\) of families read newspaper A.</li>
+  <li>\(45\%\) of families read newspaper B.</li>
+  <li>\(30\%\) of families read newspaper C.</li>
+  <li>\(20\%\) of families read newspapers A and B.</li>
+  <li>\(15\%\) of families read newspapers B and C.</li>
+  <li>\(12\%\) of families read newspapers C and A.</li>
+  <li>\(4\%\) of families read all three newspapers.</li>
+</ul>
+Find:
+<br>
+(i) The number of families reading none of the three newspapers.
+<br>
+(ii) The number of families reading exactly two newspapers.
+<hr>
+<strong>Solution:</strong>
+Let's represent the percentages of families as cardinalities relative to the universal set \(n(U) = 100\%\).
+<ul>
+  <li>\(n(A) = 60\%\), \(n(B) = 45\%\), \(n(C) = 30\%\)</li>
+  <li>\(n(A \cap B) = 20\%\), \(n(B \cap C) = 15\%\), \(n(C \cap A) = 12\%\)</li>
+  <li>\(n(A \cap B \cap C) = 4\%\)</li>
+</ul>
+
+<ol>
+<li><strong>Part (i): Families reading none</strong>
+First, calculate the percentage of families reading at least one newspaper using the Inclusion-Exclusion Principle:
+\[n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(C \cap A) + n(A \cap B \cap C)\]
+\[n(A \cup B \cup C) = 60\% + 45\% + 30\% - 20\% - 15\% - 12\% + 4\%\]
+\[n(A \cup B \cup C) = 135\% - 47\% + 4\% = 92\%\]
+The percentage of families reading none is:
+\[n(\text{none}) = 100\% - 92\% = 8\%\]
+In terms of actual number of families:
+\[\text{Families reading none} = 8\% \text{ of } 10,000 = \frac{8}{100} \cdot 10,000 = 800 \text{ families}\]
+</li>
+
+<li><strong>Part (ii): Families reading exactly two newspapers</strong>
+Apply the specialized partition formula:
+\[n(\text{exactly two}) = n(A \cap B) + n(B \cap C) + n(C \cap A) - 3n(A \cap B \cap C)\]
+\[n(\text{exactly two}) = 20\% + 15\% + 12\% - 3(4\%)\]
+\[n(\text{exactly two}) = 47\% - 12\% = 35\%\]
+In terms of actual families:
+\[\text{Families reading exactly two} = 35\% \text{ of } 10,000 = \frac{35}{100} \cdot 10,000 = 3,500 \text{ families}\]
+</li>
+</ol>
+</div>
+
+<div class="examplebox">
+<h3>Problem 2: Min/Max Boundary Constraints (High-Yield)</h3>
+<strong>Problem:</strong> In a consumer survey of a city, \(70\%\) of the consumers like product X and \(62\%\) like product Y. If \(x\%\) of consumers like both products X and Y, find the range of possible values for \(x\).
+<hr>
+<strong>Solution:</strong>
+Let \(A\) represent the set of consumers who like product X, and \(B\) represent the set of consumers who like product Y.
+Given:
+\[n(A) = 70\%, \quad n(B) = 62\%, \quad n(A \cap B) = x\%\]
+We know that:
+\[n(A \cup B) = n(A) + n(B) - n(A \cap B) = 70 + 62 - x = 132 - x\]
+
+<ol>
+<li><strong>Finding the Minimum Bound for \(x\):</strong>
+Since sets are subsets of the universal set, the cardinality of their union cannot exceed \(100\%\):
+\[n(A \cup B) \le 100\%\]
+\[132 - x \le 100 \implies x \ge 32\]
+Thus, the minimum percentage of consumers who must like both products is **\(32\%\)**.
+</li>
+<li><strong>Finding the Maximum Bound for \(x\):</strong>
+The intersection of two sets cannot contain more elements than the smaller of the two individual sets:
+\[A \cap B \subseteq A \quad \text{and} \quad A \cap B \subseteq B\]
+\[n(A \cap B) \le \min(n(A), n(B))\]
+\[x \le \min(70, 62) \implies x \le 62\]
+Thus, the maximum percentage of consumers who can like both products is **\(62\%\)**.
+</li>
+</ol>
+Combining both bounds, the range of possible values for \(x\) is:
+\[32 \le x \le 62\]
+</div>
+
+<div class="examplebox">
+<h3>Problem 3: Advanced Three-Set Equations</h3>
+<strong>Problem:</strong> In a class of 35 students, 17 take Mathematics, 19 take Physics, and 17 take Chemistry. If 11 students take both Math and Physics, 9 take both Physics and Chemistry, and 11 take both Chemistry and Math, find the number of students who take all three subjects, given that every student takes at least one subject.
+<hr>
+<strong>Solution:</strong>
+Let \(M, P, C\) represent the sets of students taking Math, Physics, and Chemistry respectively.
+We are given:
+<ul>
+  <li>\(n(U) = 35\)</li>
+  <li>\(n(M) = 17, \quad n(P) = 19, \quad n(C) = 17\)</li>
+  <li>\(n(M \cap P) = 11, \quad n(P \cap C) = 9, \quad n(C \cap M) = 11\)</li>
+</ul>
+Since every student takes at least one subject, the union of the three sets is equal to the total class size:
+\[n(M \cup P \cup C) = 35\]
+Let \(y = n(M \cap P \cap C)\) represent the number of students taking all three subjects.
+Apply the Inclusion-Exclusion Principle for three sets:
+\[n(M \cup P \cup C) = n(M) + n(P) + n(C) - n(M \cap P) - n(P \cap C) - n(C \cap M) + n(M \cap P \cap C)\]
+Substitute the known values:
+\[35 = 17 + 19 + 17 - 11 - 9 - 11 + y\]
+Simplify the right-hand side:
+\[35 = 53 - 31 + y\]
+\[35 = 22 + y\]
+Solve for \(y\):
+\[y = 35 - 22 = 13\]
+Thus, the number of students taking all three subjects is **13**.
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

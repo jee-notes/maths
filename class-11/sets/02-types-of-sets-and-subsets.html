@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Types of Sets and Subsets | Sets</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sets
+</a>
+</nav>
+<h1>Types of Sets and Subsets</h1>
+<p class="subtitle">
+Understanding the hierarchy, boundaries, and internal spaces of set structures.
+</p>
+
+<section>
+<h2>Types of Sets</h2>
+<p>
+To build operations on sets, we must first classify them based on their occupancy and cardinality:
+</p>
+
+<div class="concept-box">
+<h3>1. Empty Set (Null Set / Void Set)</h3>
+A set which contains no elements is called the <strong>empty set</strong>. It is denoted by the Greek letter symbol <strong>\(\emptyset\)</strong> or by empty braces <strong>\(\{\}\)</strong>.
+<br><br>
+<strong>Examples:</strong>
+<ul>
+<li>\(A = \{ x \in \mathbb{R} \mid x^2 + 1 = 0 \}\) (Since no real number squared is negative, \(A = \emptyset\).)</li>
+<li>\(B = \{ x \in \mathbb{N} \mid 1 < x < 2 \}\) (No natural number exists between 1 and 2, so \(B = \emptyset\).)</li>
+</ul>
+<strong>CRITICAL WARNING:</strong> The notation \(\{\emptyset\}\) does <strong>not</strong> represent an empty set. It represents a singleton set whose sole element is the empty set itself. Thus, \(n(\emptyset) = 0\) but \(n(\{\emptyset\}) = 1\).
+</div>
+
+<div class="concept-box">
+<h3>2. Singleton Set</h3>
+A set containing exactly one element is called a <strong>singleton set</strong>.
+<br><br>
+<strong>Examples:</strong>
+<ul>
+<li>\(S = \{ x \in \mathbb{Z} \mid x + 5 = 5 \} = \{0\}\).</li>
+<li>\(T = \{ x \in \mathbb{N} \mid x \text{ is even and prime} \} = \{2\}\).</li>
+</ul>
+</div>
+
+<div class="concept-box">
+<h3>3. Finite and Infinite Sets</h3>
+<ul>
+<li><strong>Finite Set:</strong> A set is finite if it is either empty or contains a definite, countable number of elements that can be fully listed. The number of unique elements in a finite set \(A\) is called its <strong>cardinal number</strong>, denoted by <strong>\(n(A)\)</strong>.</li>
+<li><strong>Infinite Set:</strong> A set whose elements cannot be fully listed because it contains an endless progression of members. Examples include \(\mathbb{N}\), \(\mathbb{Z}\), and any continuous interval like \((0, 1)\) on the real line.</li>
+</ul>
+</div>
+
+<div class="model-box">
+<h3>4. Equal Sets vs. Equivalent Sets</h3>
+<ul>
+<li><strong>Equal Sets (\(A = B\)):</strong> Two sets \(A\) and \(B\) are equal if they have exactly the same elements.
+\[A = B \iff (\forall x, x \in A \iff x \in B)\]
+Order and repetition do not affect equality. For example, \(\{1, 2\} = \{2, 1, 1\}\).</li>
+<li><strong>Equivalent Sets:</strong> Two finite sets \(A\) and \(B\) are equivalent if they have the same number of elements (same cardinality), even if the elements themselves are completely different.
+\[A \approx B \iff n(A) = n(B)\]
+For example, \(\{1, 2, 3\}\) and \(\{a, b, c\}\) are equivalent since both have cardinality 3, but they are not equal.
+<br><br>
+<strong>Rule:</strong> All equal sets are equivalent, but not all equivalent sets are equal.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Subsets and Proper Subsets</h2>
+<p>
+A set can contain other sets as sub-structures. This relationship forms the basis of all mathematical hierarchies.
+</p>
+
+<div class="concept-box">
+<h3>1. Definition of a Subset (\(A \subseteq B\))</h3>
+A set \(A\) is said to be a <strong>subset</strong> of set \(B\) if every element of \(A\) is also an element of \(B\).
+\[A \subseteq B \iff (\forall x, x \in A \implies x \in B)\]
+If \(A\) is not a subset of \(B\), we write \(A \not\subseteq B\).
+</div>
+
+<div class="concept-box">
+<h3>2. Proper Subset (\(A \subset B\))</h3>
+If \(A \subseteq B\) and \(A \neq B\), then \(A\) is called a <strong>proper subset</strong> of \(B\), and \(B\) is called the <strong>superset</strong> of \(A\).
+<br><br>
+This means \(B\) contains all elements of \(A\), plus at least one additional element that does not belong to \(A\).
+</div>
+
+<div class="model-box">
+<h3>Core Mathematical Properties of Subsets</h3>
+<ol>
+<li><strong>Every set is a subset of itself:</strong> For any set \(A\), \(A \subseteq A\). (Reflexive property)</li>
+<li><strong>The empty set is a subset of every set:</strong> For any set \(A\), \(\emptyset \subseteq A\). 
+<em>Proof:</em> The statement \(\forall x, x \in \emptyset \implies x \in A\) is vacuously true because there exists no element \(x\) in \(\emptyset\) to make the hypothesis false.</li>
+<li><strong>Proof of Equality:</strong> Two sets are equal if and only if they are subsets of each other.
+\[A = B \iff A \subseteq B \text{ and } B \subseteq A\]
+This "double containment" method is the standard algebraic way to prove set equations in advanced math.</li>
+<li><strong>Total Number of Subsets:</strong> If a finite set \(A\) contains \(n\) elements, the total number of subsets it can have is:
+\[\text{Total Subsets} = 2^n\]
+5. <strong>Total Number of Proper Subsets:</strong> Since a proper subset must exclude the set itself, the total number of proper subsets is:
+\[\text{Total Proper Subsets} = 2^n - 1\]
+</ol>
+</div>
+
+<h3>Intervals as Subsets of \(\mathbb{R}\)</h3>
+<p>
+Because the set of Real Numbers \(\mathbb{R}\) is continuous, we cannot list subsets in Roster form. Instead, we express real subsets using interval notation. Let \(a, b \in \mathbb{R}\) with \(a < b\):
+</p>
+<ul>
+<li><strong>Closed Interval:</strong> \([a, b] = \{ x \in \mathbb{R} \mid a \le x \le b \}\) (Includes boundary points)</li>
+<li><strong>Open Interval:</strong> \((a, b) = \{ x \in \mathbb{R} \mid a < x < b \}\) (Excludes boundary points)</li>
+<li><strong>Semi-Open / Semi-Closed:</strong> \([a, b) = \{ x \in \mathbb{R} \mid a \le x < b \}\) (Includes \(a\), excludes \(b\))</li>
+</ul>
+</section>
+
+<section>
+<h2>Power Set</h2>
+<p>
+The concept of constructing a set out of all subsets is highly powerful and forms the baseline for many advanced algebra and probability questions.
+</p>
+<div class="concept-box">
+<h3>Definition of a Power Set (\(P(A)\))</h3>
+The collection of <strong>all subsets</strong> of a set \(A\) is called the <strong>power set</strong> of \(A\), denoted by <strong>\(P(A)\)</strong>.
+\[P(A) = \{ S \mid S \subseteq A \}\]
+Every element of the power set \(P(A)\) is itself a set!
+</div>
+
+<div class="model-box">
+<h3>Crucial Power Set Relations and Cardinality</h3>
+Let \(A = \{1, 2\}\). Its subsets are \(\emptyset, \{1\}, \{2\}, \{1, 2\}\). Thus:
+\[P(A) = \{ \emptyset, \{1\}, \{2\}, \{1, 2\} \}\]
+Note the following logical truths for any set \(A\):
+<ul>
+<li>\(\emptyset \in P(A)\) (The empty set is an element of the power set)</li>
+<li>\(\emptyset \subseteq P(A)\) (The empty set is a subset of the power set, which is true for *any* set)</li>
+<li>\(A \in P(A)\) (The set \(A\) itself is an element of its power set)</li>
+<li>If \(n(A) = m\), then the cardinality of the power set is:
+\[n(P(A)) = 2^m\]</li>
+</ul>
+</div>
+
+<div class="insightbox">
+<h3>Power Set of the Empty Set</h3>
+What is the power set of the empty set \(\emptyset\)?
+Since \(\emptyset\) has \(0\) elements, its only subset is \(\emptyset\) itself.
+\[P(\emptyset) = \{\emptyset\}\]
+Therefore, the cardinality is \(n(P(\emptyset)) = 2^0 = 1\). 
+<br><br>
+If we take the power set of that:
+\[P(P(\emptyset)) = P(\{\emptyset\}) = \{ \emptyset, \{\emptyset\} \}\]
+Its cardinality is \(n(P(P(\emptyset))) = 2^1 = 2\). This progression forms the basis of constructing number systems from pure logic!
+</div>
+</section>
+
+<section>
+<h2>Universal Set</h2>
+<p>
+In any mathematical discussion or problem, all sets under consideration are treated as subsets of a larger, baseline set. This baseline set is called the <strong>Universal Set</strong>, denoted by <strong>\(U\)</strong>.
+</p>
+<p>
+The choice of a universal set depends entirely on the context:
+</p>
+<ul>
+<li>In coordinate geometry, the universal set is the set of all points in the Cartesian plane \(\mathbb{R}^2\).</li>
+<li>In real analysis or high school algebra, the universal set is usually the set of real numbers \(\mathbb{R}\).</li>
+<li>If we are studying the properties of integers, the universal set is \(\mathbb{Z}\).</li>
+</ul>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Deciphering Elements vs. Subsets</h3>
+<strong>Problem:</strong> Let \(A = \{ 1, 2, \{3, 4\}, 5 \}\). Which of the following statements are incorrect and why?
+<br>
+(i) \(\{3, 4\} \subseteq A\) <br>
+(ii) \(\{3, 4\} \in A\) <br>
+(iii) \(\{\{3, 4\}\} \subseteq A\) <br>
+(iv) \(\{1, 2, 5\} \subset A\)
+<hr>
+<strong>Solution:</strong>
+Let's analyze the elements of set \(A\). Set \(A\) contains exactly four elements: the number \(1\), the number \(2\), the set \(\{3, 4\}\), and the number \(5\).
+<ol>
+<li><strong>Statement (i) is INCORRECT.</strong> The entity \(\{3, 4\}\) is an <em>element</em> of \(A\), not a subset. For \(\{3, 4\}\) to be a subset, its individual elements \(3\) and \(4\) would have to be elements of \(A\). However, \(3 \notin A\) and \(4 \notin A\) (they are locked inside the nested set).</li>
+<li><strong>Statement (ii) is CORRECT.</strong> The set \(\{3, 4\}\) is indeed listed directly as a member of \(A\), so \(\{3, 4\} \in A\).</li>
+<li><strong>Statement (iii) is CORRECT.</strong> Since \(\{3, 4\} \in A\), if we wrap it in another set, we get \(\{\{3, 4\}\}\). Every element of this new set (which is the element \(\{3, 4\}\)) is a member of \(A\). Hence, \(\{\{3, 4\}\} \subseteq A\).</li>
+<li><strong>Statement (iv) is CORRECT.</strong> The elements \(1, 2,\) and \(5\) are all members of \(A\), and the subset \(\{1, 2, 5\}\) is not equal to \(A\) (since it lacks \(\{3, 4\}\)). Therefore, it is a proper subset: \(\{1, 2, 5\} \subset A\).</li>
+</ol>
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Iterating Power Sets</h3>
+<strong>Problem:</strong> Find the cardinality of \(P(P(P(\emptyset)))\).
+<hr>
+<strong>Solution:</strong>
+Let's work outward from the innermost set:
+<ol>
+<li>Let \(A_0 = \emptyset\). We know that:
+\[n(A_0) = 0\]</li>
+<li>Let \(A_1 = P(A_0) = P(\emptyset)\). The cardinality of the power set is:
+\[n(A_1) = 2^{n(A_0)} = 2^0 = 1\]
+Indeed, \(A_1 = \{\emptyset\}\).</li>
+<li>Let \(A_2 = P(A_1) = P(P(\emptyset))\). The cardinality is:
+\[n(A_2) = 2^{n(A_1)} = 2^1 = 2\]
+Indeed, \(A_2 = \{\emptyset, \{\emptyset\}\}\).</li>
+<li>Let \(A_3 = P(A_2) = P(P(P(\emptyset)))\). The cardinality is:
+\[n(A_3) = 2^{n(A_2)} = 2^2 = 4\]
+The subsets of \(\{\emptyset, \{\emptyset\}\}\) are: \(\emptyset\), \(\{\emptyset\}\), \(\{\{\emptyset\}\}\), and \(\{\emptyset, \{\emptyset\}\}\).
+Thus, \(P(P(P(\emptyset))) = \{ \emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\} \}\).
+</li>
+</ol>
+Thus, the cardinality of \(P(P(P(\emptyset)))\) is **4**.
+</div>
+
+<div class="examplebox">
+<h3>Example 3: Counting Subsets under Restrictions</h3>
+<strong>Problem:</strong> Let \(A = \{1, 2, 3, 4, 5, 6, 7, 8\}\). Find:
+<br>
+(i) The number of subsets of \(A\) that contain the element \(1\).
+<br>
+(ii) The number of subsets of \(A\) that contain the element \(1\) but exclude the element \(8\).
+<hr>
+<strong>Solution:</strong>
+<ol>
+<li><strong>Part (i):</strong>
+A subset of \(A\) can either contain or not contain any particular element. The set \(A\) has \(8\) elements. If a subset <em>must</em> contain the element \(1\), we have no choice for the element \(1\) (1 choice: it must be in the subset). For the remaining \(7\) elements, we have \(2\) choices for each (either in or out).
+<br><br>
+Thus, the number of such subsets is:
+\[1 \cdot 2^7 = 128\]
+Alternatively, think of it as taking any of the \(2^7\) subsets of the set \(\{2, 3, 4, 5, 6, 7, 8\}\) and inserting the element \(1\) into all of them. This gives exactly \(128\) subsets.
+</li>
+<li><strong>Part (ii):</strong>
+If the subset <em>must</em> contain \(1\) and <em>must not</em> contain \(8\), then both elements are fixed (1 choice each). We are left with \(6\) free elements \(\{2, 3, 4, 5, 6, 7\}\) which can either be included or excluded.
+<br><br>
+Thus, the number of such subsets is:
+\[2^6 = 64\]
+</li>
+</ol>
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>

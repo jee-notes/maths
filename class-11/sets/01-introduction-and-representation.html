@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Introduction and Representation | Sets</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/js/math.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+<a href="./index.html" class="back-btn">
+<span>&larr;</span> Back to Sets
+</a>
+</nav>
+<h1>Introduction and Representation of Sets</h1>
+<p class="subtitle">
+The absolute baseline of structural mathematical vocabulary.
+</p>
+
+<section>
+<h2>Definition of a Set</h2>
+<p>
+In naive set theory, a <strong>set</strong> is defined as a <strong>well-defined collection of distinct objects</strong>.
+</p>
+<p>
+Let us break this definition down into its two crucial logical pillars:
+</p>
+<div class="concept-box">
+<h3>1. Well-Defined Criterion</h3>
+A collection is <strong>well-defined</strong> if there exists a clear, objective rule or condition that allows us to determine, with absolute certainty, whether any given object belongs to the collection or not. 
+<br><br>
+There must be no subjective judgment, ambiguity, or individual bias involved.
+<ul>
+<li><strong>Well-Defined (Is a Set):</strong> "The collection of all vowels in the English alphabet." (Objective. Any letter is either in \(\{a, e, i, o, u\}\) or it is not.)</li>
+<li><strong>Not Well-Defined (Not a Set):</strong> "The collection of the five best cricketers in India." (Subjective. The term "best" depends on personal criteria, opinions, and stats used.)</li>
+</ul>
+</div>
+
+<div class="concept-box">
+<h3>2. Distinct Objects</h3>
+The objects in the collection must be **distinct**, meaning that no two elements can be identical. If an element is repeated in a collection, it is logically counted only once. For example, the collection of letters in the word "SCHOOL" is represented as \(\{S, C, H, O, L\}\), where the duplicate 'O' is collapsed.
+</div>
+
+<p>
+<strong>Notation and Terminology:</strong>
+</p>
+<ul>
+<li>Sets are conventionally denoted by capital letters: \(A, B, C, X, Y, Z\).</li>
+<li>The objects belonging to a set are called its <strong>elements</strong> or <strong>members</strong>, usually denoted by lowercase letters: \(a, b, c, x, y\).</li>
+<li>If an object \(x\) is an element of set \(A\), we write <strong>\(x \in A\)</strong> (read as "\(x\) belongs to \(A\)" or "\(x\) is an element of \(A\)").</li>
+<li>If \(x\) is not an element of \(A\), we write <strong>\(x \notin A\)</strong> (read as "\(x\) does not belong to \(A\)").</li>
+</ul>
+
+<div class="insightbox">
+<h3>Philosophical Insight: Russell's Paradox</h3>
+By defining a set simply as "any well-defined collection," early mathematicians ran into severe logical contractions. The most famous is <strong>Russell's Paradox</strong>: Let \(R\) be the set of all sets that do not contain themselves. Does \(R\) contain itself? 
+<br><br>
+If it does, then by definition it shouldn't. If it doesn't, then by definition it must! To resolve this paradox, modern mathematics utilizes axiomatic systems (such as Zermelo-Fraenkel set theory) which rule out such self-referential paradoxes. For JEE purposes, however, Cantor's intuitive, naive set theory is perfectly sufficient.
+</div>
+</section>
+
+<section>
+<h2>Standard Number Sets in Set Notation</h2>
+<p>
+Mathematics employs standard, universal symbols to denote the fundamental sets of numbers. You must memorize these notations as they are used constantly in JEE question prompts to restrict variables:
+</p>
+<ul>
+<li><strong>\(\mathbb{N}\):</strong> The set of all natural numbers (counting numbers) \(= \{1, 2, 3, 4, \dots\}\). Note that \(0 \notin \mathbb{N}\).</li>
+<li><strong>\(\mathbb{Z}\) or \(\mathbb{I}\):</strong> The set of all integers \(= \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}\).</li>
+<li><strong>\(\mathbb{Z}^+\) or \(\mathbb{I}^+\):</strong> The set of all positive integers \(= \{1, 2, 3, \dots\}\) (identical to \(\mathbb{N}\)).</li>
+<li><strong>\(\mathbb{Z}^-\):</strong> The set of all negative integers \(= \{-1, -2, -3, \dots\}\).</li>
+<li><strong>\(\mathbb{Q}\):</strong> The set of all rational numbers \(= \{ \frac{p}{q} \mid p, q \in \mathbb{Z}, q \neq 0 \}\).</li>
+<li><strong>\(\mathbb{R}\):</strong> The set of all real numbers, representing the entire continuous real number line.</li>
+<li><strong>\(\mathbb{R}^+\):</strong> The set of positive real numbers \((0, \infty)\).</li>
+<li><strong>\(\mathbb{C}\):</strong> The set of all complex numbers \(= \{a + ib \mid a, b \in \mathbb{R}, i = \sqrt{-1}\}\).</li>
+</ul>
+<p>
+These number sets form a strict nested hierarchical relationship:
+\[\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}\]
+</p>
+</section>
+
+<section>
+<h2>Roster or Tabular Form</h2>
+<p>
+In the **Roster Form**, a set is represented by listing all its elements explicitly, separated by commas, and enclosing them within curly brackets \(\{ \}\).
+</p>
+<p>
+For example, the set of all positive even integers less than \(10\) is written as:
+\[A = \{2, 4, 6, 8\}\]
+</p>
+<div class="model-box">
+<h3>Core Rules of Roster Form</h3>
+<ol>
+<li><strong>Order is Irrelevant:</strong> The order in which elements are listed does not change the set. 
+\[\{1, 2, 3\} \equiv \{3, 1, 2\} \equiv \{2, 3, 1\}\]</li>
+<li><strong>Repetition is Redundant:</strong> All elements must be distinct. If an element is written multiple times, it is collapsed into a single representation.
+\[\{a, a, b, b, c\} \equiv \{a, b, c\}\]</li>
+<li><strong>Ellipsis (\(\dots\)) for Infinite Sets:</strong> If a set has infinitely many elements or is too large to write fully, we establish a clear pattern with the first few elements and use dots to indicate continuation.
+\[\mathbb{N} = \{1, 2, 3, \dots\}\]</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2>Set-Builder Form</h2>
+<p>
+Listing every element is impossible for uncountably infinite sets (like real numbers in an interval) and highly tedious for large finite sets. In such cases, we use the **Set-Builder Form**.
+</p>
+<p>
+In Set-Builder Form, all elements of the set possess a single, common property that does not belong to any object outside the set.
+</p>
+<p>
+The general syntax of Set-Builder Form is:
+\[A = \{ x \mid P(x) \} \quad \text{or} \quad A = \{ x : P(x) \}\]
+</p>
+<p>
+Where:
+</p>
+<ul>
+<li><strong>\(x\)</strong> represents a typical element of the set.</li>
+<li>The colon <strong>\(:\)</strong> or vertical bar <strong>\(\mid\)</strong> stands for the phrase <strong>"such that"</strong>.</li>
+<li><strong>\(P(x)\)</strong> is the characteristic property or condition that the variable \(x\) must satisfy to qualify as a member of set \(A\).</li>
+</ul>
+<p>
+For example, the set \(A = \{2, 4, 6, 8\}\) can be expressed in set-builder form as:
+\[A = \{ x \in \mathbb{N} \mid x \text{ is even and } x < 10 \}\]
+</p>
+<h3>Roster Form vs. Set-Builder Form Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Roster Form</th>
+<th>Set-Builder Form</th>
+<th>Mathematical Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(\{a, e, i, o, u\}\)</td>
+<td>\(\{x \mid x \text{ is a vowel in English alphabet}\}\)</td>
+<td>Vowels in English</td>
+</tr>
+<tr>
+<td>\(\{1, 3, 5, 7, 9\}\)</td>
+<td>\(\{x \in \mathbb{N} \mid x \text{ is odd and } x \le 9\}\)</td>
+<td>First five odd natural numbers</td>
+</tr>
+<tr>
+<td>\(\{1, 4, 9, 16, 25\}\)</td>
+<td>\(\{x^2 \mid x \in \mathbb{N}, x \le 5\}\)</td>
+<td>Perfect squares up to 25</td>
+</tr>
+<tr>
+<td>\(\{-3, 3\}\)</td>
+<td>\(\{x \in \mathbb{Z} \mid x^2 = 9\}\)</td>
+<td>Roots of the equation \(x^2 = 9\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Solved Examples</h2>
+
+<div class="examplebox">
+<h3>Example 1: Solving Equations and Converting to Roster Form</h3>
+<strong>Problem:</strong> Write the set \(A = \{ x \in \mathbb{R} \mid x^3 - 6x^2 + 11x - 6 = 0 \}\) in Roster form.
+<hr>
+<strong>Solution:</strong>
+The set contains the real roots of the cubic polynomial equation:
+\[x^3 - 6x^2 + 11x - 6 = 0\]
+Let's factorize the cubic equation. By trial, we substitute \(x = 1\):
+\[(1)^3 - 6(1)^2 + 11(1) - 6 = 1 - 6 + 11 - 6 = 0\]
+Since \(x = 1\) is a root, \((x - 1)\) is a factor. Divide the polynomial by \((x - 1)\):
+\[x^3 - 6x^2 + 11x - 6 = (x - 1)(x^2 - 5x + 6)\]
+Now, factorize the quadratic term \(x^2 - 5x + 6\):
+\[x^2 - 5x + 6 = (x - 2)(x - 3)\]
+Thus, the factored cubic equation is:
+\[(x - 1)(x - 2)(x - 3) = 0\]
+The roots of the equation are \(x = 1\), \(x = 2\), and \(x = 3\). Since all three roots are real numbers, the set in Roster form is:
+\[A = \{1, 2, 3\}\]
+</div>
+
+<div class="examplebox">
+<h3>Example 2: Analyzing Patterns and Representing in Set-Builder Form</h3>
+<strong>Problem:</strong> Write the set \(B = \left\{ \frac{1}{2}, \frac{2}{5}, \frac{3}{10}, \frac{4}{17}, \frac{5}{26} \right\}\) in Set-Builder form.
+<hr>
+<strong>Solution:</strong>
+Let's analyze the relationship between the numerator and denominator of each element in the set:
+<ul>
+<li>First element: \(\frac{1}{2} = \frac{1}{1^2 + 1}\)</li>
+<li>Second element: \(\frac{2}{5} = \frac{2}{2^2 + 1}\)</li>
+<li>Third element: \(\frac{3}{10} = \frac{3}{3^2 + 1}\)</li>
+<li>Fourth element: \(\frac{4}{17} = \frac{4}{4^2 + 1}\)</li>
+<li>Fifth element: \(\frac{5}{26} = \frac{5}{5^2 + 1}\)</li>
+</ul>
+Clearly, if the numerator is \(n\), the denominator is of the form \(n^2 + 1\). The numerator \(n\) is a natural number running from \(1\) to \(5\) inclusive.
+<br><br>
+Thus, we can express the set in Set-Builder form as:
+\[B = \left\{ \frac{n}{n^2 + 1} \mid n \in \mathbb{N}, n \le 5 \right\}\]
+</div>
+
+<div class="examplebox">
+<h3>Example 3: Tricky Integer Constraints</h3>
+<strong>Problem:</strong> Express the set \(C = \{ x \in \mathbb{Z} \mid 4x^2 - 19x - 5 < 0 \}\) in Roster form.
+<hr>
+<strong>Solution:</strong>
+First, solve the quadratic inequality:
+\[4x^2 - 19x - 5 < 0\]
+Factorize the quadratic expression:
+\[4x^2 - 20x + x - 5 < 0 \implies 4x(x - 5) + 1(x - 5) < 0 \implies (4x + 1)(x - 5) < 0\]
+Using the wavy curve method (interval testing), the product is negative when \(x\) lies between the roots of the equation:
+\[-\frac{1}{4} < x < 5\]
+The set builder condition specifies that \(x\) must be an <strong>integer</strong> (\(x \in \mathbb{Z}\)). We must list all integers that satisfy this inequality:
+The integers in the open interval \(\left(-\frac{1}{4}, 5\right)\) are:
+\[x = 0, 1, 2, 3, 4\]
+Thus, in Roster form, the set is:
+\[C = \{0, 1, 2, 3, 4\}\]
+</div>
+</section>
+
+<footer>
+<hr>
+<p>By Hitendra K K</p>
+</footer>
+</div>
+</body>
+</html>
